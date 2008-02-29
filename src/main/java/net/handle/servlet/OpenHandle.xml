@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openhandle>
+    <servlet>
+        <parameterNames>
+            <handleId>id</handleId>
+            <datatypes>include</datatypes>
+            <format>format</format><!-- note to self: we are asserting that the value for responseFormat maps to extension for template -->
+            <index>index</index>
+            <type>type</type>
+        </parameterNames>
+        <templates>
+            <handleResponse>
+                <template>
+                    <name>handle</name>
+                    <extension>rdf</extension>
+                    <mimetype>application/rdf+xml</mimetype>
+                </template>
+                <template>
+                    <name>handle</name>
+                    <extension>json</extension>
+                    <mimetype>application/json</mimetype>
+                </template>
+                <template>
+                    <name>handle</name>
+                    <extension>n3</extension>
+                    <mimetype>text/rdf+n3</mimetype>
+                </template>
+            </handleResponse>
+            <errorResponse>
+                <template>
+                    <name>error</name>
+                    <extension>rdf</extension>
+                    <mimetype>application/rdf+xml</mimetype>
+                </template>
+            </errorResponse>
+        </templates>
+    </servlet>
+    <traceMessages>true</traceMessages>
+    <preferredProtocols>http, tcp</preferredProtocols>
+</openhandle>
