@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<r:RDF
+    xmlns:h="http://nascent.nature.com/schemas/rdf/handle#"
+    xmlns:r="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    >
+    #set ($this = $request.getAttribute("id"))
+    <h:Handle r:about="info:hdl/${this.handle}">
+        <h:handleValues r:parseType="Collection">
+            #foreach ($value in $this.values)
+            <h:HandleValue>
+                <h:index>${value.index}</h:index>
+                <h:type>${value.type}</h:type>
+                #if (!$value.type.binary)
+                #if ($value.type == "URL")
+                <h:data r:resource="${value.data}"/>
+                #else
+                <h:data>
+                    ${value.data}
+                </h:data>
+                #end
+                #elseif ($value.type.admin)
+                <h:data>
+                    <h:HS_ADMIN>
+                        <h:adminRef r:resource="info:hdl/${value.handle}#index=${value.index}"/>
+                        <h:adminPermission>
+                            <h:AdminPermission>
+                                #foreach ($permission in $value.admin.permissions.entrySet())
+                                <h:${permission.key}>${permission.value}</h:${permission.key}>
+                                #end
+                                <h:AdminPermission>
+                                    <h:adminPermission>
+                    </h:HS_ADMIN>
+                </h:data>
+                #elseif ($value.type.site)
+                <h:data>
+                    <h:HS_SITE>
+                        <h:version>${value.site.dataFormatVersion}</h:version>
+                        <h:protocolVersion>
+                            <h:ProtocolVersion>
+                                <h:majorProtocolVersion>${value.site.majorProtocolVersion}</h:majorProtocolVersion>
+                                <h:minorProtocolVersion>${value.site.minorProtocolVersion}</h:minorProtocolVersion>
+                            </h:ProtocolVersion>
+                        </h:protocolVersion>
+                        <h:serialNumber>${value.site.serialNumber}</h:serialNumber>
+                        <h:primaryMask>
+                            <h:PrimaryMask>
+                                <h:primary>${value.site.primary}</h:primary>
+                                <h:multiPrimary>${value.site.multiPrimary}</h:multiPrimary>
+                            </h:PrimaryMask>
+                        </h:primaryMask>
+                        <h:hashOption>${value.site.hOption}</h:hashOption>
+                        <h:hashFilter>${value.site.hFilter}</h:hashFilter>
+                        <h:attributes parseType="Collection">
+                            #foreach ($attribute in $value.site.attributes.entrySet())
+                            <h:Attribute>
+                                <h:name>${attribute.key}</h:name>
+                                <h:value>${attribute.value}</h:value>
+                            </h:Attribute>
+                            #end
+                        </h:attributes>
+                        <h:numOfServer>$value.site.servers.size()</h:numOfServer>
+                        <h:serverRecords parseType="Collection">
+                            #foreach ($server in $value.site.servers)
+                            <h:ServerRecord>
+                                <h:serverID>${server.id}</h:serverID>
+                                <h:address>${server.address}</h:address>
+                                #if ($server.publicKey)
+                                <h:publicKeyRecord>${server.publicKey}</h:publicKeyRecord>
+                                #end
+                                <h:serviceInterface>
+                                    <h:ServiceInterface>
+                                        <h:interfaceCounter>$server.interfaces.size()</h:interfaceCounter>
+                                        #foreach ($interface in $server.interfaces)
+                                        <h:interface>
+                                            <h:Interface>
+                                                <h:serviceType>${interface.type}</h:serviceType>
+                                                <h:transmissionProtocol>${interface.protocol}</h:transmissionProtocol>
+                                                <h:portNumber>${interface.port}</h:portNumber>
+                                            </h:Interface>
+                                        </h:interface>
+                                        #end
+                                    </h:ServiceInterface>
+                                </h:serviceInterface>
+                            </h:ServerRecord>
+                            #end
+                        </h:serverRecords>
+                    </h:HS_SITE>
+                </h:data>
+                #elseif ($value.type.service)
+                <h:data>
+                    <h:HS_SERV>
+                    </h:HS_SERV>
+                </h:data>
+                #elseif ($value.type.primary)
+                <h:data>
+                    <h:HS_PRIMARY>
+                    </h:HS_PRIMARY>
+                </h:data>
+                #elseif ($value.type.alias)
+                <h:data>
+                    <h:HS_ALIAS>
+                    </h:HS_ALIAS>
+                </h:data>
+                #elseif ($value.type.valueReferenceList)
+                <h:data>
+                    <h:HS_VLIST>
+                    </h:HS_VLIST>
+                </h:data>
+                #end
+                <h:permission>
+                    <h:Permission>
+                        <h:adminRead>${value.permissions.adminRead}</h:adminRead>
+                        <h:adminWrite>${value.permissions.adminWrite}</h:adminWrite>
+                        <h:publicRead>${value.permissions.publicRead}</h:publicRead>
+                        <h:publicWrite>${value.permissions.publicWrite}</h:publicWrite>
+                        <h:Permission>
+                </h:permission>
+                <h:ttl>
+                    <h:TTL>
+                        <h:ttlType>${value.ttlType}</h:ttlType>
+                        <h:ttlValue>${value.ttl}</h:ttlValue>
+                    </h:TTL>
+                </h:ttl>
+                <h:timestamp>${value.timestamp}</h:timestamp>
+                <h:reference>
+                    <h:Reference>
+                        <h:referenceCount>${value.references.size()}</h:referenceCount>
+                        <h:referenceList r:parseType="Collection">
+                            #foreach ($reference in $value.valueReferences)
+                            <h:HandleValueRef r:about="info:hdl/${reference.handle}#index=${reference.index}"/>
+                            #end
+                        </h:referenceList>
+                    </h:Reference>
+                </h:reference>
+            </h:HandleValue>
+            #end
+        </h:handleValues>
+    </h:Handle>
+</r:RDF>

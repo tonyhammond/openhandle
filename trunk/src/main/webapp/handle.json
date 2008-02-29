@@ -1,0 +1,69 @@
+#set ($this = $request.getAttribute("id"))
+{
+    "handle" : "info:hdl/${this.handle}" ,
+    "handleValues" : [
+        #foreach ($value in $this.values)
+        {
+            "index" : "${value.index}" ,
+            "type" : "${value.type}" ,
+            #if (!$value.type.binary)
+	        #if ${value.type} == "URL")
+            "data" : "<${value.data}>" ,
+            #else
+            "data" : "${value.data}" ,
+            #end
+            #elseif ($value.type.admin)
+            "data" : {
+                "adminRef" : "<info:hdl/${value.handle}#index=${value.index}/>" ,
+                "adminPermission" : {
+                   #foreach ($permission in $value.admin.permissions.entrySet())
+                    #if ($velocityCount < $value.admin.permissions.entrySet.size())
+                   "${permission.key}" : "${permission.value}" ,
+                   #else
+                   "${permission.key}" : "${permission.value}"
+                   #end
+                 }
+            } ,
+            #elseif ($value.type.site)
+            "data" : {
+            } ,
+            #elseif ($value.type.service)
+            "data" : {
+            } ,
+            #elseif ($value.type.primary)
+            "data" : {
+            } ,
+            #elseif ($value.type.alias)
+            "data" : {
+            } ,
+            #elseif ($value.type.valueReferenceList)
+            "data" : {
+            } ,
+            #end
+            "permission" : {
+                "adminRead" : "${value.permissions.adminRead}" ,
+                "adminWrite" : "${value.permissions.adminWrite}" ,
+                "publicRead" : "${value.permissions.publicRead}" ,
+                "publicWrite" : "${value.permissions.publicWrite}"
+            } ,
+            "ttl" : {
+                "ttlType" : "${value.ttlType}" ,
+                "ttlValue" : "${value.ttl}"
+            } ,
+            "timestamp" : "${value.timestamp}" ,
+            "reference"  : {
+                "referenceCount" : "${value.references.size()}" ,
+                "referenceList" : [
+                    #foreach ($reference in $value.valueReferences)
+                    #if ($velocityCount < $value.valueReferences.size())
+                    <info:hdl/${reference.handle}#index=${reference.index}/> ,
+                    #else
+                    <info:hdl/${reference.handle}#index=${reference.index}/>
+                    #end
+                    #end
+                ]
+            }
+        }
+        #end
+    ]
+}
