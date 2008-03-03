@@ -5,19 +5,22 @@
  *
  * <p>Copyright (C) 2007 Christopher Townson.</p>
  *
- * <p>This work is licenced under the Creative Commons 
- * Attribution-NonCommercial-ShareAlike 2.5 License. To view a copy of this 
- * licence, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send 
- * a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California 
+ * <p>This work is licenced under the Creative Commons
+ * Attribution-NonCommercial-ShareAlike 2.5 License. To view a copy of this
+ * licence, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send
+ * a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California
  * 94305, USA.</p>
  */
+
 package net.handle.servlet;
+
+import static org.apache.commons.lang.StringUtils.isNotBlank;
 
 /**
  * <p>
  * Enumeration of mime type assignments.
  * </p>
- * 
+ *
  * @see <a href="http://www.iana.org/assignments/media-types/">IANA media type
  *      assignments</a>
  */
@@ -59,7 +62,7 @@ public enum Mimetype {
      * N.B. the supplied string must match those produced by {@link #toString()}
      * in this enumeration.
      * </p>
-     * 
+     *
      * @param mimetype the mimetype string
      * @return the {@link Mimetype}
      */
@@ -73,13 +76,27 @@ public enum Mimetype {
         return null;
     }
 
+    public static Mimetype forExtension(String extension) {
+        if (isNotBlank(extension)) {
+            for (Mimetype value : values()) {
+                if (value.getRecommendedFileExtension() != null
+                        && value.getRecommendedFileExtension()
+                                .equals(extension)) {
+                    return value;
+                }
+            }
+        }
+
+        return null;
+    }
+
     /**
      * <p>
      * Returns the recommended file extension for this mime type, without the
      * period (e.g. "txt" for {@link #TEXT_PLAIN}), or <code>null</code> if
      * no recommended file extension is available.
      * </p>
-     * 
+     *
      * @return the recommended file extension or <code>null</code> if there is
      *         no recommended file extension for this mime type
      */
@@ -172,7 +189,7 @@ public enum Mimetype {
             s = "swf";
             break;
         case APPLICATION_XHTML_XML:
-            s = "html";
+            s = "xhtml";
             break;
         case APPLICATION_XML:
             s = "xml";
@@ -241,7 +258,7 @@ public enum Mimetype {
             s = "tab";
             break;
         case TEXT_URI_LIST:
-            s = "txt";
+            s = "uri";
             break;
         case TEXT_XML:
             s = "xml";
@@ -271,7 +288,7 @@ public enum Mimetype {
      * Returns the mime type identifier for this mime type (e.g. "text/plain"
      * for {@link #TEXT_PLAIN}).
      * </p>
-     * 
+     *
      * @see java.lang.Enum#toString()
      */
     @Override

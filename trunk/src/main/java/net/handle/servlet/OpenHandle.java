@@ -1,25 +1,19 @@
 /*
  * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
- * Date: Nov 8, 2007
- * Time: 11:37:16 AM
- *
- * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
- *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * Date: Nov 8, 2007 Time: 11:37:16 AM <p>Copyright (C) 2007 Nature Publishing
+ * Group, Inc.</p> <p><abbr title="Nature Publishing Group">NPG</abbr>
+ * reserves all rights in this program. The program or any portion thereof may
+ * not be reproduced in any form whatsoever without the written consent of <abbr
+ * title="Nature Publishing Group">NPG</abbr>.</p> <p>Nature Publishing Group
+ * is a division of Macmillan Publishers Limited, of Brunel Road, Houndmills,
+ * Basingstoke, Hampshire, RG21 6XS. Registered Number 785998 England.</p>
  */
+
 package net.handle.servlet;
 
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
 import org.apache.commons.lang.builder.ToStringStyle;
 
 import net.handle.hdllib.AbstractMessage;
@@ -35,7 +29,7 @@ import net.handle.hdllib.ResolutionResponse;
  * <p>
  * TODO Document OpenHandle
  * </p>
- * 
+ *
  * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
  */
 public class OpenHandle {
@@ -52,12 +46,13 @@ public class OpenHandle {
     /**
      * <p>
      * </p>
-     * 
-     * @param args the handle rtf id as first argument (any other args are
-     *            ignored)
+     *
+     * @param args the handle id as first argument (currently, additional args
+     *        are ignored)
      * @throws Exception if anything goes wrong
      */
     public static void main(String[] args) throws Exception {
+        // TODO handle indices, types, traceMessage and protocols args
         if (args.length < 1) {
             System.out.println("usage: please provide the handle identifier.");
         } else {
@@ -78,7 +73,7 @@ public class OpenHandle {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param handleResolver the ready-configured resolver
      */
     public OpenHandle(HandleResolver handleResolver) {
@@ -88,7 +83,7 @@ public class OpenHandle {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param protocols the preferred protocols
      * @param traceMessages
      */
@@ -102,14 +97,61 @@ public class OpenHandle {
      * <p>
      * Get the handle response.
      * </p>
-     * 
-     * @param handle the handle rtf id
+     *
+     * @param handle the handle identifier
      * @return the handle response
      * @throws HandleException if the handle could not be got
      */
     public HandleResponseAdapter get(String handle) throws HandleException {
         ResolutionRequest request = new ResolutionRequest(handle.getBytes(),
                 null, null, null);
+        return get(handle, request);
+    }
+
+    /**
+     * <p>
+     * Get the handle response; limit the values included in the response to the
+     * specified indices and record types. Pass <code>null</code> to either
+     * indices or types to specify no limiting for either of these parameters.
+     * </p>
+     *
+     * @param handle the handle identifier
+     * @param indices the indices to include in the response
+     * @param types the record types to include in the response
+     * @return the handle response
+     * @throws HandleException if the handle could not be got
+     */
+    public HandleResponseAdapter get(String handle, int[] indices,
+            HandleRecordType[] types) throws HandleException {
+        ResolutionRequest request = new ResolutionRequest(handle.getBytes(),
+                HandleRecordType.encode(types), indices, null);
+        return get(handle, request);
+    }
+
+    /**
+     * <p>
+     * Set handle client option to traceMessages.
+     * </p>
+     *
+     * @param traceMessages the traceMessages
+     */
+    public void setTraceMessages(boolean traceMessages) {
+        resolver.traceMessages = traceMessages;
+    }
+
+    /**
+     * <p>
+     * Set handle client option for preferredProtocols
+     * </p>
+     *
+     * @param preferredProtocols the preferredProtocols
+     */
+    public void setPreferredProtocols(int[] preferredProtocols) {
+        resolver.setPreferredProtocols(preferredProtocols);
+    }
+
+    private HandleResponseAdapter get(String handle, ResolutionRequest request)
+            throws HandleException {
         AbstractResponse response = resolver.processRequest(request);
         int responseCode = response.responseCode;
         if (responseCode == AbstractMessage.RC_SUCCESS) {
@@ -124,47 +166,5 @@ public class OpenHandle {
             throw new HandleException(responseCode, AbstractMessage
                     .getResponseCodeMessage(responseCode));
         }
-    }
-
-    public void setTraceMessages(boolean traceMessages) {
-        resolver.traceMessages = traceMessages;
-    }
-
-    public void setPreferredProtocols(int[] preferredProtocols) {
-        resolver.setPreferredProtocols(preferredProtocols);
-    }
-
-    /**
-     * <p>
-     * Attempts to convert a comma-separated string of protocol type names to an
-     * integer array, representing them in a way a Handle resolver will
-     * understand. If the supplied String is <code>null</code> or empty, then
-     * <code>null</code> will be returned.
-     * </p>
-     * 
-     * @param s a comma-separated list of protocols (http, tcp, udp) in order of
-     *            preference
-     * @return the protocols as an int array which can be used to set the
-     *         preferred protocols for the handle resolver
-     */
-    public static int[] toProtocolArray(String s) {
-        if (StringUtils.isNotBlank(s)) {
-            String[] protocols = s.split(",");
-            int[] array = new int[protocols.length];
-            for (int i = 0; i < protocols.length; i++) {
-                String p = protocols[i].trim();
-                if (p.equals("http")) {
-                    array[i] = new Byte(Interface.SP_HDL_HTTP).intValue();
-                } else if (p.equals("tcp")) {
-                    array[i] = new Byte(Interface.SP_HDL_TCP).intValue();
-                } else if (p.equals("udp")) {
-                    array[i] = new Byte(Interface.SP_HDL_UDP).intValue();
-                }
-            }
-
-            return array;
-        }
-
-        return null;
     }
 }

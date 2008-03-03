@@ -30,7 +30,7 @@
 
     <servlet>
         <servlet-name>openhandle</servlet-name>
-        <servlet-class>net.handle.servlet.OpenHandleServlet</servlet-class>
+        <servlet-class>net.handle.servlet.OpenHandleServlet2</servlet-class>
         <load-on-startup>2</load-on-startup>
     </servlet>
 
@@ -40,6 +40,16 @@
     <servlet-mapping>
         <servlet-name>velocity</servlet-name>
         <url-pattern>*.rdf</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>velocity</servlet-name>
+        <url-pattern>*.json</url-pattern>
+    </servlet-mapping>
+
+    <servlet-mapping>
+        <servlet-name>velocity</servlet-name>
+        <url-pattern>*.n3</url-pattern>
     </servlet-mapping>
 
     <servlet-mapping>
@@ -73,6 +83,16 @@
     <mime-mapping>
         <extension>rdf</extension>
         <mime-type>application/rdf+xml</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>json</extension>
+        <mime-type>application/json</mime-type>
+    </mime-mapping>
+
+    <mime-mapping>
+        <extension>n3</extension>
+        <mime-type>text/rdf+n3</mime-type>
     </mime-mapping>
 
     <!-- =================================================================== -->
