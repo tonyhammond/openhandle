@@ -21,9 +21,9 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
 
 /**
  * <p>
- * TODO Document Template
+ * Template bean.
  * </p>
- * 
+ *
  * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
  */
 public class Template {
@@ -33,16 +33,14 @@ public class Template {
      * Simple enumeration of template types. Used to indicate whether this
      * template should be used to display handle or error responses.
      * </p>
-     * 
+     *
      * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
      */
     public enum Type {
-        ERROR, RESPONSE;
+        ERROR_RESPONSE, HANDLE_RESPONSE;
     }
 
-    private String extension;
-
-    private String mimetype;
+    private Mimetype mimetype;
 
     private String name;
 
@@ -52,14 +50,12 @@ public class Template {
      * <p>
      * You must supply all properties to initialize a template.
      * </p>
-     * 
-     * @param extension the extension
+     *
      * @param mimetype the mimetype
      * @param name the name
      * @param type the type
      */
-    public Template(String extension, String mimetype, String name, Type type) {
-        this.extension = extension;
+    public Template(Mimetype mimetype, String name, Type type) {
         this.mimetype = mimetype;
         this.name = name;
         this.type = type;
@@ -68,7 +64,7 @@ public class Template {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -78,23 +74,12 @@ public class Template {
 
     /**
      * <p>
-     * Returns the  extension.
-     * </p>
-     * 
-     * @return the extension
-     */
-    public String getExtension() {
-        return extension;
-    }
-
-    /**
-     * <p>
      * Returns the  mimetype.
      * </p>
-     * 
+     *
      * @return the mimetype
      */
-    public String getMimetype() {
+    public Mimetype getMimetype() {
         return mimetype;
     }
 
@@ -102,7 +87,7 @@ public class Template {
      * <p>
      * Returns the  name.
      * </p>
-     * 
+     *
      * @return the name
      */
     public String getName() {
@@ -113,7 +98,7 @@ public class Template {
      * <p>
      * Returns the  type.
      * </p>
-     * 
+     *
      * @return the type
      */
     public Type getType() {
@@ -123,7 +108,7 @@ public class Template {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -133,23 +118,12 @@ public class Template {
 
     /**
      * <p>
-     * Sets the extension.
-     * </p>
-     * 
-     * @param extension the extension to set
-     */
-    public void setExtension(String extension) {
-        this.extension = extension;
-    }
-
-    /**
-     * <p>
      * Sets the mimetype.
      * </p>
-     * 
+     *
      * @param mimetype the mimetype to set
      */
-    public void setMimetype(String mimetype) {
+    public void setMimetype(Mimetype mimetype) {
         this.mimetype = mimetype;
     }
 
@@ -157,7 +131,7 @@ public class Template {
      * <p>
      * Sets the name.
      * </p>
-     * 
+     *
      * @param name the name to set
      */
     public void setName(String name) {
@@ -168,7 +142,7 @@ public class Template {
      * <p>
      * Sets the type.
      * </p>
-     * 
+     *
      * @param type the type to set
      */
     public void setType(Type type) {
@@ -178,12 +152,12 @@ public class Template {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override
     public String toString() {
-        return name + "." + extension;
+        return name + "." + mimetype.getRecommendedFileExtension();
     }
 
 }
