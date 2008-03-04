@@ -2,7 +2,7 @@
 
 == JSON ==
 
-The JSON serialization essentially looks like the following:
+The [http://json.org/ JSON] serialization essentially looks like the following:
 
 {{{
 {
