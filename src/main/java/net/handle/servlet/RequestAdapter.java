@@ -59,10 +59,23 @@ public class RequestAdapter {
      */
     public RequestAdapter(HttpServletRequest request, Settings settings) {
         handle = initHandle(request, settings);
+        LOG.debug("handle id '" + handle + "' requested");
         indices = initIndices(request, settings);
+        if (indices != null && indices.length > 0) {
+            for (int i : indices) {
+                LOG.debug("index " + i + " requested");
+            }
+        }
         errorTemplate = initErrorTemplate(request, settings);
+        LOG.debug("error template is " + errorTemplate);
         handleTemplate = initHandleTemplate(request, settings);
+        LOG.debug("handle template is " + handleTemplate);
         types = initTypes(request, settings);
+        if (types != null && types.length > 0) {
+            for (HandleRecordType type : types) {
+                LOG.debug("record type " + type.toString() + " requested");
+            }
+        }
     }
 
     /**

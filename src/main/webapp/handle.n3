@@ -3,7 +3,7 @@
 @prefix h: <http://nascent.nature.com/schemas/rdf/handle#> .
 @prefix r: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
  
-<info:hdl/${value.handle}> a :Handle ;
+<info:hdl/${this.handle}> a :Handle ;
         :handleValues  (
             #foreach ($value in $this.values)
             h:index "${value.index}" ;
@@ -17,7 +17,7 @@
             #elseif ($value.type.admin)
             h:data [
                 a h:HS_ADMIN;
-                h:adminRef <info:hdl/${value.handle}#index=${value.index}/> ;
+                h:adminRef <info:hdl/${this.handle}#index=${value.index}/> ;
                 h:adminPermission [
                     a h:AdminPermission;
                     #foreach ($permission in $value.admin.permissions.entrySet())
