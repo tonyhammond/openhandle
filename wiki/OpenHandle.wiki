@@ -4,6 +4,8 @@
 
 OpenHandle is a project ...
 
+See OpenHandleParameters for a listing of querystring paramaters to the OpenHandle service.
+
 
 = Details =
 
