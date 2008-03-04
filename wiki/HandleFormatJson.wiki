@@ -1,8 +1,8 @@
-#summary Handle format JSON
+#summary JSON serialization for Handle
 
 == JSON ==
 
-The JSON serialization looks like:
+The JSON serialization essentially looks like the following:
 
 {{{
 {
