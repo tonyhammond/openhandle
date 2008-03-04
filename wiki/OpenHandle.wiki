@@ -1,15 +1,5 @@
-#summary Java servlet-based front-end to Handle for exposing records as rdf, json, n3 etc.
-
-= Introduction =
+#summary Java servlet-based front-end to the Handle System for exposing records as RDF/XML, RDF/N3, JSON
 
 OpenHandle is a project ...
 
 See OpenHandleParameters for a listing of querystring paramaters to the OpenHandle service.
-
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
