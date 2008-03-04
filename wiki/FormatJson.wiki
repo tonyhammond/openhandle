@@ -1,3 +1,0 @@
-#summary JSON format.
-
-== JSON ==
