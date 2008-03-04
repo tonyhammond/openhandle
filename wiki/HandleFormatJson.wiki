@@ -1,0 +1,26 @@
+#summary Handle format JSON
+
+== JSON ==
+
+The JSON serialization looks like:
+
+{{{
+{
+    "handle" : "info:hdl/10100/nature" ,
+    "handleValues" : [
+        {
+            "index" : "1" ,
+            "type" : "URL" ,
+            "data" : "http://www,nature.com/" ,
+            "permission" : {
+            } ,
+            "ttl" : {
+            } ,
+            "timestamp" : "" ,
+            "reference"  : {
+
+            }
+        }
+    ]          
+}
+}}}
