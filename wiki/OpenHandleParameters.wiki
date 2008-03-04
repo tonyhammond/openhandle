@@ -2,7 +2,7 @@
 
 == Service ==
 
-The project main service is sited at
+The project test service is sited at
 
   * [http://nascent.nature.com/openhandle/handle? http://nascent.nature.com/openhandle/handle?]
 
