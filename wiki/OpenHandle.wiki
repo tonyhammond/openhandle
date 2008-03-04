@@ -1,5 +1,5 @@
-#summary Java servlet-based front-end to the Handle System for exposing records as RDF/XML, RDF/N3, JSON
-
+#summary Homepage for OpenHandle project wiki
+ 
 OpenHandle is a project to expose Handle records in common text-based serializations to make the data stored within the records more amenable to Web applications.
 
 See http://www.handle.net/ for further information on the Handle System.
