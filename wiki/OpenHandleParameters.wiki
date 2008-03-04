@@ -13,7 +13,7 @@ Recognized parameters are:
 
 == Examples ==
 
-  * `[http://nascent.nature.com/openhandle/handle?id=10.1000/1 ?id=10.1000/1]`
+  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1 ?id=10.1000/1]
 
 Returns default format (RDF/XML) for handle `10.1000/1` with mime type `application/rdf+xml` 
 
@@ -21,14 +21,14 @@ Returns default format (RDF/XML) for handle `10.1000/1` with mime type `applicat
 
 Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `application/rdf+n3` 
 
- * [http://nascent.nature.com/openhandle/handle?id=10.1000/1 ?id=10.1000/1]`?id=10.1000/1&format=n3&mimetype=text/plain`
+ * [http://nascent.nature.com/openhandle/handle??id=10.1000/1&format=n3&mimetype=text/plain ?id=10.1000/1&format=n3&mimetype=text/plain]
 
 Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `text/plain` 
 
-  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1 ?id=10.1000/1]`?id=10.1000/1&index=1`
+  * [http://nascent.nature.com/openhandle/handle??id=10.1000/1&index=1 ?id=10.1000/1&index=1]
 
 Returns default format (RDF/XML) for handle `10.1000/1` and value for `index=1` with mime type `application/rdf+xml` 
 
-  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1 ?id=10.1000/1]`?id=10.1000/1&type=URL`
+  * [http://nascent.nature.com/openhandle/handle??id=10.1000/1&type=URL ?id=10.1000/1&type=URL]
 
 Returns default format (RDF/XML) for handle `10.1000/1` and value for `type=URL` with mime type `application/rdf+xml` 
