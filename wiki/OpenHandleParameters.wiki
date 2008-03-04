@@ -1,5 +1,4 @@
-= OpenHandle Parameters =
-
+#summary Querystring parameters for OpenHandle service
 
 == Parameters ==
 
@@ -13,3 +12,23 @@ Recognized parameters are:
   * `include` = ( `datatypes` )
 
 == Examples ==
+
+  * `?id=10.1000/1`
+
+Returns default format (RDF/XML) for handle `10.1000/1` with mime type `application/rdf+xml` 
+
+ * `?id=10.1000/1&format=n3`
+
+Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `application/rdf+n3` 
+
+ * `?id=10.1000/1&format=n3&mimetype=text/plain`
+
+Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `text/plain` 
+
+  * `?id=10.1000/1&index=1`
+
+Returns default format (RDF/XML) for handle `10.1000/1` and value for `index=1` with mime type `application/rdf+xml` 
+
+  * `?id=10.1000/1&type=URL`
+
+Returns default format (RDF/XML) for handle `10.1000/1` and value for `type=URL` with mime type `application/rdf+xml` 
