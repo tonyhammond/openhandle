@@ -13,7 +13,7 @@ Recognized parameters are:
 
 == Examples ==
 
-  * <a href="http://apple.com">`?id=10.1000/1`</a>
+  * [http://apple.com `?id=10.1000/1`]
 
 Returns default format (RDF/XML) for handle `10.1000/1` with mime type `application/rdf+xml` 
 
