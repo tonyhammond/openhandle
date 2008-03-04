@@ -2,7 +2,7 @@
 
 = Introduction =
 
-Add your content here.
+OpenHandle is a project ...
 
 
 = Details =
