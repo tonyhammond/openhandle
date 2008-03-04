@@ -6,7 +6,7 @@
 <info:hdl/${this.handle}> a :Handle ;
         :handleValues  (
             #foreach ($value in $this.values)
-            h:index "${value.index}" ;
+          [ h:index "${value.index}" ;
             h:type "${value.type}" ;
             #if (!$value.type.binary)
             #if (${value.type} == "URL")
@@ -118,5 +118,4 @@
             ]
         ]
         #end
-    ]
-)
+) .

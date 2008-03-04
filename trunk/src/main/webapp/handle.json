@@ -64,7 +64,7 @@
                     #end
                 ]
             }
-        }
+        }#if(!($velocityCount.equals($this.values.size()))) ,#end
         #end
     ]
 }
