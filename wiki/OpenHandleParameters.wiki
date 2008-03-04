@@ -1,5 +1,11 @@
 #summary Querystring parameters for OpenHandle service
 
+== Service ==
+
+The project main service is sited at
+
+  * [http://nascent.nature.com/openhandle/handle? http://nascent.nature.com/openhandle/handle?]
+
 == Parameters ==
 
 Recognized parameters are:
