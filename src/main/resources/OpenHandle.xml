@@ -13,24 +13,20 @@
                 <template>
                     <!-- you MUST specify a name, an extension, and a mimetype for EACH template that is configured -->
                     <name>/handle</name>
-                    <extension>rdf</extension>
                     <mimetype>application/rdf+xml</mimetype>
                 </template>
                 <template>
                     <name>/handle</name>
-                    <extension>json</extension>
                     <mimetype>application/json</mimetype>
                 </template>
                 <template>
                     <name>/handle</name>
-                    <extension>n3</extension>
                     <mimetype>text/rdf+n3</mimetype>
                 </template>
             </handleResponse>
             <errorResponse>
                 <template>
                     <name>/error</name>
-                    <extension>rdf</extension>
                     <mimetype>application/rdf+xml</mimetype>
                 </template>
             </errorResponse>
