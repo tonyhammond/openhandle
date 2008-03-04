@@ -21,14 +21,14 @@
                 #elseif ($value.type.admin)
                 <h:data>
                     <h:HS_ADMIN>
-                        <h:adminRef r:resource="info:hdl/${value.handle}#index=${value.index}"/>
+                        <h:adminRef r:resource="info:hdl/${this.handle}#index=${value.index}"/>
                         <h:adminPermission>
                             <h:AdminPermission>
                                 #foreach ($permission in $value.admin.permissions.entrySet())
                                 <h:${permission.key}>${permission.value}</h:${permission.key}>
                                 #end
-                                <h:AdminPermission>
-                                    <h:adminPermission>
+                                </h:AdminPermission>
+                                    </h:adminPermission>
                     </h:HS_ADMIN>
                 </h:data>
                 #elseif ($value.type.site)
@@ -113,7 +113,7 @@
                         <h:adminWrite>${value.permissions.adminWrite}</h:adminWrite>
                         <h:publicRead>${value.permissions.publicRead}</h:publicRead>
                         <h:publicWrite>${value.permissions.publicWrite}</h:publicWrite>
-                        <h:Permission>
+                        </h:Permission>
                 </h:permission>
                 <h:ttl>
                     <h:TTL>

@@ -23,35 +23,14 @@
     <!--                             Servlets                                -->
     <!-- =================================================================== -->
     <servlet>
-        <servlet-name>velocity</servlet-name>
-        <servlet-class>org.apache.velocity.tools.view.servlet.VelocityViewServlet</servlet-class>
-        <load-on-startup>1</load-on-startup>
-    </servlet>
-
-    <servlet>
         <servlet-name>openhandle</servlet-name>
-        <servlet-class>net.handle.servlet.OpenHandleServlet2</servlet-class>
-        <load-on-startup>2</load-on-startup>
+        <servlet-class>net.handle.servlet.OpenHandleServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
     </servlet>
 
     <!-- =================================================================== -->
     <!--                         Servlet Mappings                            -->
     <!-- =================================================================== -->
-    <servlet-mapping>
-        <servlet-name>velocity</servlet-name>
-        <url-pattern>*.rdf</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>velocity</servlet-name>
-        <url-pattern>*.json</url-pattern>
-    </servlet-mapping>
-
-    <servlet-mapping>
-        <servlet-name>velocity</servlet-name>
-        <url-pattern>*.n3</url-pattern>
-    </servlet-mapping>
-
     <servlet-mapping>
         <servlet-name>openhandle</servlet-name>
         <url-pattern>/handle</url-pattern>

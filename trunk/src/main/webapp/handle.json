@@ -7,20 +7,21 @@
             "index" : "${value.index}" ,
             "type" : "${value.type}" ,
             #if (!$value.type.binary)
-	        #if ${value.type} == "URL")
+	        #if (${value.type} == "URL")
             "data" : "<${value.data}>" ,
             #else
             "data" : "${value.data}" ,
             #end
             #elseif ($value.type.admin)
             "data" : {
-                "adminRef" : "<info:hdl/${value.handle}#index=${value.index}/>" ,
+                "adminRef" : "<info:hdl/${this.handle}#index=${value.index}/>" ,
                 "adminPermission" : {
                    #foreach ($permission in $value.admin.permissions.entrySet())
                     #if ($velocityCount < $value.admin.permissions.entrySet.size())
                    "${permission.key}" : "${permission.value}" ,
                    #else
                    "${permission.key}" : "${permission.value}"
+                   #end
                    #end
                  }
             } ,

@@ -21,6 +21,8 @@ import static org.apache.commons.lang.StringUtils.isBlank;
 import static org.apache.commons.lang.StringUtils.isNotBlank;
 
 import java.io.IOException;
+import java.io.Writer;
+import java.util.Properties;
 
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
@@ -35,12 +37,17 @@ import org.apache.commons.configuration.Configuration;
 import org.apache.commons.configuration.XMLConfiguration;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.VelocityEngine;
+import org.apache.velocity.context.Context;
+import org.apache.velocity.tools.generic.DateTool;
 
 /**
  * <p>
- * TODO Document OpenHandleServlet
+ * Servlet to obtain handle record data and return as any desired
+ * representation.
  * </p>
- *
+ * 
  * @author <a href="mailto:christopher.townson@googlemail.com">Christopher
  *         Townson</a>
  * @author <a href="mailto:t.hammond@nature.com">Tony Hammond</a>
@@ -54,6 +61,8 @@ public class OpenHandleServlet extends HttpServlet {
     private OpenHandle resolver;
 
     private Settings settings;
+
+    private VelocityEngine velocity;
 
     /**
      * <p>
@@ -71,19 +80,19 @@ public class OpenHandleServlet extends HttpServlet {
      * A custom configuration detailing available templates, handle client
      * options, and request parameter names can be specified as an init-param:
      * </p>
-     *
+     * 
      * <pre>
      * &lt;init-param&gt;
      *     &lt;param-name&gt;config&lt;/param-name&gt;
      *     &lt;param-value&gt;/WEB-INF/OpenHandle.xml&lt;/param-value&gt;
      * &lt;/init-param&gt;
      * </pre>
-     *
+     * 
      * <p>
      * The path specified as a value must point to a resource obtainable via
      * {@link ServletContext#getResource(String)}.
      * </p>
-     *
+     * 
      * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
      */
     @Override
@@ -125,12 +134,24 @@ public class OpenHandleServlet extends HttpServlet {
         } catch (SettingsException e) {
             throw new ServletException(e);
         }
+
+        try {
+            Properties properties = new Properties();
+            properties.load(OpenHandleServlet.class
+                    .getResourceAsStream("/velocity.properties"));
+            velocity = new VelocityEngine();
+            velocity.setApplicationAttribute(ServletContext.class.getName(), getServletContext());
+            velocity.init(properties);
+        } catch (Exception e) {
+            throw new ServletException("Could not initialize velocity engine",
+                    e);
+        }
     }
 
     /**
      * <p>
      * </p>
-     *
+     * 
      * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest,
      *      javax.servlet.http.HttpServletResponse)
      */
@@ -143,7 +164,7 @@ public class OpenHandleServlet extends HttpServlet {
     /**
      * <p>
      * </p>
-     *
+     * 
      * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest,
      *      javax.servlet.http.HttpServletResponse)
      */
@@ -170,10 +191,15 @@ public class OpenHandleServlet extends HttpServlet {
             throws ServletException, IOException {
         Template template = adapter.getErrorResponseTemplate();
         response.setStatus(httpStatus);
-        response.setContentType(template.getMimetype().toString());
+        String override = request.getParameter("mimetype");
+        if (isNotBlank(override) && Mimetype.forName(override) != null) {
+            response.setContentType(Mimetype.forName(override).toString());
+        } else {
+            response.setContentType(template.getMimetype().toString());
+        }
         request.setAttribute("error", new HandleExceptionAdapter(
                 handleErrorCode, message));
-        request.getRequestDispatcher(template.toString());
+        render(request, response, template);
     }
 
     /*
@@ -188,13 +214,32 @@ public class OpenHandleServlet extends HttpServlet {
                             .getTypes());
             Template template = adapter.getHandleResponseTemplate();
             response.setStatus(HttpServletResponse.SC_OK);
-            response.setContentType(template.getMimetype().toString());
+            String override = request.getParameter("mimetype");
+            if (isNotBlank(override) && Mimetype.forName(override) != null) {
+                response.setContentType(Mimetype.forName(override).toString());
+            } else {
+                response.setContentType(template.getMimetype().toString());
+            }
             request.setAttribute(settings.getHandleIdRequestParameterName(),
                     handleData);
-            request.getRequestDispatcher(template.toString());
+            render(request, response, template);
         } catch (HandleException e) {
             doErrorResponse(adapter, request, response, e.getMessage(),
                     HttpServletResponse.SC_INTERNAL_SERVER_ERROR, e.getCode());
+        }
+    }
+
+    private void render(HttpServletRequest request,
+            HttpServletResponse response, Template template)
+            throws ServletException, IOException {
+        try {
+            Context context = new VelocityContext();
+            context.put("request", request);
+            context.put("dateTool", new DateTool());
+            Writer writer = response.getWriter();
+            velocity.getTemplate(template.toString()).merge(context, writer);
+        } catch (Exception e) {
+            throw new ServletException(e);
         }
     }
 }

@@ -30,7 +30,7 @@ import org.junit.Test;
  * <p>
  * JUnit test case for {@link Settings}.
  * </p>
- *
+ * 
  * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
  */
 public class SettingsTest {
@@ -40,21 +40,29 @@ public class SettingsTest {
         // control variables
         String datatypesRequestParameterName = "include";
         Template defaultErrorResponseTemplate = new Template(
-                Mimetype.APPLICATION_RDF_XML, "error", Template.Type.ERROR_RESPONSE);
+                Mimetype.APPLICATION_RDF_XML, "error",
+                Template.Type.ERROR_RESPONSE);
         Template defaultHandleResponseTemplate = new Template(
-                Mimetype.APPLICATION_RDF_XML, "handle", Template.Type.HANDLE_RESPONSE);
+                Mimetype.APPLICATION_RDF_XML, "handle",
+                Template.Type.HANDLE_RESPONSE);
         Map<Mimetype, Template> errorResponseTemplates = new HashMap<Mimetype, Template>();
         errorResponseTemplates.put(Mimetype.APPLICATION_RDF_XML, new Template(
-                Mimetype.APPLICATION_RDF_XML, "error", Template.Type.ERROR_RESPONSE));
+                Mimetype.APPLICATION_RDF_XML, "error",
+                Template.Type.ERROR_RESPONSE));
+        errorResponseTemplates.put(Mimetype.TEXT_PLAIN, new Template(
+                Mimetype.TEXT_PLAIN, "error", Template.Type.ERROR_RESPONSE));
+        errorResponseTemplates.put(Mimetype.APPLICATION_XHTML_XML,
+                new Template(Mimetype.APPLICATION_XHTML_XML, "error",
+                        Template.Type.ERROR_RESPONSE));
         String formatRequestParameterName = "format";
         String handleIdRequestParameterName = "id";
         Map<Mimetype, Template> handleResponseTemplates = new HashMap<Mimetype, Template>();
-        handleResponseTemplates
-                .put(Mimetype.APPLICATION_RDF_XML, new Template(
-                        Mimetype.APPLICATION_RDF_XML, "handle",
-                        Template.Type.HANDLE_RESPONSE));
+        handleResponseTemplates.put(Mimetype.APPLICATION_RDF_XML, new Template(
+                Mimetype.APPLICATION_RDF_XML, "handle",
+                Template.Type.HANDLE_RESPONSE));
         handleResponseTemplates.put(Mimetype.APPLICATION_JSON, new Template(
-                Mimetype.APPLICATION_JSON, "handle", Template.Type.HANDLE_RESPONSE));
+                Mimetype.APPLICATION_JSON, "handle",
+                Template.Type.HANDLE_RESPONSE));
         handleResponseTemplates.put(Mimetype.TEXT_RDF_N3, new Template(
                 Mimetype.TEXT_RDF_N3, "handle", Template.Type.HANDLE_RESPONSE));
         String indexRequestParameterName = "index";
@@ -84,7 +92,8 @@ public class SettingsTest {
                 .getHandleResponseTemplates());
         assertEquals(indexRequestParameterName, settings
                 .getIndexRequestParameterName());
-        assertEquals(Protocol.toString(preferredProtocols), Protocol.toString(settings.getPreferredProtocols()));
+        assertEquals(Protocol.toString(preferredProtocols), Protocol
+                .toString(settings.getPreferredProtocols()));
         assertEquals(typeRequestParameterName, settings
                 .getTypeRequestParameterName());
         assertEquals(traceMessages, settings.isTraceMessages());
