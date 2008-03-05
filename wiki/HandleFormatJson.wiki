@@ -13,12 +13,14 @@ The [http://json.org/ JSON] serialization essentially looks like the following:
             "type" : "URL" ,
             "data" : "http://www,nature.com/" ,
             "permission" : {
+                ...
             } ,
             "ttl" : {
+                ...
             } ,
             "timestamp" : "" ,
             "reference"  : {
-
+                ...
             }
         }
     ]          
