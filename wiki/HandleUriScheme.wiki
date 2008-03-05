@@ -6,6 +6,6 @@ Currently handle is registered as an [http://info-uri.info/ info] URI namespace 
 
     info:hdl/1234/567
 
-This is a temporary measure and uses [http://info-uri.info/ info] as a bootstrapping mechanism.
+This is a temporary measure and uses the [http://info-uri.info/ info] URI scheme as a bootstrapping mechanism.
 
 A native URI scheme for handle should be registered.
