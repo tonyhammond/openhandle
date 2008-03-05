@@ -13,9 +13,9 @@ Recognized parameters are:
   * `id` = handle
   * `index` = handle value index
   * `type` = handle value type
-  * `mimetype` = mime type for overriding default mime type
   * `format` = `rdf` | `n3` | `json`
-  * `include` = `datatypes` (*not implemented yet*)
+  * `mimetype` = mime type for overriding default mime type
+  * `include` = `datatypes` *(not implemented yet)*
 
 == Examples ==
 
