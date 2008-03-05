@@ -13,8 +13,10 @@ A native URI scheme for handle should be registered.
 Four recent (Feb. '08) posts to the handle-info mailing list are germane:
 
  * [http://www.handle.net/mail-archive/handle-info/msg00243.html Feb 12]
-  ** discusses
+  ** discusses rationale for embedding URI scheme details into revised RFC 3651, rather than  making a separate RFC
  * [http://www.handle.net/mail-archive/handle-info/msg00244.html Feb 13]
-  ** discusses
+  ** discusses how Handle should mirror HTTP in defining a generic syntax, devoid of application syntax for querystring and/or fragment 
  * [http://www.handle.net/mail-archive/handle-info/msg00245.html Feb 14]
+  ** provides a first cut at an ABNF for a generic Handle URI scheme
  * [http://www.handle.net/mail-archive/handle-info/msg00252.html Feb 25]
+  ** points to the DNS URI scheme as a possible model for a Handle URI scheme
