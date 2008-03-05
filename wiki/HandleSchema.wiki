@@ -1,0 +1,3 @@
+#summary RDFS Schema for Handle
+
+== Handle Schema ==
