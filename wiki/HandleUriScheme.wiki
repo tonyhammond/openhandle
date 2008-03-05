@@ -1,0 +1,11 @@
+#summary URI scheme for Handle
+
+== URI Scheme ==
+
+Currently handle is registered as an info URI namespace (see the handle namespace registration [http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:hdl/ here]) which means a handle can be cited in URI form as e.g.
+
+    info:hdl/1234/567
+
+This is a temporary measure and uses info as a bootstrapping mechanism.
+
+A native URI scheme for handle should be registered.
