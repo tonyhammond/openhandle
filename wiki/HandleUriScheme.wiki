@@ -27,7 +27,8 @@ The first cut ABNF from message #3 is reproduced below. In light of message #4, 
   hdl:1234/567
 
   hdl://190.12.34.56/1234/567
-}}
+}}}
+
 the first form being the handle as name, and the second the handle presented to a specific handle server for resolution.
 
 {{{
