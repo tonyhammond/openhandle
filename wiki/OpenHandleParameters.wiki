@@ -15,7 +15,7 @@ Recognized parameters are:
   * `type` = handle value type
   * `mimetype` = mime type for overriding default mime type
   * `format` = `rdf` | `n3` | `json`
-  * `include` = `datatypes` (Note: not implemented yet)
+  * `include` = `datatypes` (*not implemented yet*)
 
 == Examples ==
 
@@ -29,7 +29,7 @@ Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `applica
 
  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1&format=rdf&mimetype=application/xml ?id=10.1000/1&format=rdf&mimetype=application/xml]
 
-Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `text/plain` 
+Returns specified format (RDF/XML) for handle `10.1000/1` with mime type `application/xml` 
 
  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1&format=n3&mimetype=text/plain ?id=10.1000/1&format=n3&mimetype=text/plain]
 
