@@ -25,7 +25,7 @@ Returns default format (RDF/XML) for handle `10.1000/1` with mime type `applicat
 
  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1&format=n3 ?id=10.1000/1&format=n3]
 
-Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `application/rdf+n3` 
+Returns specified format (RDF/N3) for handle `10.1000/1` with mime type `text/rdf+n3` 
 
  * [http://nascent.nature.com/openhandle/handle?id=10.1000/1&format=rdf&mimetype=application/xml ?id=10.1000/1&format=rdf&mimetype=application/xml]
 
