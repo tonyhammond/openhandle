@@ -11,11 +11,11 @@ The project test service is sited at
 Recognized parameters are:
 
   * `id` = handle
-  * `index` = handle value index
-  * `type` = handle value type
+  * `index` = handle value index (e.g. `index=2`)
+  * `type` = handle value type (e.g. `type=URL`)
   * `format` = `rdf` | `n3` | `json`
   * `mimetype` = mime type for overriding default mime type
-  * `include` = `datatypes` *(not implemented yet)*
+  * `include` = `datatypes` (*not* implemented yet)
 
 == Examples ==
 
