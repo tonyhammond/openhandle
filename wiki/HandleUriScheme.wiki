@@ -9,3 +9,10 @@ Currently handle is registered as an [http://info-uri.info/ info] URI namespace 
 This is a temporary measure and uses the [http://info-uri.info/ info] URI scheme as a bootstrapping mechanism.
 
 A native URI scheme for handle should be registered.
+
+Four recent (Feb. '08) posts to the handle-info mailing list are germane:
+
+ * [http://www.handle.net/mail-archive/handle-info/msg00243.html 1]
+ * [http://www.handle.net/mail-archive/handle-info/msg00244.html 2]
+ * [http://www.handle.net/mail-archive/handle-info/msg00245.html 3]
+ * [http://www.handle.net/mail-archive/handle-info/msg00252.html 4]
