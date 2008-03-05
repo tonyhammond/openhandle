@@ -1,3 +1,53 @@
 #summary JSON-based API for Handle admin
 
 == JSON API ==
+
+A simple text-based API for Handle admin could be JSON, whereby a JSON admin object is sent to a server and a JSON response received.
+
+Such a JSON request could like the following skeleton which would be used to create a Handle using secret key authentication:
+
+{{{
+{
+    "admin" : [
+        {
+            "operation" : "AUTHENTICATE"
+            "arguments" : {
+                "password" : "secret" ,
+                "handle" : "" ,
+                "values" : [
+                    {
+                        "index" : "" ,
+                     }
+                ]
+            }
+        } ,
+        {
+            "operation" : "CREATE"
+            "arguments" : {
+                "handle" : "" ,
+                "values" : [
+                    {
+                        "index" : "" ,
+                        "type" : "" ,
+                        "value" : {} ,
+                        "ttl" : {} ,
+                        "timestamp" : "" ,
+                        "permission" : {} ,
+                        "reference" : {} ,
+                    } ,
+                    {
+                        "index" : "" ,
+                        "type" : "" ,
+                        "value" : {} ,
+                        "ttl" : {} ,
+                        "timestamp" : "" ,
+                        "permission" : {} ,
+                        "reference" : {} ,
+                    } ,
+                    ...
+                ] 
+            }
+        }
+    ]
+} 
+}}}
