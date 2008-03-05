@@ -1,0 +1,3 @@
+#summary Text API for Handle admin
+
+== Text API ==
