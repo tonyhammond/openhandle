@@ -13,8 +13,8 @@ A native URI scheme for handle should be registered.
 Four recent (Feb. '08) posts to the handle-info mailing list are germane:
 
  * [http://www.handle.net/mail-archive/handle-info/msg00243.html Feb 12]
- ** discusses
+  ** discusses
  * [http://www.handle.net/mail-archive/handle-info/msg00244.html Feb 13]
- ** discusses
+  ** discusses
  * [http://www.handle.net/mail-archive/handle-info/msg00245.html Feb 14]
  * [http://www.handle.net/mail-archive/handle-info/msg00252.html Feb 25]
