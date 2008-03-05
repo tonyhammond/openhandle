@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <r:RDF
-    xmlns:h="http://nascent.nature.com/schemas/rdf/handle#"
+    xmlns:h="http://hdl.handle.net/10100/handle.rdfs#"
     xmlns:r="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
     >
     #set ($this = $request.getAttribute("id"))

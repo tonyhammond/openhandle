@@ -17,7 +17,7 @@
                 "adminRef" : "<info:hdl/${this.handle}#index=${value.index}/>" ,
                 "adminPermission" : {
                    #foreach ($permission in $value.admin.permissions.entrySet())
-                    #if ($velocityCount.equals($value.admin.permissions.entrySet.size()))
+                    #if ($velocityCount.equals($value.admin.permissions.entrySet().size()))
                    "${permission.key}" : "${permission.value}"
                    #else
                    "${permission.key}" : "${permission.value}" , 
