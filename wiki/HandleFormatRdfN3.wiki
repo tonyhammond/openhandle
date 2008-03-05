@@ -13,13 +13,16 @@ The [http://www.w3.org/DesignIssues/Notation3.html RDF/N3] serialization essenti
             h:data <http://www.nature.com/> ;
             h:permission [
                 a h:Permission;
+                ...
             ] ;
             h:ttl [
                 a h:TTL;
+                ...
             ] ;
             h:timestamp "" ;
             h:reference [
                a h:Reference ;
+               ...
             ]
         ]
     ) .
