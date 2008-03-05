@@ -1,6 +1,6 @@
 #set ($this = $request.getAttribute("id"))
 
-@prefix h: <http://nascent.nature.com/schemas/rdf/handle#> .
+@prefix h: <http://hdl.handle.net/10100/handle.rdfs#>
 @prefix r: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
  
 <info:hdl/${this.handle}> a :Handle ;
