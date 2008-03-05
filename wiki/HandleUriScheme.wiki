@@ -2,7 +2,7 @@
 
 == URI Scheme ==
 
-Currently handle is registered as an info URI namespace (see the handle namespace registration [http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:hdl/ here]) which means a handle can be cited in URI form as e.g.
+Currently handle is registered as an [http://info-uri.info/ info] URI namespace (see the handle namespace registration [http://info-uri.info/registry/OAIHandler?verb=GetRecord&metadataPrefix=reg&identifier=info:hdl/ here]) which means a handle can be cited in URI form as e.g.
 
     info:hdl/1234/567
 
