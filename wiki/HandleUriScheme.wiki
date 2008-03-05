@@ -20,3 +20,61 @@ Four recent (Feb. '08) posts to the handle-info mailing list are germane:
   ** provides a first cut at an ABNF for a generic Handle URI scheme
  * [http://www.handle.net/mail-archive/handle-info/msg00252.html Feb 25]
   ** points to the DNS URI scheme as a possible model for a Handle URI scheme
+
+The first cut ABNF from message #3 is reproduced below. In light of message #4, this might be modified to allow for differentiation between naming and resolution in dealing with naming authority. That is, one might see something more like:
+
+{{{
+  hdl:1234/567
+
+  hdl://190.12.34.56/1234/567
+}}
+the first form being the handle as name, and the second the handle presented to a specific handle server for resolution.
+
+{{{
+       ;; ABNF for a Handle string
+
+       handle             = naming-authority "/" local-name
+
+       naming-authority   = *(naming-authority  ".") na-segment
+
+       na-segment         = 1*(%x00-2D / %x30-3F / %x41-FF )
+                            ; any octets that map to UTF-8 encoded
+                            ; Unicode 2.0 characters except
+                            ; octets "%x2E" and "%x2F" (which
+                            ; correspond to the ASCII characters "."
+                            ; and "/")
+
+       local-name         = *(%x00-FF)
+                            ; any octets that map to UTF-8 encoded
+                            ; Unicode 2.0 characters
+
+
+
+       ;; ABNF for a Handle URI
+
+       hdl-uri            = "hdl" ":" "//" u-handle [ "?" query ]
+
+                                [ "#" fragment ]
+
+       ; All productions not starting "u-" are from RFC 3986
+
+       u-handle           = u-naming-authority "/" u-local-name
+
+       u-naming-authority = *(u-naming-authority  ".") u-na-segment
+
+       u-na-segment       = *( u-unreserved / pct-encoded / sub-delims
+                             ; native handle chars for <na-segment> other
+                             ; than characters in the range
+                             ; (%x21 / %x24 / %x26-2D / %x30-39 / %x3B
+                             ;  / %x3D / %x41-5A / %x5F /%x61-7A / %x7E)
+                             ; which must be %-encoded
+
+       u-local-name       = *( pchar / "/" )
+                             ; native handle chars for <local-name> other
+                             ; than characters in the range
+                             ; (%x21 / %x24 / %x26-2F / %x30-39 / %x3B
+                             ;  / %x3D / %x41-5A / %x5F /%x61-7A / %x7E)
+                             ; which must be %-encoded
+
+       u-unreserved       = ALPHA / DIGIT / "-" / "_" / "~"
+}}}
