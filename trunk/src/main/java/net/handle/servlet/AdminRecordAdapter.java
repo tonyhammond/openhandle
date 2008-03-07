@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: 5 Oct 2007
  * Time: 10:06:23
  *
  * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 
 package net.handle.servlet;
@@ -32,8 +30,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * <p>
  * TODO Document AdminRecordAdapter.
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class AdminRecordAdapter {
 
@@ -41,7 +39,7 @@ public class AdminRecordAdapter {
      * <p>
      * TODO Document AdminPermission.
      * </p>
-     * 
+     *
      * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
      */
     public enum AdminPermission {
@@ -118,7 +116,7 @@ public class AdminRecordAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param record the admin record
      */
     public AdminRecordAdapter(AdminRecord record) {
@@ -130,7 +128,7 @@ public class AdminRecordAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param permission the permission
      * @param value the value
      * @return
@@ -146,7 +144,7 @@ public class AdminRecordAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -170,7 +168,7 @@ public class AdminRecordAdapter {
      * <p>
      * Returns the id.
      * </p>
-     * 
+     *
      * @return the id
      */
     public String getId() {
@@ -181,7 +179,7 @@ public class AdminRecordAdapter {
      * <p>
      * Returns the index.
      * </p>
-     * 
+     *
      * @return the index
      */
     public Integer getIndex() {
@@ -192,7 +190,7 @@ public class AdminRecordAdapter {
      * <p>
      * Returns the permissions.
      * </p>
-     * 
+     *
      * @return the permissions
      */
     public Map<String, Boolean> getPermissions() {
@@ -202,7 +200,7 @@ public class AdminRecordAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -217,7 +215,7 @@ public class AdminRecordAdapter {
      * map in which the key is a permission type and the value is a boolean
      * indicating whether the record has this permission.
      * </p>
-     * 
+     *
      * @param record the record
      * @return the permissions map
      * @throws IllegalArgumentException if the permissions array in the record
@@ -283,7 +281,7 @@ public class AdminRecordAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

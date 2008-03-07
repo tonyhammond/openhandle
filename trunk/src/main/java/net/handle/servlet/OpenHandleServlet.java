@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: 14 Sep 2007
  * Time: 14:49:55
  *
  * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of <abbr title="Nature Publishing
- * Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 
 package net.handle.servlet;
@@ -47,10 +45,10 @@ import org.apache.velocity.tools.generic.DateTool;
  * Servlet to obtain handle record data and return as any desired
  * representation.
  * </p>
- * 
+ *
  * @author <a href="mailto:christopher.townson@googlemail.com">Christopher
  *         Townson</a>
- * @author <a href="mailto:t.hammond@nature.com">Tony Hammond</a>
+ * @author <a href="mailto:tony.hammond@gmail.com">Tony Hammond</a>
  */
 public class OpenHandleServlet extends HttpServlet {
 
@@ -80,19 +78,19 @@ public class OpenHandleServlet extends HttpServlet {
      * A custom configuration detailing available templates, handle client
      * options, and request parameter names can be specified as an init-param:
      * </p>
-     * 
+     *
      * <pre>
      * &lt;init-param&gt;
      *     &lt;param-name&gt;config&lt;/param-name&gt;
      *     &lt;param-value&gt;/WEB-INF/OpenHandle.xml&lt;/param-value&gt;
      * &lt;/init-param&gt;
      * </pre>
-     * 
+     *
      * <p>
      * The path specified as a value must point to a resource obtainable via
      * {@link ServletContext#getResource(String)}.
      * </p>
-     * 
+     *
      * @see javax.servlet.GenericServlet#init(javax.servlet.ServletConfig)
      */
     @Override
@@ -151,7 +149,7 @@ public class OpenHandleServlet extends HttpServlet {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see javax.servlet.http.HttpServlet#doGet(javax.servlet.http.HttpServletRequest,
      *      javax.servlet.http.HttpServletResponse)
      */
@@ -164,7 +162,7 @@ public class OpenHandleServlet extends HttpServlet {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see javax.servlet.http.HttpServlet#doPost(javax.servlet.http.HttpServletRequest,
      *      javax.servlet.http.HttpServletResponse)
      */
