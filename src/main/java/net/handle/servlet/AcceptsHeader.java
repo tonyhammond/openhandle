@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: Feb 28, 2008
  * Time: 2:20:11 PM
  *
  * <p>Copyright (C) 2008 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 package net.handle.servlet;
 
@@ -25,8 +23,8 @@ import org.apache.commons.lang.StringUtils;
  * <p>
  * TODO Document AcceptsHeader
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class AcceptsHeader {
 
@@ -36,7 +34,7 @@ public class AcceptsHeader {
      * <p>
      * Initialize with the raw header string.
      * </p>
-     * 
+     *
      * @param header the raw header string
      */
     public AcceptsHeader(String header) {
@@ -85,7 +83,7 @@ public class AcceptsHeader {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override
@@ -105,7 +103,7 @@ public class AcceptsHeader {
      * <p>
      * Returns the preferred mimetype as specified in this Accepts header.
      * </p>
-     * 
+     *
      * @return the preferred mimetype
      */
     public Mimetype getPreferredMimetype() {
@@ -116,7 +114,7 @@ public class AcceptsHeader {
      * <p>
      * Returns the entries.
      * </p>
-     * 
+     *
      * @return the entries
      */
     public SortedSet<AcceptsHeaderEntry> getEntries() {
@@ -127,7 +125,7 @@ public class AcceptsHeader {
      * <p>
      * Sets the entries.
      * </p>
-     * 
+     *
      * @param entries the entries to set
      */
     public void setEntries(SortedSet<AcceptsHeaderEntry> entries) {

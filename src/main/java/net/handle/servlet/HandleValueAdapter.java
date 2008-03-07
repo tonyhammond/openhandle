@@ -1,18 +1,16 @@
-/**
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+/*
+ * Created by: christopher
  * Date: 5 Oct 2007
  * Time: 10:17:15
  *
  * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 
 package net.handle.servlet;
@@ -42,8 +40,8 @@ import org.apache.commons.lang.builder.ToStringBuilder;
  * <p>
  * TODO Document HandleValueAdapter.
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class HandleValueAdapter {
 
@@ -51,7 +49,7 @@ public class HandleValueAdapter {
      * <p>
      * TODO Document Permission
      * </p>
-     * 
+     *
      * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
      */
     public enum Permission {
@@ -60,7 +58,7 @@ public class HandleValueAdapter {
         /**
          * <p>
          * </p>
-         * 
+         *
          * @see java.lang.Enum#toString()
          */
         @Override
@@ -104,7 +102,7 @@ public class HandleValueAdapter {
      * <p>
      * Instantiate the adapter for the supplied HandleValue.
      * </p>
-     * 
+     *
      * @param value the handleValue to adapt
      * @throws HandleException if an admin record could not be decoded
      */
@@ -151,7 +149,7 @@ public class HandleValueAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -184,7 +182,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the admin.
      * </p>
-     * 
+     *
      * @return the admin
      */
     public AdminRecordAdapter getAdmin() {
@@ -195,7 +193,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the alias.
      * </p>
-     * 
+     *
      * @return the alias
      */
     public String getAlias() {
@@ -206,7 +204,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the data.
      * </p>
-     * 
+     *
      * @return the data
      */
     public String getData() {
@@ -218,7 +216,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the timestamp.
      * </p>
-     * 
+     *
      * @return the timestamp
      * @see #getTimestamp()
      */
@@ -230,7 +228,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the index.
      * </p>
-     * 
+     *
      * @return the index
      */
     public Integer getIndex() {
@@ -241,7 +239,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the permissions.
      * </p>
-     * 
+     *
      * @return the permissions
      */
     public Map<String, Boolean> getPermissions() {
@@ -252,7 +250,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the primary.
      * </p>
-     * 
+     *
      * @return the primary
      */
     public String getPrimary() {
@@ -263,7 +261,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the references.
      * </p>
-     * 
+     *
      * @return the references
      */
     public List<ValueReferenceAdapter> getReferences() {
@@ -274,7 +272,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the service.
      * </p>
-     * 
+     *
      * @return the service
      */
     public String getService() {
@@ -285,7 +283,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the site.
      * </p>
-     * 
+     *
      * @return the site
      */
     public SiteInfoAdapter getSite() {
@@ -296,7 +294,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the timestamp.
      * </p>
-     * 
+     *
      * @return the timestamp
      */
     public Date getTimestamp() {
@@ -307,7 +305,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the TTL.
      * </p>
-     * 
+     *
      * @return the TTL
      */
     public Integer getTtl() {
@@ -318,7 +316,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the TTLType.
      * </p>
-     * 
+     *
      * @return the TTLType
      */
     public String getTtlType() {
@@ -329,7 +327,7 @@ public class HandleValueAdapter {
      * <p>
      * Returns the type.
      * </p>
-     * 
+     *
      * @return the type
      */
     public HandleTypeAdapter getType() {
@@ -339,7 +337,7 @@ public class HandleValueAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -355,7 +353,7 @@ public class HandleValueAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

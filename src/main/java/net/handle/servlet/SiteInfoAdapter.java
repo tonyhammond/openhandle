@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: Nov 7, 2007
  * Time: 2:48:39 PM
  *
  * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 package net.handle.servlet;
 
@@ -36,8 +34,8 @@ import net.handle.hdllib.SiteInfo;
  * <p>
  * TODO Document SiteInfoAdapter
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class SiteInfoAdapter {
 
@@ -45,7 +43,7 @@ public class SiteInfoAdapter {
      * <p>
      * TODO Document HashOption
      * </p>
-     * 
+     *
      * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
      */
     public enum HashOption {
@@ -54,7 +52,7 @@ public class SiteInfoAdapter {
         /**
          * <p>
          * </p>
-         * 
+         *
          * @see java.lang.Enum#toString()
          */
         @Override
@@ -80,7 +78,7 @@ public class SiteInfoAdapter {
     }
 
     private static final Log LOG = LogFactory.getLog(SiteInfoAdapter.class);
-    
+
     private Map<String, String> attributes;
 
     private SiteInfo delegate;
@@ -90,7 +88,7 @@ public class SiteInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param info
      *            the site info
      */
@@ -113,7 +111,7 @@ public class SiteInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -147,7 +145,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the attributes.
      * </p>
-     * 
+     *
      * @return the attributes
      */
     public Map<String, String> getAttributes() {
@@ -158,7 +156,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the dataFormatVersion.
      * </p>
-     * 
+     *
      * @return the dataFormatVersion
      */
     public int getDataFormatVersion() {
@@ -169,7 +167,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the hashFilter.
      * </p>
-     * 
+     *
      * @return the hashFilter
      */
     public String getHashFilter() {
@@ -180,7 +178,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the hashOption.
      * </p>
-     * 
+     *
      * @return the hashOption
      */
     public HashOption getHashOption() {
@@ -205,7 +203,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the majorProtocolVersion.
      * </p>
-     * 
+     *
      * @return the majorProtocolVersion
      */
     public String getMajorProtocolVersion() {
@@ -216,7 +214,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the minorProtocolVersion.
      * </p>
-     * 
+     *
      * @return the minorProtocolVersion
      */
     public String getMinorProtocolVersion() {
@@ -227,7 +225,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the serialNumber.
      * </p>
-     * 
+     *
      * @return the serialNumber
      */
     public Integer getSerialNumber() {
@@ -238,7 +236,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the servers.
      * </p>
-     * 
+     *
      * @return the servers
      */
     public List<ServerInfoAdapter> getServers() {
@@ -248,7 +246,7 @@ public class SiteInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -265,7 +263,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the multiPrimary.
      * </p>
-     * 
+     *
      * @return the multiPrimary
      */
     public Boolean isMultiPrimary() {
@@ -276,7 +274,7 @@ public class SiteInfoAdapter {
      * <p>
      * Returns the primary.
      * </p>
-     * 
+     *
      * @return the primary
      */
     public Boolean isPrimary() {
@@ -286,7 +284,7 @@ public class SiteInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

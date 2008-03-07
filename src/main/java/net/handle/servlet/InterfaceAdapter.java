@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: Nov 7, 2007
  * Time: 4:47:59 PM
  *
  * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 package net.handle.servlet;
 
@@ -26,8 +24,8 @@ import net.handle.hdllib.Interface;
  * <p>
  * TODO Document InterfaceAdapter
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class InterfaceAdapter {
 
@@ -36,7 +34,7 @@ public class InterfaceAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param face
      *            the interface
      */
@@ -47,7 +45,7 @@ public class InterfaceAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -72,7 +70,7 @@ public class InterfaceAdapter {
      * <p>
      * Returns the port.
      * </p>
-     * 
+     *
      * @return the port.
      */
     public Integer getPort() {
@@ -83,7 +81,7 @@ public class InterfaceAdapter {
      * <p>
      * Returns the protocol.
      * </p>
-     * 
+     *
      * @return the protocol
      */
     public String getProtocol() {
@@ -94,7 +92,7 @@ public class InterfaceAdapter {
      * <p>
      * Returns the type.
      * </p>
-     * 
+     *
      * @return the type
      */
     public String getType() {
@@ -104,7 +102,7 @@ public class InterfaceAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -116,7 +114,7 @@ public class InterfaceAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

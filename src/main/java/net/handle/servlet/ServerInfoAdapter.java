@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: Nov 7, 2007
  * Time: 3:01:10 PM
  *
  * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 package net.handle.servlet;
 
@@ -33,8 +31,8 @@ import net.handle.hdllib.ServerInfo;
  * <p>
  * TODO Document ServerInfoAdapter
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class ServerInfoAdapter {
 
@@ -55,7 +53,7 @@ public class ServerInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -81,7 +79,7 @@ public class ServerInfoAdapter {
      * <p>
      * Returns the address.
      * </p>
-     * 
+     *
      * @return the address
      */
     public String getAddress() {
@@ -92,7 +90,7 @@ public class ServerInfoAdapter {
      * <p>
      * Returns the id.
      * </p>
-     * 
+     *
      * @return the id
      */
     public Integer getId() {
@@ -103,7 +101,7 @@ public class ServerInfoAdapter {
      * <p>
      * Returns the interfaces.
      * </p>
-     * 
+     *
      * @return the interfaces
      */
     public List<InterfaceAdapter> getInterfaces() {
@@ -114,7 +112,7 @@ public class ServerInfoAdapter {
      * <p>
      * Returns the publicKey.
      * </p>
-     * 
+     *
      * @return the publicKey or <code>null</code>
      */
     public PublicKey getPublicKey() {
@@ -129,7 +127,7 @@ public class ServerInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -141,7 +139,7 @@ public class ServerInfoAdapter {
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

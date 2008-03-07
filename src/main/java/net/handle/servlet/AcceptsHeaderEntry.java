@@ -1,18 +1,16 @@
 /*
- * Created by: <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: Feb 28, 2008
  * Time: 2:11:07 PM
  *
  * <p>Copyright (C) 2008 Nature Publishing Group, Inc.</p>
  *
- * <p><abbr title="Nature Publishing Group">NPG</abbr> reserves all rights in this
- * program. The program or any portion thereof may not be reproduced in any form
- * whatsoever without the written consent of
- * <abbr title="Nature Publishing Group">NPG</abbr>.</p>
- *
- * <p>Nature Publishing Group is a division of Macmillan Publishers Limited, of
- * Brunel Road, Houndmills, Basingstoke, Hampshire, RG21 6XS. Registered Number
- * 785998 England.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 package net.handle.servlet;
 
@@ -25,8 +23,8 @@ import org.apache.commons.lang.builder.HashCodeBuilder;
  * <p>
  * Bean representing an entry in an HTTP Accepts header.
  * </p>
- * 
- * @author <a href="mailto:c.townson@nature.com">Christopher Townson</a>
+ *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  */
 public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
         Serializable {
@@ -53,7 +51,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
     /**
      * <p>
      * </p>
-     * 
+     *
      * @param type
      * @param q
      * @param mxb
@@ -69,7 +67,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Comparable#compareTo(java.lang.Object)
      */
     public int compareTo(AcceptsHeaderEntry entry) {
@@ -85,7 +83,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#equals(java.lang.Object)
      */
     @Override
@@ -97,7 +95,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Returns the mxb.
      * </p>
-     * 
+     *
      * @return the mxb
      */
     public Float getMxb() {
@@ -108,7 +106,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Returns the mxs.
      * </p>
-     * 
+     *
      * @return the mxs
      */
     public Float getMxs() {
@@ -119,7 +117,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Returns the q.
      * </p>
-     * 
+     *
      * @return the q
      */
     public Float getQ() {
@@ -130,7 +128,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Returns the type.
      * </p>
-     * 
+     *
      * @return the type
      */
     public Mimetype getType() {
@@ -140,7 +138,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#hashCode()
      */
     @Override
@@ -152,7 +150,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Sets the mxb.
      * </p>
-     * 
+     *
      * @param mxb the mxb to set
      */
     public void setMxb(Float mxb) {
@@ -163,7 +161,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Sets the mxs.
      * </p>
-     * 
+     *
      * @param mxs the mxs to set
      */
     public void setMxs(Float mxs) {
@@ -174,7 +172,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Sets the q.
      * </p>
-     * 
+     *
      * @param q the q to set
      */
     public void setQ(Float q) {
@@ -185,7 +183,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
      * <p>
      * Sets the type.
      * </p>
-     * 
+     *
      * @param type the type to set
      */
     public void setType(Mimetype type) {
@@ -195,7 +193,7 @@ public class AcceptsHeaderEntry implements Comparable<AcceptsHeaderEntry>,
     /**
      * <p>
      * </p>
-     * 
+     *
      * @see java.lang.Object#toString()
      */
     @Override

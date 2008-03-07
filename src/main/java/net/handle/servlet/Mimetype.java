@@ -1,15 +1,16 @@
 /*
- * Created by: <a href="mailto:christopher@christophertownson.com">Christopher Townson</a>
+ * Created by: christopher
  * Date: Dec 14, 2007
  * Time: 10:51:59 AM
  *
- * <p>Copyright (C) 2007 Christopher Townson.</p>
+ * <p>Copyright (C) 2007 Nature Publishing Group, Inc.</p>
  *
- * <p>This work is licenced under the Creative Commons
- * Attribution-NonCommercial-ShareAlike 2.5 License. To view a copy of this
- * licence, visit http://creativecommons.org/licenses/by-nc-sa/2.5/ or send
- * a letter to Creative Commons, 559 Nathan Abbott Way, Stanford, California
- * 94305, USA.</p>
+ * <p><a rel="license" href="http://creativecommons.org/licenses/GPL/2.0/">
+ * <img alt="Creative Commons License" style="border-width:0"
+ * src="http://i.creativecommons.org/l/GPL/2.0/88x62.png" /></a><br />
+ * This work is licensed under a <a rel="license"
+ * href="http://creativecommons.org/licenses/GPL/2.0/">Creative Commons GNU
+ * General Public License License</a>.</p>
  */
 
 package net.handle.servlet;
@@ -21,6 +22,7 @@ import static org.apache.commons.lang.StringUtils.isNotBlank;
  * Enumeration of mime type assignments.
  * </p>
  *
+ * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
  * @see <a href="http://www.iana.org/assignments/media-types/">IANA media type
  *      assignments</a>
  */
