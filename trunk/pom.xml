@@ -21,7 +21,7 @@
         <developer>
             <id>thammond</id>
             <name>Tony Hammon</name>
-            <email>t.hammond@nature.com</email>
+            <email>tony.hammond@gmail.com</email>
             <organization>Nature Publishing Group</organization>
             <roles>
                 <role>Application Architect</role>
@@ -52,13 +52,6 @@
                 <configuration>
                     <source>1.5</source>
                     <target>1.5</target>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>tomcat-maven-plugin</artifactId>
-                <configuration>
-                    <id>tomcat-localhost</id>
                 </configuration>
             </plugin>
             <plugin>
