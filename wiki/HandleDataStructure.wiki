@@ -8,4 +8,4 @@ Essentially a handle record is a set of values with 7 fields: index, type, data,
 || || 1 || URL || http://... || {...} || {...} || ... || {...} ||
 || || 100 || ADMIN || {...} || {...} || {...} || ... || {...} ||
 
-In the table above the `{...}` symbolizes a complex value. Other values (e.g. `...`) are simple scalars.
+In the table above the '`{...}`' symbolizes a complex value. Other values (e.g. '`...`') are simple scalars.
