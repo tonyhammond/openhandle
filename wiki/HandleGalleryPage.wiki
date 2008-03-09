@@ -3,4 +3,5 @@
 == Handle Gallery ==
 
 || Handle || Comment || RDF/XML || RDF/N3 || JSON ||
-|| 0.NA/0 || Naming authority "0" || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=rdf&mimetype=application/xml RDF/XML] || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=n3&mimetype=text/plain RDF/N3] || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=json&mimetype=text/plain RDF/XML]  ||
+|| 0.NA/0 || Naming authority "0"- Global || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=rdf&mimetype=application/xml RDF/XML] || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=n3&mimetype=text/plain RDF/N3] || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=json&mimetype=text/plain JSON]  ||
+|| 0.NA/0 || Naming authority "10101" - Nature || [http://nascent.nature.com/openhandle/handle?id=0.NA/10101&format=rdf&mimetype=application/xml RDF/XML] || [http://nascent.nature.com/openhandle/handle?id=0.NA/10101&format=n3&mimetype=text/plain RDF/N3] || [http://nascent.nature.com/openhandle/handle?id=0.NA/0&format=json&mimetype=text/plain JSON]  ||
