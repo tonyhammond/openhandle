@@ -13,3 +13,5 @@ Essentially a handle record is a set of values. Each value is a tuple with 7 fie
 §1 'Simple' value UTF8 string - length plus string.
 
 §2 'Simple' value UTF8 string for *some* user types (e.g. 'URL') - length plus string.
+
+Values marked '`{...}`' above are complex values.
