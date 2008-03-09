@@ -4,10 +4,14 @@
 
 Essentially a handle record is a set of values. Each value is a tuple with 7 fields: index, type, data, ttl, permission, timestamp, reference.
 
-|| *(handle)* || *index* § || *type* § || *data* || *ttl* || *permission* || *timestamp* § || *reference* ||
+|| *(handle)* || *index* § || *type* §1 || *data* §2 || *ttl* || *permission* || *timestamp* § || *reference* ||
 || || 1 || URL || http://... || {...} || {...} || ... || {...} ||
 || || 100 || ADMIN || {...} || {...} || {...} || ... || {...} ||
 
 § Simple values.
+
+§1 'Simple' value UTF8 string - length plus string.
+
+§2 'Simple' value UTF8 string for *some* user types (e.g. 'URL') - length plus string.
 
 In the table above '`{...}`' symbolizes a complex value. Other values (expressed or '`...`') are simple scalars.
