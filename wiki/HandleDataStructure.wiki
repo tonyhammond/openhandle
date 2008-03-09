@@ -5,8 +5,8 @@
 Essentially a handle record is a set of values. Each value is a tuple with 7 fields: index, type, data, ttl, permission, timestamp, reference. See [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 RFC 3651] for details.
 
 || *(handle)* || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 index]* § || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 type]* §1 || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 data]* §2 || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 ttl]* || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 permission]* || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 timestamp]* § || *[http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 reference]* ||
-|| || 1 || URL || http://... || {...} || {...} || ... || {...} ||
-|| || 100 || ADMIN || {...} || {...} || {...} || ... || {...} ||
+|| || 1 || URL || http://... || {...} || {...} || ? ms || {...} ||
+|| || 100 || ADMIN || {...} || {...} || {...} || ? ms || {...} ||
 
 § Simple values.
 
