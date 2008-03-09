@@ -1,8 +1,8 @@
 #summary RDF schema for Handle
 
-== Handle Schema ==
+== Handle RDF Schema ==
 
-(This page needs elaboration. The RDFS is included here for convenience.)
+(This page needs elaboration. The RDFS is included here for convenience. The current schema can be downloaded from [http://openhandle.googlecode.com/files/handle.rdfs here].)
 
 {{{
 <?xml version="1.0" encoding="UTF-8"?>
