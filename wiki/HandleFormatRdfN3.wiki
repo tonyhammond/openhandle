@@ -2,7 +2,7 @@
 
 == RDF/N3 ==
 
-The [http://www.w3.org/DesignIssues/Notation3.html RDF/N3] serialization essentially looks like the following:
+The [http://www.w3.org/TeamSubmission/n3/ RDF/N3] serialization essentially looks like the following:
 
 {{{
 <info:hdl/10.1000/1> a :Handle ;
