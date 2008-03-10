@@ -10,5 +10,5 @@ There are two sources for the Handle specs:
 The RFC is authoritative but has slipped somewhat with respect to the HANDLE.NET 6.2 Java codebase. The table below attempts to capture some of the disparity between the RFC and the codebase.
 
 || *RFC Section* || *Remove* || *Add* ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1] || ADMIN_EXECUTE || ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1] || PUBLIC_EXECUTE || ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || PUBLIC_EXECUTE || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || ADMIN_EXECUTE || - ||
