@@ -1,0 +1,7 @@
+#summary Rationale for OpenHandle
+
+== OpenHandle Rationale ==
+
+Since there will inevitably be questions as to the reason for this project, this page will attempt to collect some of the factors for embearking on this work.
+
+  * 
