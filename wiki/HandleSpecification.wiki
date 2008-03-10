@@ -9,8 +9,8 @@ There are two sources for the Handle specs:
 
 The RFC is authoritative but has slipped somewhat with respect to the HANDLE.NET 6.2 Java codebase. The table below attempts to capture some of the disparity between the RFC and the codebase.
 
-|| *RFC Section* || *Remove* || *Add* || *Reference* ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `PUBLIC_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `ADMIN_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `LIST_NA` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-2 Sect. 2], p. 4 || - || URI || [http://www.handle.net/mail-archive/handle-info/msg00244.html TH] ||
+|| *RFC Section* || *Remove* || *Add* || *Reference* || *Comment* ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `PUBLIC_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `ADMIN_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `LIST_NA` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-2 Sect. 2], p. 4 || - || URI || [http://www.handle.net/mail-archive/handle-info/msg00244.html TH] || Add subsection to Sect. 2 detailing URI scheme ||
