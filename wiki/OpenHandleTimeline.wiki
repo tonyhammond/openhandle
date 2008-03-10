@@ -1,0 +1,7 @@
+#summary Timeline for OpenHandle
+== OpenHandle Timeline ==
+
+Timelines:
+
+  * [http://www.handle.net/mail-archive/handle-dev/msg00052.html First Version] 
+  * [http://www.handle.net/mail-archive/handle-info/msg00052.html Current Version] 
