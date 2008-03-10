@@ -12,3 +12,4 @@ The RFC is authoritative but has slipped somewhat with respect to the HANDLE.NET
 || *RFC Section* || *Remove* || *Add* ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `PUBLIC_EXECUTE` || - ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `ADMIN_EXECUTE` || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `LIST_NA` || - ||
