@@ -13,3 +13,4 @@ The RFC is authoritative but has slipped somewhat with respect to the HANDLE.NET
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `PUBLIC_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `ADMIN_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `LIST_NA` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-2 Sect. 2], p. 4 || - || URI || [http://www.handle.net/mail-archive/handle-info/msg00244.html TH] ||
