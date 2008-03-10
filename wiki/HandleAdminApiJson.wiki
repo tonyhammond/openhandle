@@ -4,7 +4,7 @@
 
 A simple text-based API for Handle admin could be JSON, whereby a JSON admin object is sent to a server and a JSON response received. The inspiration for this work comes from [http://freebase.com Freebase] and its associated [http://freebase.com/view/9202a8c04000641f800000000544e13e Metaweb Query Language] which allows for a JSON query/result exchange.
 
-Such a JSON request could like the following skeleton which would be used to create a Handle using secret key authentication:
+Such a JSON request could look like the following skeleton which would be used to create a Handle using secret key authentication:
 
 {{{
 {
