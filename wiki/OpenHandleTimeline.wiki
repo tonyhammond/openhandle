@@ -3,5 +3,6 @@
 
 Timelines:
 
-  * [http://www.handle.net/mail-archive/handle-dev/msg00052.html First Version] 
-  * [http://www.handle.net/mail-archive/handle-info/msg00052.html Current Version] 
+  * [http://www.handle.net/mail-archive/handle-dev/msg00052.html First Version] - Mar '03
+  * [http://www.handle.net/mail-archive/handle-info/msg00221.html Current Version] - Feb '08
+  * [http://www.handle.net/mail-archive/handle-info/msg00221.html Google Code] - Mar '08
