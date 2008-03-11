@@ -6,7 +6,7 @@
     <groupId>net.handle</groupId>
     <artifactId>openhandle</artifactId>
     <packaging>war</packaging>
-    <version>0.1</version>
+    <version>0.1.2</version>
     <description>Simple web application facade to handle.</description>
     <issueManagement>
         <url>http://code.google.com/p/openhandle/issues/</url>
@@ -45,7 +45,6 @@
         </repository>
     </repositories>
     <build>
-        <finalName>openhandle</finalName>
         <plugins>
             <plugin>
                 <artifactId>maven-compiler-plugin</artifactId>
