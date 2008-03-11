@@ -31,7 +31,7 @@ import net.handle.hdllib.ResolutionResponse;
 
 /**
  * <p>
- * TODO Document OpenHandle
+ * OpenHandle Entry Point
  * </p>
  *
  * @author <a href="mailto:christopher.townson@googlemail.com">Christopher Townson</a>
