@@ -32,18 +32,6 @@
         <developerConnection>scm:svn:https://openhandle.googlecode.com/svn/trunk</developerConnection>
         <connection>scm:svn:http://openhandle.googlecode.com/svn/trunk</connection>
     </scm>
-    <repositories>
-        <repository>
-            <id>central</id>
-            <url>http://nascent.nature.com/artifactory/repo</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-            </snapshots>
-        </repository>
-    </repositories>
     <build>
         <plugins>
             <plugin>
