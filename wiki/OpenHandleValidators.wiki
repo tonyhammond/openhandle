@@ -5,6 +5,8 @@
 This page will maintain links to online validators for Open**Handle serializations.
 
   * RDF/XML
-   ** [http://www.w3.org/RDF/Validator/ RDF Validator]
+   ** [http://www.w3.org/RDF/Validator/ W3C RDF Validator]
+   ** [http://rdfabout.com/demo/validator/ rdfabout.com's Validator]
   * RDF/N3
+   ** [http://rdfabout.com/demo/validator/ rdfabout.com's Validator]
   * JSON
