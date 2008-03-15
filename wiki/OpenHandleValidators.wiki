@@ -2,4 +2,4 @@
 
 == OpenHandle Validators ==
 
-This page will maintain links to online validators for Open{}Handle serializations.
+This page will maintain links to online validators for Open**Handle serializations.
