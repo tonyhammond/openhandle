@@ -1,46 +1,46 @@
 #set ($this = $request.getAttribute("id"))
 {
-    "handle" : "info:hdl/${this.handle}" ,
+    "handle" : "<info:hdl/${this.handle}>" ,
     "handleValues" : [
-        #foreach ($value in $this.values)
+#foreach ($value in $this.values)
         {
             "index" : "${value.index}" ,
             "type" : "${value.type}" ,
-            #if (!$value.type.binary)
-	        #if (${value.type} == "URL")
+#if (!$value.type.binary)
+#if (${value.type} == "URL")
             "data" : "<${value.data}>" ,
-            #else
+#else
             "data" : "${value.data}" ,
-            #end
-            #elseif ($value.type.admin)
+#end
+#elseif ($value.type.admin)
             "data" : {
                 "adminRef" : "<info:hdl/${this.handle}#index=${value.index}/>" ,
                 "adminPermission" : {
-                   #foreach ($permission in $value.admin.permissions.entrySet())
-                    #if ($velocityCount.equals($value.admin.permissions.entrySet().size()))
-                   "${permission.key}" : "${permission.value}"
-                   #else
-                   "${permission.key}" : "${permission.value}" , 
-                   #end
-                   #end
+#foreach ($permission in $value.admin.permissions.entrySet())
+#if ($velocityCount.equals($value.admin.permissions.entrySet().size()))
+                    "${permission.key}" : "${permission.value}"
+#else
+                    "${permission.key}" : "${permission.value}" , 
+#end
+#end
                  }
             } ,
-            #elseif ($value.type.site)
+#elseif ($value.type.site)
             "data" : {
             } ,
-            #elseif ($value.type.service)
+#elseif ($value.type.service)
             "data" : {
             } ,
-            #elseif ($value.type.primary)
+#elseif ($value.type.primary)
             "data" : {
             } ,
-            #elseif ($value.type.alias)
+#elseif ($value.type.alias)
             "data" : {
             } ,
-            #elseif ($value.type.valueReferenceList)
+#elseif ($value.type.valueReferenceList)
             "data" : {
             } ,
-            #end
+#end
             "permission" : {
                 "adminRead" : "${value.permissions.adminRead}" ,
                 "adminWrite" : "${value.permissions.adminWrite}" ,
@@ -55,16 +55,18 @@
             "reference"  : {
                 "referenceCount" : "${value.references.size()}" ,
                 "referenceList" : [
-                    #foreach ($reference in $value.valueReferences)
-                    #if ($velocityCount < $value.valueReferences.size())
+#foreach ($reference in $value.valueReferences)
+#if ($velocityCount < $value.valueReferences.size())
                     <info:hdl/${reference.handle}#index=${reference.index}/> ,
-                    #else
+#else
                     <info:hdl/${reference.handle}#index=${reference.index}/>
-                    #end
-                    #end
+#end
+#end
                 ]
             }
         }#if(!($velocityCount.equals($this.values.size()))) ,#end
-        #end
+
+#end
+
     ]
 }

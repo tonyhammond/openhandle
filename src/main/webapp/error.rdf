@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
 <rdf:RDF
     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
-    <!-- #set($this = $request.getAttribute("error")) -->
+    <!-- #set($this = $request.getAttribute("id")) -->
+    <!-- #set($err = $request.getAttribute("error")) -->
     <Response
-        rdf:about="">
-        <code>${this.code}</code>
-        <message>${this.message}</message>
+        rdf:about="${this.handle}">
+        <code>${err.code}</code>
+        <message>${err.message}</message>
         <isFailure>1</isFailure>
     </Response>
 </rdf:RDF>
