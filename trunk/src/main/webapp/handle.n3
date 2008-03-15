@@ -4,28 +4,29 @@
 @prefix r: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
  
 <info:hdl/${this.handle}> a :Handle ;
-        :handleValues  (
-            #foreach ($value in $this.values)
-          [ h:index "${value.index}" ;
+    :handleValues  (
+#foreach ($value in $this.values)
+        [
+            h:index "${value.index}" ;
             h:type "${value.type}" ;
-            #if (!$value.type.binary)
-            #if (${value.type} == "URL")
+#if (!$value.type.binary)
+#if (${value.type} == "URL")
             h:data <${value.data}> ;
-            #else
+#else
             h:data "${value.data}" ;
-            #end
-            #elseif ($value.type.admin)
+#end
+#elseif ($value.type.admin)
             h:data [
                 a h:HS_ADMIN;
                 h:adminRef <info:hdl/${this.handle}#index=${value.index}/> ;
                 h:adminPermission [
                     a h:AdminPermission;
-                    #foreach ($permission in $value.admin.permissions.entrySet())
+#foreach ($permission in $value.admin.permissions.entrySet())
                     h:${permission.key} "${permission.value}" ;
-                    #end
-                 ]
+#end
+                ]
             ] ;
-            #elseif ($value.type.site)
+#elseif ($value.type.site)
             h:data [
                 a h:HS_SITE;
                 h:version ${value.site.dataFormatVersion} ;
@@ -34,66 +35,65 @@
                     h:majorProtocolVersion ${value.site.majorProtocolVersion} ;
                     h:minorProtocolVersion ${value.site.minorProtocolVersion} ;
                 ] ;
-		        h:serialNumber ${value.site.serialNumber} ;
+                h:serialNumber ${value.site.serialNumber} ;
                 h:primaryMask [
-                     a h:PrimaryMask ;
-                     h:primary ${value.site.primary} ;
-                     h:multiPrimary ${value.site.multiPrimary} ;
+                    a h:PrimaryMask ;
+                    h:primary ${value.site.primary} ;
+                    h:multiPrimary ${value.site.multiPrimary} ;
                 ] ;
                 h:hashOption ${value.site.hOption} ;
                 h:hashFilter ${value.site.hFilter} ;
                 h:attributes (
-                     #foreach ($attribute in $value.site.attributes.entrySet())
-                     [
-                         a h:Attribute ;
-                         h:name ${attribute.key} ;
-                         h:value ${attribute.value} ;
-                     ]
-                     #end
+#foreach ($attribute in $value.site.attributes.entrySet())
+                    [
+                        a h:Attribute ;
+                        h:name "${attribute.key}" ;
+                        h:value "${attribute.value}" ;
+                    ]
+#end
                 ) ;
                 h:numOfServer $value.site.servers.size() ;
                 h:serverRecords (
-                     #foreach ($server in $value.site.servers)
-                     [
-                         a h:ServerRecord ;
-                         h:serverID ${server.id} ;
-                         h:address ${server.address} ;
-                         #if ($server.publicKey)
-                         h:publicKeyRecord ${server.publicKey} ;
-                         #end
-                         h:serviceInterface [
-                             a h:ServiceInterface>
-                             h:interfaceCounter $server.interfaces.size() ;
-                             #foreach ($interface in $server.interfaces)
-                             h:interface [
-                                 a h:Interface ;
-                                 h:serviceType ${interface.type} ;
-                                 h:transmissionProtocol ${interface.protocol} ;
-                                 h:portNumber ${interface.port} ;
-                             ]
-                             #end
-                          ]
-                            </h:ServerRecord>
-                            #end
+#foreach ($server in $value.site.servers)
+                    [
+                        a h:ServerRecord ;
+                        h:serverID ${server.id} ;
+                        h:address ${server.address} ;
+#if ($server.publicKey)
+                        h:publicKeyRecord ${server.publicKey} ;
+#end
+                        h:serviceInterface [
+                        a h:ServiceInterface>
+                        h:interfaceCounter $server.interfaces.size() ;
+#foreach ($interface in $server.interfaces)
+                        h:interface [
+                            a h:Interface ;
+                            h:serviceType ${interface.type} ;
+                            h:transmissionProtocol ${interface.protocol} ;
+                            h:portNumber ${interface.port} ;
+                        ]
+#end
+                    ]
+#end
                 )
             ] ;
-            #elseif ($value.type.service)
+#elseif ($value.type.service)
             h:data [
                 a h:HS_SERV;
             ] ;
-            #elseif ($value.type.primary)
+#elseif ($value.type.primary)
             h:data [
                 a h:HS_PRIMARY;
             ] ;
-            #elseif ($value.type.alias)
+#elseif ($value.type.alias)
             h:data [
                 a h:HS_ALIAS;
             ] ;
-            #elseif ($value.type.valueReferenceList)
+#elseif ($value.type.valueReferenceList)
             h:data [
                 a h:HS_VLIST;
             ] ;
-            #end
+#end
             h:permission [
                 a h:Permission;
                 h:adminRead "${value.permissions.adminRead}" ;
@@ -111,11 +111,11 @@
                 a h:Reference ;
                 h:referenceCount "${value.references.size()}" ;
                 h:referenceList [
-                    #foreach ($reference in $value.valueReferences)
+#foreach ($reference in $value.valueReferences)
                     h:HandleValueRef <info:hdl/${reference.handle}#index=${reference.index}/> ;
-                    #end
+#end
                 ]
             ]
         ]
-        #end
-) .
+#end
+    ) .

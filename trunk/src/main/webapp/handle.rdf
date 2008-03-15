@@ -14,9 +14,7 @@
                 #if ($value.type == "URL")
                 <h:data r:resource="${value.data}"/>
                 #else
-                <h:data>
-                    ${value.data}
-                </h:data>
+                <h:data>${value.data}</h:data>
                 #end
                 #elseif ($value.type.admin)
                 <h:data>
