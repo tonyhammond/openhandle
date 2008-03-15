@@ -17,10 +17,10 @@
 #end
 #elseif ($value.type.admin)
             h:data [
-                a h:HS_ADMIN;
+                a h:HS_ADMIN ;
                 h:adminRef <info:hdl/${this.handle}#index=${value.index}/> ;
                 h:adminPermission [
-                    a h:AdminPermission;
+                    a h:AdminPermission ;
 #foreach ($permission in $value.admin.permissions.entrySet())
                     h:${permission.key} "${permission.value}" ;
 #end
@@ -28,7 +28,7 @@
             ] ;
 #elseif ($value.type.site)
             h:data [
-                a h:HS_SITE;
+                a h:HS_SITE ;
                 h:version ${value.site.dataFormatVersion} ;
                 h:protocolVersion [
                     a h:ProtocolVersion ;
@@ -63,7 +63,7 @@
                         h:publicKeyRecord ${server.publicKey} ;
 #end
                         h:serviceInterface [
-                        a h:ServiceInterface>
+                        a h:ServiceInterface ;
                         h:interfaceCounter $server.interfaces.size() ;
 #foreach ($interface in $server.interfaces)
                         h:interface [
@@ -79,30 +79,30 @@
             ] ;
 #elseif ($value.type.service)
             h:data [
-                a h:HS_SERV;
+                a h:HS_SERV ;
             ] ;
 #elseif ($value.type.primary)
             h:data [
-                a h:HS_PRIMARY;
+                a h:HS_PRIMARY ;
             ] ;
 #elseif ($value.type.alias)
             h:data [
-                a h:HS_ALIAS;
+                a h:HS_ALIAS ;
             ] ;
 #elseif ($value.type.valueReferenceList)
             h:data [
-                a h:HS_VLIST;
+                a h:HS_VLIST ;
             ] ;
 #end
             h:permission [
-                a h:Permission;
+                a h:Permission ;
                 h:adminRead "${value.permissions.adminRead}" ;
                 h:adminWrite "${value.permissions.adminWrite}" ;
                 h:publicRead "${value.permissions.publicRead}" ;
                 h:publicWrite "${value.permissions.publicWrite}" ;
             ] ;
             h:ttl [
-                a h:TTL;
+                a h:TTL ;
                 h:ttlType "${value.ttlType}" ;
                 h:ttlValue "${value.ttl}" ;
             ] ;
