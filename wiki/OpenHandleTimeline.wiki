@@ -6,4 +6,4 @@ Timelines:
   * [http://www.handle.net/mail-archive/handle-dev/msg00052.html Original Version] - Mar 26, '03
   * [http://www.handle.net/mail-archive/handle-info/msg00221.html Current Version] - Feb 5, '08
   * [http://www.handle.net/mail-archive/handle-info/msg00254.html Release to Google Code] - Mar 7, '08
-  * [http://openhandle.googlecode.com/files/openhandle-0.1.2-sources.jar Added Version to Downloads: 0.1.2] - Mar. 12, '08 
+  * Added Version to (Source) Downloads: [http://openhandle.googlecode.com/files/openhandle-0.1.2-sources.jar 0.1.2] - Mar. 12, '08 
