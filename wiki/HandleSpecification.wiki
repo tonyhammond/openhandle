@@ -12,17 +12,17 @@ Additionally the Handle System type registry (`0.TYPE`) has a number of register
 The RFC is authoritative but has slipped somewhat with respect to the HANDLE.NET 6.2 Java codebase. The table below attempts to capture some of the disparity between the RFC and the codebase.
 
 || *RFC Section* || *Leave* || *Remove* || *Add* || *Reference* || *Comment* ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || - || `PUBLIC_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] || Feature placeholder - unimplemented ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || - || `ADMIN_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] || Feature placeholder - unimplemented ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || - || `LIST_NA` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR] || Already set in the server configuration file ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `HS_ADMIN` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || - ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.2 Sect. 3.2.2], p. 14 || `HS_SITE` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || - ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.3 Sect. 3.2.3], p. 19 || - || `HS_NA_DELEGATE` (?) || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || Not registered in type registry ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.4 Sect. 3.2.4], p. 20 || `HS_SERV` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || - ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.5 Sect. 3.2.5], p. 21 || `HS_ALIAS` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || - ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.6 Sect. 3.2.6], p. 21 || - || `HS_PRIMARY` (?) || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || Not registered in type registry ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.7 Sect. 3.2.7], p. 22 || `HS_VLIST` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || - ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2 Sect. 3.2] || - || - || `HS_SECKEY` || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || Marked as 'STD_TYPE' in codebase; Registered in type registry ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2 Sect. 3.2] || - || - || `HS_PUBKEY` || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || Marked as 'STD_TYPE' in codebase; Registered in type registry ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2 Sect. 3.2] || - || - || `HS_DSAPUBKEY` (?) || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH] || Marked as 'STD_TYPE' in codebase; *Not* registered in type registry ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-2 Sect. 2], p. 4 || - || - || URI Spec. || [http://www.handle.net/mail-archive/handle-info/msg00244.html TH] || Add subsection to Sect. 2 detailing URI scheme ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || - || `PUBLIC_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || Feature placeholder - unimplemented ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || - || `ADMIN_EXECUTE` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || Feature placeholder - unimplemented ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || - || `LIST_NA` || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || Already set in the server configuration file ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `HS_ADMIN` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.2 Sect. 3.2.2], p. 14 || `HS_SITE` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.3 Sect. 3.2.3], p. 19 || - || `HS_NA_DELEGATE` (?) || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || Not registered in type registry ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.4 Sect. 3.2.4], p. 20 || `HS_SERV` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.5 Sect. 3.2.5], p. 21 || `HS_ALIAS` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.6 Sect. 3.2.6], p. 21 || - || `HS_PRIMARY` (?) || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || Not registered in type registry ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.7 Sect. 3.2.7], p. 22 || `HS_VLIST` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2 Sect. 3.2] || - || - || `HS_SECKEY` || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || Marked as 'STD_TYPE' in codebase; Registered in type registry ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2 Sect. 3.2] || - || - || `HS_PUBKEY` || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || Marked as 'STD_TYPE' in codebase; Registered in type registry ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2 Sect. 3.2] || - || - || `HS_DSAPUBKEY` (?) || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || Marked as 'STD_TYPE' in codebase; *Not* registered in type registry ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-2 Sect. 2], p. 4 || - || - || URI Spec. || [http://www.handle.net/mail-archive/handle-info/msg00244.html TH (244)] || Add subsection to Sect. 2 detailing URI scheme ||
