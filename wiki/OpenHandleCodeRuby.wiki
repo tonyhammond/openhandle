@@ -1,4 +1,4 @@
-#summary Ruby Code Examples for OpenHandle
+#summary Ruby code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Ruby Code Examples ==
