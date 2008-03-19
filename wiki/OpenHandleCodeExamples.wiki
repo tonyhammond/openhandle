@@ -8,5 +8,5 @@ This page will maintain links to language-specific pages for using OpenHandle fr
   * [OpenHandleCodePython Python]
   * [OpenHandleCodePhp PHP]
   * [OpenHandleCodePerl Perl]
-  * [OpenHandleCodeJava JavaScript]
+  * [OpenHandleCodeJavaScript JavaScript]
   * [OpenHandleCodeJava Java]
