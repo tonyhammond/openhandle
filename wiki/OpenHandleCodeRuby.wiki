@@ -8,7 +8,7 @@ It is expected that there could be an OpenHandle Ruby library but in the meantim
 Here's how a native Ruby program (contained in file "`handler`") can grab a handle data record:
 
 {{{
-% cat handler
+% cat handler.rb
 require 'rubygems'
 require 'json'
 require 'open-uri'
@@ -31,7 +31,7 @@ puts "]"
 
  
 {{{
-% ruby handler 10.1038/nature05932
+% ruby handler.rb 10.1038/nature05932
 "handle" => "<info:hdl/10.1038/nature05932>"
 "handleValues" => [
 
