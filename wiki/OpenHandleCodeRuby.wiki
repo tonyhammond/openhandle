@@ -13,9 +13,9 @@ require 'rubygems'
 require 'json'
 require 'open-uri'
 
-OPENHDL_SVC = "http://nascent.nature.com/openhandle/handle"
+OPENHANDLE_SERVICE = "http://nascent.nature.com/openhandle/handle"
 
-uri = URI.parse("#{OPENHDL_SVC}?id=#{ARGV[0]}&format=json")
+uri = URI.parse("#{OPENHANDLE_SERVICE}?id=#{ARGV[0]}&format=json")
 
 h = JSON.parse(uri.open.read)
 puts "\"handle\" => #{h['handle'].inspect}"
