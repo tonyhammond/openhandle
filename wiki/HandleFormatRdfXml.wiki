@@ -1,3 +1,0 @@
-#summary RDF/XML serialization for Handle
-
-== RDF/XML ==
