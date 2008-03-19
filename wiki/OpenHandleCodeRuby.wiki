@@ -1,0 +1,62 @@
+#summary Ruby Code Examples for OpenHandle
+
+== OpenHandle Ruby Code Examples ==
+
+It is expected that there could be an OpenHandle Ruby library but in the meantime OpenHandle can be accessed straightforwardly from native Ruby code.
+
+Here's how a native Ruby program (contained in file `handler`) can grab a handle data record:
+
+{{{
+% cat handler
+require 'rubygems'
+require 'json'
+require 'open-uri'
+
+OPENHDL_SVC = "http://nascent.nature.com/openhandle/handle"
+
+uri = URI.parse("#{OPENHDL_SVC}?id=#{ARGV[0]}&format=json")
+
+h = JSON.parse(uri.open.read)
+puts "\"handle\" => #{h['handle'].inspect}"
+puts "\"handleValues\" => ["; puts
+h['handleValues'].each do |value|
+  value.each do |key, val|
+    puts "    #{key.inspect} => #{val.inspect}"
+  end
+  puts
+end
+puts "]"
+}}}
+
+ 
+{{{
+% ruby handler 10.1038/nature05932
+"handle" => "<info:hdl/10.1038/nature05932>"
+"handleValues" => [
+
+    "reference" => {"referenceList"=>[], "referenceCount"=>"0"}
+    "timestamp" => "Wed Jun 20 18:14:42 BST 2007"
+    "ttl" => {"ttlType"=>"0", "ttlValue"=>"86400"}
+    "permission" => {"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}
+    "type" => "URL"
+    "index" => "1"
+    "data" => "<http://www.nature.com/doifinder/10.1038/nature05932>"
+
+    "reference" => {"referenceList"=>[], "referenceCount"=>"0"}
+    "timestamp" => "Wed Jul 11 20:40:04 BST 2007"
+    "ttl" => {"ttlType"=>"0", "ttlValue"=>"86400"}
+    "permission" => {"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}
+    "type" => "700050"
+    "index" => "2"
+    "data" => "20070711131808"
+
+    "reference" => {"referenceList"=>[], "referenceCount"=>"0"}
+    "timestamp" => "Wed Jun 20 18:14:42 BST 2007"
+    "ttl" => {"ttlType"=>"0", "ttlValue"=>"86400"}
+    "permission" => {"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}
+    "type" => "HS_ADMIN"
+    "index" => "100"
+    "data" => {"adminPermission"=>{"removeAdmin"=>"true", "modifyValue"=>"true", "deleteNa"=>"false", "addHandle"=>"false", "removeValue"=>"true", "listHandles"=>"true", "addAdmin"=>"true", "deleteHandle"=>"true", "addValue"=>"true", "addNa"=>"false", "readValue"=>"true", "modifyAdmin"=>"true"}, "adminRef"=>"<info:hdl/10.1038/nature05932#index=100/>"}
+
+]
+}}}
