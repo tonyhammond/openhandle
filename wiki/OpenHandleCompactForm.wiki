@@ -2,5 +2,6 @@
 
 == OpenHandle Compact Forms ==
 
-|| *Full Form* || {{{ and this
-and}}} ||
+|| *Full Form* || *Compact Form* ||
+|| `thsiz` || ||
+|| || `that` ||
