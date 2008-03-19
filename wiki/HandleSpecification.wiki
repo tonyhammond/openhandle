@@ -11,8 +11,8 @@ The RFC is authoritative but has slipped somewhat with respect to the HANDLE.NET
 
 || *RFC Section* || *Leave* || *Remove* || *Add* || *Reference* || *Comment* ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `PUBLIC_EXECUTE` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || Unimplemented - Feature placeholder for web services/grid type apps||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `ADMIN_EXECUTE` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || - Unimplemented - Feature placeholder for web services/grid type apps ||
-|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `LIST_NA` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || - Unimplemented - Feature placeholder for namespace admin ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.1 Sect. 3.1], p. 7 || `ADMIN_EXECUTE` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || Unimplemented - Feature placeholder for web services/grid type apps ||
+|| [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `LIST_NA` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00237.html SR (237)] || Unimplemented - Feature placeholder for namespace admin ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.1 Sect. 3.2.1], p. 13 || `HS_ADMIN` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.2 Sect. 3.2.2], p. 14 || `HS_SITE` || - || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || - ||
 || [http://www.apps.ietf.org/rfc/rfc3651.html#sec-3.2.3 Sect. 3.2.3], p. 19 || - || `HS_NA_DELEGATE` (?) || - || [http://www.handle.net/mail-archive/handle-info/msg00230.html TH (230)] || Not registered in type registry ||
