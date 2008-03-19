@@ -5,7 +5,7 @@
 
 It is expected that there could be an OpenHandle Ruby library but in the meantime OpenHandle can be accessed straightforwardly from native Ruby code.
 
-Here's how a native Ruby program (contained in file "`handler`") can grab a handle data record:
+Here's how a native Ruby program (contained in file "`handler.rb`") can grab a handle data record:
 
 {{{
 % cat handler.rb
