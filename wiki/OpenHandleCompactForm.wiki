@@ -1,7 +1,0 @@
-#summary Compact forms for OpenHandle
-
-== OpenHandle Compact Forms ==
-
-|| *Full Form* || *Compact Form* ||
-|| [data:,this] || ||
-|| || `that` ||
