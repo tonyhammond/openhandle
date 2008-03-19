@@ -1,0 +1,15 @@
+#summary Java Code Examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Java Code Examples ==
+
+Here's how a native Java program (contained in file "`handler`") can grab a handle data record:
+
+{{{
+% cat handler
+}}}
+
+
+{{{
+% java handler 10.1038/nature05932
+}}}
