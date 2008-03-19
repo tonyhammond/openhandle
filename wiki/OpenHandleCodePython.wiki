@@ -1,0 +1,15 @@
+#summary Python Code Examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Python Code Examples ==
+
+Here's how a native Python program (contained in file "`handler`") can grab a handle data record:
+
+{{{
+% cat handler
+}}}
+
+
+{{{
+% python handler 10.1038/nature05932
+}}}
