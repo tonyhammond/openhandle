@@ -4,7 +4,7 @@
 
 (This is a very rough draft.)
 
-A Handle record is composed of values each subdivided into fields - see Data Model.
+A Handle record is composed of values each subdivided into fields - see HandleDataModel.
 
  * user/admin fields
  * simple/complex fields
