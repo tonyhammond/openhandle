@@ -6,10 +6,143 @@
 Here's how a native PHP program (contained in file "`handler`") can grab a handle data record:
 
 {{{
-% cat handler
+% cat handler.php 
+<?php
+
+define('OPENHANDLE_SERVICE', 'http://nascent.nature.com/openhandle/handle');
+
+$params = array(
+  'id' => $argv[1],
+  'format' => 'json',
+  );
+
+$data = json_decode(file_get_contents(OPENHANDLE_SERVICE . '?' . http_build_query($params)));
+print_r($data);
 }}}
 
 
 {{{
-% php handler 10.1038/nature05932
+% php handler.php 10.1038/nature05932
+stdClass Object
+(
+    [comment] => OpenHandle (JSON) - see http://openhandle.googlecode.com/
+    [handle] => <info:hdl/10.1038/nature05392>
+    [handleValues] => Array
+        (
+            [0] => stdClass Object
+                (
+                    [index] => 1
+                    [type] => URL
+                    [data] => <http://www.nature.com/doifinder/10.1038/nature05392>
+                    [permission] => stdClass Object
+                        (
+                            [adminRead] => true
+                            [adminWrite] => true
+                            [publicRead] => true
+                            [publicWrite] => false
+                        )
+
+                    [ttl] => stdClass Object
+                        (
+                            [ttlType] => 0
+                            [ttlValue] => 86400
+                        )
+
+                    [timestamp] => Wed Jan 10 18:08:30 GMT 2007
+                    [reference] => stdClass Object
+                        (
+                            [referenceCount] => 0
+                            [referenceList] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [1] => stdClass Object
+                (
+                    [index] => 2
+                    [type] => 700050
+                    [data] => 20070110130704
+                    [permission] => stdClass Object
+                        (
+                            [adminRead] => true
+                            [adminWrite] => true
+                            [publicRead] => true
+                            [publicWrite] => false
+                        )
+
+                    [ttl] => stdClass Object
+                        (
+                            [ttlType] => 0
+                            [ttlValue] => 86400
+                        )
+
+                    [timestamp] => Wed Jan 10 18:08:30 GMT 2007
+                    [reference] => stdClass Object
+                        (
+                            [referenceCount] => 0
+                            [referenceList] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+            [2] => stdClass Object
+                (
+                    [index] => 100
+                    [type] => HS_ADMIN
+                    [data] => stdClass Object
+                        (
+                            [adminRef] => <info:hdl/10.1038/nature05392#index=100/>
+                            [adminPermission] => stdClass Object
+                                (
+                                    [readValue] => true
+                                    [addNa] => false
+                                    [deleteHandle] => true
+                                    [addAdmin] => true
+                                    [removeValue] => true
+                                    [deleteNa] => false
+                                    [addValue] => true
+                                    [addHandle] => false
+                                    [listHandles] => true
+                                    [removeAdmin] => true
+                                    [modifyValue] => true
+                                    [modifyAdmin] => true
+                                )
+
+                        )
+
+                    [permission] => stdClass Object
+                        (
+                            [adminRead] => true
+                            [adminWrite] => true
+                            [publicRead] => true
+                            [publicWrite] => false
+                        )
+
+                    [ttl] => stdClass Object
+                        (
+                            [ttlType] => 0
+                            [ttlValue] => 86400
+                        )
+
+                    [timestamp] => Wed Jan 10 18:08:30 GMT 2007
+                    [reference] => stdClass Object
+                        (
+                            [referenceCount] => 0
+                            [referenceList] => Array
+                                (
+                                )
+
+                        )
+
+                )
+
+        )
+
+)
 }}}
