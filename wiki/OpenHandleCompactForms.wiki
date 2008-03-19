@@ -1,0 +1,81 @@
+#summary Compact forms for OpenHandle
+
+== OpenHandle Compact Forms ==
+
+(This is a very rough draft.)
+
+A Handle record is composed of values each subdivided into fields - see Data Model.
+
+ * user/admin fields
+ * simple/complex fields
+
+
+The Handle serialization can be verbose. It is noticeable that the admin fields of a handle value are suitable elements for abbreviation:
+
+Handle value fields
+
+ * TTL
+ * Timestamp
+ * Permission 
+ * References - Handle Value Refs
+
+Handle data predefined types
+
+ * HS_ADMIN
+  ** handle value ref
+  ** perms
+
+{{{
+      "permission" : {
+        "adminRead" : "true" ,
+        "adminWrite" : "true" ,
+        "publicRead" : "true" ,	
+        "publicWrite" : "false"
+      } ,
+}}}
+
+{{{ 
+      "permission" : "1110" ,
+}}}
+
+{{{
+	"ttl" : {
+		"ttlType" : "0" ,
+		"ttlValue" : "86400" ,
+	}
+}}}
+
+{{{
+	"ttl" : "+86400" 
+}}}
+
+{{{
+      "timestamp" : "20080310T05:56:00.123Z" , 
+}}}
+
+{{{
+      "timestamp" : "20080310T05:56:00.123Z" , 
+}}}
+
+{{{
+    "reference" : {
+        "referenceCount" : "2" ,
+        "referenceList" : [
+            {
+                "handle" : "1234/567" ,
+                "handleValueIndex" : "200" ,
+            } ,
+            {
+                "handle" : "1234/567" ,
+                "handleValueIndex" : "201" ,
+            }
+        ]
+    }
+}}}
+
+{{{
+    "reference" : [
+        "hdl:1234/567?index=200" ,
+        "hdl:1234/567?index=201" 
+    ]
+}}}
