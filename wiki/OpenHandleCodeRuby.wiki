@@ -20,7 +20,7 @@ uri = URI.parse("#{OPENHANDLE_SERVICE}?id=#{ARGV[0]}&format=json")
 p JSON.parse(uri.open.read)
 }}}
 
-which 
+which can be run as
 
 {{{
 % ruby handler.rb 10.1038/nature05392
