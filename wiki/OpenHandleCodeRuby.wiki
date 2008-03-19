@@ -1,5 +1,6 @@
 #summary Ruby Code Examples for OpenHandle
 
+[OpenHandleCodeExamples Code Examples]
 == OpenHandle Ruby Code Examples ==
 
 It is expected that there could be an OpenHandle Ruby library but in the meantime OpenHandle can be accessed straightforwardly from native Ruby code.
