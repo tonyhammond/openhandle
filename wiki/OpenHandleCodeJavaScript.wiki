@@ -1,4 +1,4 @@
-#summary JavaScript Code Examples for OpenHandle
+#summary JavaScript code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Java**Script Code Examples ==
