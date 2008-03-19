@@ -1,4 +1,4 @@
-#summary Python Code Examples for OpenHandle
+#summary Python code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Python Code Examples ==
