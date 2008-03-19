@@ -25,6 +25,31 @@ Handle data predefined types
   ** handle value ref
   ** perms
 
+=== TTL ===
+
+{{{
+	"ttl" : {
+		"ttlType" : "0" ,
+		"ttlValue" : "86400" ,
+	}
+}}}
+
+{{{
+	"ttl" : "+86400" 
+}}}
+
+=== Timestamp ===
+
+{{{
+      "timestamp" : "20080310T05:56:00.123Z" , 
+}}}
+
+{{{
+      "timestamp" : "20080310T05:56:00.123Z" , 
+}}}
+
+=== Permission ===
+
 {{{
       "permission" : {
         "adminRead" : "true" ,
@@ -38,24 +63,7 @@ Handle data predefined types
       "permission" : "1110" ,
 }}}
 
-{{{
-	"ttl" : {
-		"ttlType" : "0" ,
-		"ttlValue" : "86400" ,
-	}
-}}}
-
-{{{
-	"ttl" : "+86400" 
-}}}
-
-{{{
-      "timestamp" : "20080310T05:56:00.123Z" , 
-}}}
-
-{{{
-      "timestamp" : "20080310T05:56:00.123Z" , 
-}}}
+=== Reference ===
 
 {{{
     "reference" : {
