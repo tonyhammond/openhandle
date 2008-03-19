@@ -1,0 +1,14 @@
+#summary Serializations of OpenHandle
+
+== OpenHandle Serializations ==
+
+The OpenHandle service currently serializes Handle records as:
+
+ * [OpenHandleSerializationRdf RDF/XML]
+ * [OpenHandleSerializationN3 RDF/N3]
+ * [OpenHandleSerializationJson RDF/JSON]
+
+Each serialization can also occur in two forms - see OpenHandleCompactForms:
+
+ * Full - each element of a compund structre is expressed
+ * Compact - complex structures are represented as strings (or arrays of strings)
