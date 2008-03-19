@@ -3,13 +3,13 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Java**Script Code Examples ==
 
-Here's how a native Java**Script program (contained in file "`handler`") can grab a handle data record:
+Here's how a native Java**Script program (contained in file "`handler.js`") can grab a handle data record:
 
 {{{
-% cat handler
+% cat handler.js
 }}}
 
 
 {{{
-% js handler 10.1038/nature05932
+% js handler.js 10.1038/nature05932
 }}}
