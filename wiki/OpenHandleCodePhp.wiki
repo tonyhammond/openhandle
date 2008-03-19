@@ -18,6 +18,8 @@ $params = array(
 
 $data = json_decode(file_get_contents(OPENHANDLE_SERVICE . '?' . http_build_query($params)));
 print_r($data);
+
+?>
 }}}
 
 
