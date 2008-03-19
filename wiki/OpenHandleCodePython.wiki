@@ -3,13 +3,13 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Python Code Examples ==
 
-Here's how a native Python program (contained in file "`handler`") can grab a handle data record:
+Here's how a native Python program (contained in file "`handler.py`") can grab a handle data record:
 
 {{{
-% cat handler
+% cat handler.py
 }}}
 
 
 {{{
-% python handler 10.1038/nature05932
+% python handler.py 10.1038/nature05932
 }}}
