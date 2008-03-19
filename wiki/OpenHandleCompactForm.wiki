@@ -1,0 +1,9 @@
+#summary Compact forms for OpenHandle
+
+== OpenHandle Compact Forms ==
+
+|| {{{
+this
+and
+that }}} || {{{ and this
+and}}}
