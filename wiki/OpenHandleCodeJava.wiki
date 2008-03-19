@@ -1,4 +1,4 @@
-#summary Java Code Examples for OpenHandle
+#summary Java code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Java Code Examples ==
