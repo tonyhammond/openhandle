@@ -5,3 +5,4 @@
 This page will maintain links to language-specific pages for using OpenHandle from code. Language examples include:
 
   * [OpenHandleCodeRuby Ruby]
+  * [OpenHandleCodePhp PHP]
