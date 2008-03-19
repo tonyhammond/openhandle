@@ -3,10 +3,10 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Java Code Examples ==
 
-Here's how a native Java program (contained in file "`handler`") can grab a handle data record:
+Here's how a native Java program (contained in file "`handler.java`") can grab a handle data record:
 
 {{{
-% cat handler
+% cat handler.java
 }}}
 
 
