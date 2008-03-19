@@ -1,0 +1,15 @@
+#summary Perl Code Examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Perl Code Examples ==
+
+Here's how a native Perl program (contained in file "`handler`") can grab a handle data record:
+
+{{{
+% cat handler
+}}}
+
+
+{{{
+% perl handler 10.1038/nature05932
+}}}
