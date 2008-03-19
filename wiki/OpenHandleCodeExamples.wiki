@@ -1,0 +1,7 @@
+#summary Code examples for OpenHandle
+
+== OpenHandle Code Examples ==
+
+This page will maintain links to language-specific pages for using OpenHandle from code. Language examples include:
+
+  * [OpenHandleCodeRuby Ruby]
