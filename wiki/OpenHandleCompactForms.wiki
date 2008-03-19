@@ -9,7 +9,6 @@ A Handle record is composed of values each subdivided into fields - see HandleDa
  * user/admin fields
  * simple/complex fields
 
-
 The Handle serialization can be verbose. It is noticeable that the admin fields of a handle value are suitable elements for abbreviation:
 
 Handle value fields
@@ -25,7 +24,7 @@ Handle data predefined types
   ** handle value ref
   ** perms
 
-==== TTL ====
+=== TTL ===
 
 {{{
 	"ttl" : {
@@ -38,7 +37,7 @@ Handle data predefined types
 	"ttl" : "+86400" 
 }}}
 
-==== Timestamp ====
+=== Timestamp ===
 
 {{{
       "timestamp" : "20080310T05:56:00.123Z" , 
