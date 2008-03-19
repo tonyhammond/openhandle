@@ -1,4 +1,4 @@
-#summary PHP Code Examples for OpenHandle
+#summary PHP code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle PHP Code Examples ==
