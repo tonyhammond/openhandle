@@ -3,13 +3,13 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Perl Code Examples ==
 
-Here's how a native Perl program (contained in file "`handler`") can grab a handle data record:
+Here's how a native Perl program (contained in file "`handler.pl`") can grab a handle data record:
 
 {{{
-% cat handler
+% cat handler.pl
 }}}
 
 
 {{{
-% perl handler 10.1038/nature05932
+% perl handler.pl 10.1038/nature05932
 }}}
