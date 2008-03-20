@@ -9,4 +9,5 @@ An OpenHandle service is a Java servlet-based front-end to the Handle System for
 See the following head pages:
 
  * OpenHandleSerializations - serializations supported by OpenHandle
- * OpenHandleParameters - a listing of querystring parameters to the service
+ * OpenHandleServices - services delivering OpenHandle
+ * OpenHandleParameters - querystring parameters to the service
