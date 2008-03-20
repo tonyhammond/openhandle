@@ -12,10 +12,19 @@ property openhandle : "http://nascent.nature.com/openhandle/handle"
 set the_url to openhandle & "?id=10100/nature&format=json&compact"
 set handle to do shell script "curl " & quoted form of the_url
 
-display dialog handle
+try
+    display dialog handle
+on error
+    handle
+end try
 }}}
 
-And running this interactively gives:
+And this can be run as:
+{{{
+% osascript handler.scpt
+}}}
+
+or can be run interactively which gives:
 {{{
 % open handler.scpt
 }}}
