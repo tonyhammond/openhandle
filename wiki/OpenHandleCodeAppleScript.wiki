@@ -7,9 +7,12 @@ Here's how a native Apple**Script program (contained in file "`handler.scpt`") c
 
 {{{
 % cat handler.scpt
-set handle to do shell script "curl 'http://nascent.nature.com/openhandle/handle?id=10100/nature&format=json&compact'"
-display dialog handle
-}}}
+property openhandle : "http://nascent.nature.com/openhandle/handle"
+
+set the_url to openhandle & "?id=10100/nature&format=json&compact"
+set handle to do shell script "curl " & quoted form of the_url
+
+display dialog handle}}}
 
 And running this gives:
 
