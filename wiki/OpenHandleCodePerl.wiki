@@ -23,7 +23,6 @@ print Dumper ($data);
 
 {{{
 % perl handler.pl 10.1038/nature05932
-% perl handle.pl
 {
     "comment" : "OpenHandle (JSON) - see http://openhandle.googlecode.com/" ,
     "handle" : "hdl:10.1038/nature05932" ,
