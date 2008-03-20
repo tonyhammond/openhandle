@@ -4,18 +4,18 @@
 
 (This is a very rough draft.)
 
+The Handle serializations can be verbose. It is especially noticeable that the admin fields of a handle value are structured elements and are suitable candidates for abbreviation.
+
 A Handle record is composed of values each subdivided into fields - see HandleDataModel.
 
  * user/admin fields
  * simple/complex fields
 
-The Handle serialization can be verbose. It is noticeable that the admin fields of a handle value are suitable elements for abbreviation:
-
 Handle value fields
 
+ * Permission 
  * TTL
  * Timestamp
- * Permission 
  * References - Handle Value Refs
 
 Handle data predefined types
@@ -23,6 +23,22 @@ Handle data predefined types
  * HS_ADMIN
   ** handle value ref
   ** perms
+
+
+=== Permission ===
+
+{{{
+      "permission" : {
+        "adminRead" : "true" ,
+        "adminWrite" : "true" ,
+        "publicRead" : "true" ,	
+        "publicWrite" : "false"
+      } ,
+}}}
+
+{{{ 
+      "permission" : "1110" ,
+}}}
 
 === TTL ===
 
@@ -45,21 +61,6 @@ Handle data predefined types
 
 {{{
       "timestamp" : "20080310T05:56:00.123Z" , 
-}}}
-
-=== Permission ===
-
-{{{
-      "permission" : {
-        "adminRead" : "true" ,
-        "adminWrite" : "true" ,
-        "publicRead" : "true" ,	
-        "publicWrite" : "false"
-      } ,
-}}}
-
-{{{ 
-      "permission" : "1110" ,
 }}}
 
 === Reference ===
