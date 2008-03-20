@@ -1,0 +1,20 @@
+#summary Services for OpenHandle
+
+== OpenHandle Services ==
+
+Should manage OpenHandle services with a handle (obviously). Will aim to register for now under the following handle:
+
+ * hdl:10100/openhandle
+
+At the moment there is only one known OpenHandle service:
+
+ * http:/nascent.nature.com/openhandle/handle?
+
+Would be useful to get another service operational as a fallback.
+
+Another consideration would be to emit an HTTP header from the OpenHandle service which would identify that service as an OpenHandle source. The header can be simply grabbed as:
+
+{{{
+% curl -I http://hdl.handle.net/10100/openhandle | grep ...
+}}}
+
