@@ -15,6 +15,9 @@ set handle to do shell script "curl " & quoted form of the_url
 display dialog handle
 }}}
 
-And running this gives:
+And running this interactively gives:
+{{{
+% open handler.scpt
+}}}
 
 http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg
