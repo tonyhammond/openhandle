@@ -22,7 +22,7 @@ print_r($data);
 ?>
 }}}
 
-
+This can be run as:
 {{{
 % php handler.php 10.1038/nature05932
 stdClass Object
