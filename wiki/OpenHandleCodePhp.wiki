@@ -9,14 +9,14 @@ Here's how a native PHP program (contained in file "`handler.php`") can grab a h
 % cat handler.php 
 <?php
 
-define('OPENHANDLE_SERVICE', 'http://nascent.nature.com/openhandle/handle');
+define('OPENHANDLE', 'http://nascent.nature.com/openhandle/handle');
 
 $params = array(
   'id' => $argv[1],
   'format' => 'json',
   );
 
-$data = json_decode(file_get_contents(OPENHANDLE_SERVICE . '?' . http_build_query($params)));
+$data = json_decode(file_get_contents(OPENHANDLE . '?' . http_build_query($params)));
 print_r($data);
 
 ?>
