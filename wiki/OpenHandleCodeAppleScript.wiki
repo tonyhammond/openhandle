@@ -1,3 +1,16 @@
 #summary AppleScript ocde examples for OpenHandle
 
-== OpenHandle AppleScript Code Examples ==
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Apple**Script Code Examples ==
+
+Here's how a native Apple**Script program (contained in file "`handler.scpt`") can grab a handle data record:
+
+{{{
+% cat handler.scpt
+set handle to do shell script "curl 'http://nascent.nature.com/openhandle/handle?id=10100/nature&format=json&compact'"
+display dialog handle
+}}}
+
+And running this gives:
+
+http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg
