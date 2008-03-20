@@ -1,13 +1,11 @@
 #summary Homepage for OpenHandle project wiki
  
-OpenHandle is a project to expose Handle records in common text-based serializations to make the data stored within the records more amenable to Web applications.
-
-See http://www.handle.net/ for further information on the Handle System.
-
-An OpenHandle service is a Java servlet-based front-end to the Handle System for exposing records as RDF/XML, RDF/N3, JSON.
+OpenHandle is a project to expose Handle records in common text-based serializations to make the data stored within the records more accessible to Web applications. Specifically, OpenHandle is a Java servlet-based front-end to the Handle System for exposing records as RDF/XML, RDF/N3, and JSON. 
 
 See the following head pages:
 
  * OpenHandleSerializations - serializations supported by OpenHandle
  * OpenHandleServices - services delivering OpenHandle
  * OpenHandleParameters - querystring parameters to the service
+
+See http://www.handle.net/ for further information on the Handle System.
