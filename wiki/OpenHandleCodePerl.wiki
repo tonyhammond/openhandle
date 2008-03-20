@@ -7,16 +7,59 @@ Here's how a native Perl program (contained in file "`handler.pl`") can grab a h
 
 {{{
 % cat handler.pl
+use Data::Dumper;
 use LWP::Simple;
+use JSON;
 
 $OPENHANDLE = "http://nascent.nature.com/openhandle/handle";
 
-$data = get($OPENHANDLE);
+$json = get($OPENHANDLE . "?id=10.1038/nature05932&format=json&compact");
+print $json;
+$data = from_json($json);
+print Dumper ($data);
 
-print $data;
 }}}
 
 
 {{{
 % perl handler.pl 10.1038/nature05932
+% perl handle.pl
+{
+    "comment" : "OpenHandle (JSON) - see http://openhandle.googlecode.com/" ,
+    "handle" : "hdl:10.1038/nature05932" ,
+    "handleValues" : [
+        {
+            "index" : "1" ,
+            "type" : "URL" ,
+            "data" : "http://www.nature.com/doifinder/10.1038/nature05932" ,
+            "permission" : "1110" ,
+            "ttl" : "+86400" ,
+            "timestamp" : "Wed Jun 20 18:14:42 BST 2007" ,
+            "reference"  : []
+        } ,
+        {
+            "index" : "2" ,
+            "type" : "700050" ,
+            "data" : "20070711131808" ,
+            "permission" : "1110" ,
+            "ttl" : "+86400" ,
+            "timestamp" : "Wed Jul 11 20:40:04 BST 2007" ,
+            "reference"  : []
+        } ,
+        {
+            "index" : "100" ,
+            "type" : "HS_ADMIN" ,
+           "data" : {
+                "adminRef" : "hdl:10.1038/nature05932#index=100" ,
+                "adminPermission" : "101110101111" ,
+            } ,
+            "permission" : "1110" ,
+            "ttl" : "+86400" ,
+            "timestamp" : "Wed Jun 20 18:14:42 BST 2007" ,
+            "reference"  : []
+        }
+
+    ]
+}
+unexpected end of string while parsing JSON string, at character offset 965 [" ,\n            "per..."] at handle.pl line 8
 }}}
