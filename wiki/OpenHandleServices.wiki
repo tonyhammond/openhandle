@@ -2,9 +2,9 @@
 
 == OpenHandle Services ==
 
-Should manage OpenHandle services with a handle (obviously). Will aim to register for now under the following handle:
+Registered OpenHandle services are managed with a handle (obviously):
 
- * hdl:10100/openhandle
+ * [http://nascent.nature.com/openhandle/handle?id=10100/openhandle&format=json&&mimetype=text/plain hdl:10100/openhandle]
 
 At the moment there is only one known OpenHandle service:
 
@@ -17,4 +17,3 @@ Another consideration would be to emit an HTTP header from the OpenHandle servic
 {{{
 % curl -I http://hdl.handle.net/10100/openhandle | grep ...
 }}}
-
