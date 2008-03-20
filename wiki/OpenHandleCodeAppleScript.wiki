@@ -12,7 +12,8 @@ property openhandle : "http://nascent.nature.com/openhandle/handle"
 set the_url to openhandle & "?id=10100/nature&format=json&compact"
 set handle to do shell script "curl " & quoted form of the_url
 
-display dialog handle}}}
+display dialog handle
+}}}
 
 And running this gives:
 
