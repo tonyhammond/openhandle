@@ -13,9 +13,9 @@ require 'rubygems'    # if "json" lib installed as gem
 require 'json'
 require 'open-uri'
 
-OPENHANDLE_SERVICE = "http://nascent.nature.com/openhandle/handle"
+OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
 
-uri = URI.parse("#{OPENHANDLE_SERVICE}?id=#{ARGV[0]}&format=json")
+uri = URI.parse("#{OPENHANDLE}?id=#{ARGV[0]}&format=json")
 
 p JSON.parse(uri.open.read)
 }}}
@@ -45,58 +45,110 @@ http://openhandle.googlecode.com/", "handleValues"=>[{"reference"=>{"referenceLi
 "adminRef"=>"<info:hdl/10.1038/nature05392#index=100/>"}}]}
 }}}
 
-Or, with some attempt at pretty printing we might have this:
+Or, as an attempt at pretty printing we might turn this back into JSON *from* the Ruby code using `JSON.pretty_geneerate`. (I can't seem to find a suitable Ruby pretty printing method to give me back a 'prettified' literal notation.)
 {{{
 % cat handler.rb
 require 'rubygems'   # if "json" lib installed as gem
 require 'json'
 require 'open-uri'
 
-OPENHANDLE_SERVICE = "http://nascent.nature.com/openhandle/handle"
+OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
 
-uri = URI.parse("#{OPENHANDLE_SERVICE}?id=#{ARGV[0]}&format=json")
+uri = URI.parse("#{OPENHANDLE}?id=#{ARGV[0]}&format=json")
 
 h = JSON.parse(uri.open.read)
-puts "\"handle\" => #{h['handle'].inspect}"
-puts "\"handleValues\" => ["; puts
-h['handleValues'].each do |value|
-  value.each do |key, val|
-    puts "    #{key.inspect} => #{val.inspect}"
-  end
-  puts
-end
-puts "]"
+puts JSON.pretty_generate(h)
 }}}
 
  
 {{{
 % ruby handler.rb 10.1038/nature05932
-"handle" => "<info:hdl/10.1038/nature05932>"
-"handleValues" => [
+{
+  "handle": "<info:hdl\/10.1038\/nature05932>",
+  "comment": "OpenHandle (JSON) - see http:\/\/openhandle.googlecode.com\/",
+  "handleValues": [
+    {
+      "reference": {
+        "referenceList": [
 
-    "reference" => {"referenceList"=>[], "referenceCount"=>"0"}
-    "timestamp" => "Wed Jun 20 18:14:42 BST 2007"
-    "ttl" => {"ttlType"=>"0", "ttlValue"=>"86400"}
-    "permission" => {"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}
-    "type" => "URL"
-    "index" => "1"
-    "data" => "<http://www.nature.com/doifinder/10.1038/nature05932>"
+        ],
+        "referenceCount": "0"
+      },
+      "timestamp": "Wed Jun 20 18:14:42 BST 2007",
+      "ttl": {
+        "ttlType": "0",
+        "ttlValue": "86400"
+      },
+      "permission": {
+        "publicWrite": "false",
+        "adminWrite": "true",
+        "adminRead": "true",
+        "publicRead": "true"
+      },
+      "type": "URL",
+      "index": "1",
+      "data": "<http:\/\/www.nature.com\/doifinder\/10.1038\/nature05932>"
+    },
+    {
+      "reference": {
+        "referenceList": [
 
-    "reference" => {"referenceList"=>[], "referenceCount"=>"0"}
-    "timestamp" => "Wed Jul 11 20:40:04 BST 2007"
-    "ttl" => {"ttlType"=>"0", "ttlValue"=>"86400"}
-    "permission" => {"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}
-    "type" => "700050"
-    "index" => "2"
-    "data" => "20070711131808"
+        ],
+        "referenceCount": "0"
+      },
+      "timestamp": "Wed Jul 11 20:40:04 BST 2007",
+      "ttl": {
+        "ttlType": "0",
+        "ttlValue": "86400"
+      },
+      "permission": {
+        "publicWrite": "false",
+        "adminWrite": "true",
+        "adminRead": "true",
+        "publicRead": "true"
+      },
+      "type": "700050",
+      "index": "2",
+      "data": "20070711131808"
+    },
+    {
+      "reference": {
+        "referenceList": [
 
-    "reference" => {"referenceList"=>[], "referenceCount"=>"0"}
-    "timestamp" => "Wed Jun 20 18:14:42 BST 2007"
-    "ttl" => {"ttlType"=>"0", "ttlValue"=>"86400"}
-    "permission" => {"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}
-    "type" => "HS_ADMIN"
-    "index" => "100"
-    "data" => {"adminPermission"=>{"removeAdmin"=>"true", "modifyValue"=>"true", "deleteNa"=>"false", "addHandle"=>"false", "removeValue"=>"true", "listHandles"=>"true", "addAdmin"=>"true", "deleteHandle"=>"true", "addValue"=>"true", "addNa"=>"false", "readValue"=>"true", "modifyAdmin"=>"true"}, "adminRef"=>"<info:hdl/10.1038/nature05932#index=100/>"}
-
-]
+        ],
+        "referenceCount": "0"
+      },
+      "timestamp": "Wed Jun 20 18:14:42 BST 2007",
+      "ttl": {
+        "ttlType": "0",
+        "ttlValue": "86400"
+      },
+      "permission": {
+        "publicWrite": "false",
+        "adminWrite": "true",
+        "adminRead": "true",
+        "publicRead": "true"
+      },
+      "type": "HS_ADMIN",
+      "index": "100",
+      "data": {
+        "adminPermission": {
+          "removeAdmin": "true",
+          "modifyValue": "true",
+          "deleteNa": "false",
+          "addHandle": "false",
+          "removeValue": "true",
+          "listHandles": "true",
+          "addAdmin": "true",
+          "deleteHandle": "true",
+          "addValue": "true",
+          "addNa": "false",
+          "readValue": "true",
+          "modifyAdmin": "true"
+        },
+        "adminRef": "<info:hdl\/10.1038\/nature05932#index=100\/>"
+      }
+    }
+  ]
+}
 }}}
