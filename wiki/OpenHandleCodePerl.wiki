@@ -13,7 +13,7 @@ use JSON;
 
 $OPENHANDLE = "http://nascent.nature.com/openhandle/handle";
 
-$json = get($OPENHANDLE . "?id=$ARGV[0]&format=json&compact");
+$json = get($OPENHANDLE . "?id=$ARGV[0]&format=json");
 $data = from_json($json);
 print Dumper($data);
 
