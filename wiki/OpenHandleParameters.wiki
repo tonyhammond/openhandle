@@ -15,6 +15,7 @@ Recognized parameters are:
   * `type` = handle value type (e.g. `type=URL`)
   * `format` = `rdf` | `n3` | `json`
   * `mimetype` = mime type for overriding default mime type
+  * `compact` = `true` | `false`
   * `include` = `datatypes` (*not* implemented yet)
 
 == Examples ==
