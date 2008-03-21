@@ -9,13 +9,20 @@ Here's how a native Apple**Script program (contained in file "`handler.scpt`") c
 % cat handler.scpt
 property openhandle : "http://nascent.nature.com/openhandle/handle"
 
-set the_url to openhandle & "?id=10100/nature&format=json&compact"
-set handle to do shell script "curl " & quoted form of the_url
+try
+    set result to display dialog "Enter handle" default answer "10100/nature"
+    set handle to text returned of result
+on error
+    set handle to "10100/nature"
+end try
+
+set the_url to openhandle & "?id=" & handle & "&format=json&compact"
+set json to do shell script "curl " & quoted form of the_url
 
 try
-    display dialog handle
+    display dialog json
 on error
-    handle
+    json
 end try
 }}}
 
