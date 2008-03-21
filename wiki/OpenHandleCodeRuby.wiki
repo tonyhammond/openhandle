@@ -26,7 +26,8 @@ which can be run as
 % ruby handler.rb 10.1038/nature05392
 {"handle"=>"hdl:10.1038/nature05932", "comment"=>"OpenHandle (JSON) - see
 http://openhandle.googlecode.com/", "handleValues"=>[{"reference"=>[],
-"timestamp"=>"Wed Jun 20 18:14:42 BST 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"URL", "index"=>"1",
+"timestamp"=>"Wed Jun 20 18:14:42 BST 2007", "ttl"=>"+86400",
+"permission"=>"1110", "type"=>"URL", "index"=>"1",
 "data"=>"http://www.nature.com/doifinder/10.1038/nature05932"},
 {"reference"=>[], "timestamp"=>"Wed Jul 11 20:40:04 BST 2007", "ttl"=>"+86400",
 "permission"=>"1110", "type"=>"700050", "index"=>"2", "data"=>"20070711131808"},
