@@ -24,26 +24,15 @@ which can be run as
 
 {{{
 % ruby handler.rb 10.1038/nature05392
-{"handle"=>"<info:hdl/10.1038/nature05392>", "comment"=>"OpenHandle (JSON) - see
-http://openhandle.googlecode.com/", "handleValues"=>[{"reference"=>{"referenceList"=>[],
-"referenceCount"=>"0"}, "timestamp"=>"Wed Jan 10 18:08:30 GMT 2007",
-"ttl"=>{"ttlType"=>"0", "ttlValue"=>"86400"}, "permission"=>{"publicWrite"=>"false",
-"adminWrite"=>"true", "adminRead"=>"true", "publicRead"=>"true"}, "type"=>"URL",
-"index"=>"1", "data"=>"<http://www.nature.com/doifinder/10.1038/nature05392>"},
-{"reference"=>{"referenceList"=>[], "referenceCount"=>"0"}, "timestamp"=>"Wed Jan 10
-18:08:30 GMT 2007", "ttl"=>{"ttlType"=>"0", "ttlValue"=>"86400"},
-"permission"=>{"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true",
-"publicRead"=>"true"}, "type"=>"700050", "index"=>"2", "data"=>"20070110130704"},
-{"reference"=>{"referenceList"=>[], "referenceCount"=>"0"}, "timestamp"=>"Wed Jan 10
-18:08:30 GMT 2007", "ttl"=>{"ttlType"=>"0", "ttlValue"=>"86400"},
-"permission"=>{"publicWrite"=>"false", "adminWrite"=>"true", "adminRead"=>"true",
-"publicRead"=>"true"}, "type"=>"HS_ADMIN", "index"=>"100",
-"data"=>{"adminPermission"=>{"removeAdmin"=>"true", "modifyValue"=>"true",
-"deleteNa"=>"false", "addHandle"=>"false", "removeValue"=>"true", "listHandles"=>"true",
-"addAdmin"=>"true", "deleteHandle"=>"true", "addValue"=>"true", "addNa"=>"false",
-"readValue"=>"true", "modifyAdmin"=>"true"},
-"adminRef"=>"<info:hdl/10.1038/nature05392#index=100/>"}}]}
-}}}
+{"handle"=>"hdl:10.1038/nature05932", "comment"=>"OpenHandle (JSON) - see http://openhandle.googlecode.com/", "handleValues"=>[{"reference"=>[], "timestamp"=>"Wed
+Jun 20 18:14:42 BST 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"URL",
+"index"=>"1", "data"=>"http://www.nature.com/doifinder/10.1038/nature05932"},
+{"reference"=>[], "timestamp"=>"Wed Jul 11 20:40:04 BST 2007", "ttl"=>"+86400",
+"permission"=>"1110", "type"=>"700050", "index"=>"2", "data"=>"20070711131808"},
+{"reference"=>[], "timestamp"=>"Wed Jun 20 18:14:42 BST 2007", "ttl"=>"+86400",
+"permission"=>"1110", "type"=>"HS_ADMIN", "index"=>"100",
+"data"=>{"adminPermission"=>"101110101111",
+"adminRef"=>"hdl:10.1038/nature05932?index=100"}}]}
 
 Or, as an attempt at pretty printing we might turn this back into JSON *from* the instantiated Ruby data structure using `JSON.pretty_generate`. (I can't seem to find a suitable Ruby pretty printing method to give me back a 'prettified' literal notation.)
 {{{
@@ -64,89 +53,43 @@ puts JSON.pretty_generate(h)
 {{{
 % ruby handler.rb 10.1038/nature05932
 {
-  "handle": "<info:hdl\/10.1038\/nature05932>",
+  "handle": "hdl:10.1038\/nature05932",
   "comment": "OpenHandle (JSON) - see http:\/\/openhandle.googlecode.com\/",
   "handleValues": [
     {
-      "reference": {
-        "referenceList": [
+      "reference": [
 
-        ],
-        "referenceCount": "0"
-      },
+      ],
       "timestamp": "Wed Jun 20 18:14:42 BST 2007",
-      "ttl": {
-        "ttlType": "0",
-        "ttlValue": "86400"
-      },
-      "permission": {
-        "publicWrite": "false",
-        "adminWrite": "true",
-        "adminRead": "true",
-        "publicRead": "true"
-      },
+      "ttl": "+86400",
+      "permission": "1110",
       "type": "URL",
       "index": "1",
-      "data": "<http:\/\/www.nature.com\/doifinder\/10.1038\/nature05932>"
+      "data": "http:\/\/www.nature.com\/doifinder\/10.1038\/nature05932"
     },
     {
-      "reference": {
-        "referenceList": [
+      "reference": [
 
-        ],
-        "referenceCount": "0"
-      },
+      ],
       "timestamp": "Wed Jul 11 20:40:04 BST 2007",
-      "ttl": {
-        "ttlType": "0",
-        "ttlValue": "86400"
-      },
-      "permission": {
-        "publicWrite": "false",
-        "adminWrite": "true",
-        "adminRead": "true",
-        "publicRead": "true"
-      },
+      "ttl": "+86400",
+      "permission": "1110",
       "type": "700050",
       "index": "2",
       "data": "20070711131808"
     },
     {
-      "reference": {
-        "referenceList": [
+      "reference": [
 
-        ],
-        "referenceCount": "0"
-      },
+      ],
       "timestamp": "Wed Jun 20 18:14:42 BST 2007",
-      "ttl": {
-        "ttlType": "0",
-        "ttlValue": "86400"
-      },
-      "permission": {
-        "publicWrite": "false",
-        "adminWrite": "true",
-        "adminRead": "true",
-        "publicRead": "true"
-      },
+      "ttl": "+86400",
+      "permission": "1110",
       "type": "HS_ADMIN",
       "index": "100",
       "data": {
-        "adminPermission": {
-          "removeAdmin": "true",
-          "modifyValue": "true",
-          "deleteNa": "false",
-          "addHandle": "false",
-          "removeValue": "true",
-          "listHandles": "true",
-          "addAdmin": "true",
-          "deleteHandle": "true",
-          "addValue": "true",
-          "addNa": "false",
-          "readValue": "true",
-          "modifyAdmin": "true"
-        },
-        "adminRef": "<info:hdl\/10.1038\/nature05932#index=100\/>"
+        "adminPermission": "101110101111",
+        "adminRef": "hdl:10.1038\/nature05932?index=100"
       }
     }
   ]
