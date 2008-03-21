@@ -35,8 +35,9 @@ http://openhandle.googlecode.com/", "handleValues"=>[{"reference"=>[],
 "permission"=>"1110", "type"=>"HS_ADMIN", "index"=>"100",
 "data"=>{"adminPermission"=>"101110101111",
 "adminRef"=>"hdl:10.1038/nature05932?index=100"}}]}
+}}}
 
-Or, as an attempt at pretty printing we might turn this back into JSON *from* the instantiated Ruby data structure using `JSON.pretty_generate`. (I can't seem to find a suitable Ruby pretty printing method to give me back a prettified literal notation.)
+Or, as an attempt at pretty printing we might turn this back into JSON *from* the instantiated Ruby data structure using `JSON.pretty_generate`. (I can't seem to find a suitable Ruby pretty printing method to give me back a 'prettified' literal notation.)
 {{{
 % cat handler.rb
 require 'rubygems'   # only if "json" lib installed as gem
