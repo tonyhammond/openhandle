@@ -1,4 +1,3 @@
-#*
 ########################################################################
 ##  OpenHandle - Velocity Template for JSON Serialization of Handle
 ##
@@ -8,32 +7,77 @@
 ##  Handle System, see [3].
 ##
 ##  Author: Tony Hammond <t.hammond@nature.com>
-##  Date:   2008-03-16T12:00:00Z
+##  Date:   2008-03-21T12:00:00Z
 ##
 ##  ==
 ##  [1] http://openhandle.googlecode.com/
 ##  [2] http://www.ietf.org/rfc/rfc3651.txt
 ##  [3] http://wwww.handle.net/
 ########################################################################
-*##set ($this = $request.getAttribute("id"))
+#set ($this = $request.getAttribute("id"))
+#if ($request.getParameter("compact"))
+#if ($request.getParameter("compact") == "false")
+#else
+#set ($compact = $request.getParameter("compact"))
+#end
+#else
+#set ($compact = "true")
+#end
 {
     "comment" : "OpenHandle (JSON) - see http://openhandle.googlecode.com/" ,
-
-    "handle" : "<info:hdl/${this.handle}>" ,
+    "handle" : "hdl:${this.handle}" ,
     "handleValues" : [
 #foreach ($value in $this.values)
+########################################################################
+## Handle Value (Begin)
+########################################################################
         {
+########################################################################
+## Handle Value Field - Index
+########################################################################
             "index" : "${value.index}" ,
+########################################################################
+## Handle Value Field - Type
+########################################################################
             "type" : "${value.type}" ,
+########################################################################
+## Handle Value Field - Data
+########################################################################
 #if (!$value.type.binary)
 #if (${value.type} == "URL")
-            "data" : "<${value.data}>" ,
+            "data" : "${value.data}" ,
 #else
             "data" : "${value.data}" ,
 #end
 #elseif ($value.type.admin)
+########################################################################
+## Handle Value Field - Data (HS_ADMIN)
+########################################################################
+#if ($compact)
+#foreach ($permission in $value.admin.permissions.entrySet())
+#if ($permission.key == "readValue")#if (${permission.value}) #set ($readValue = "1")#else #set ($readValue = "0") #end#end
+#if ($permission.key == "addNa")#if (${permission.value}) #set ($addNa = "1")#else #set ($addNa = "0") #end#end
+#if ($permission.key == "deleteHandle")#if (${permission.value}) #set ($deleteHandle = "1")#else #set ($deleteHandle = "0") #end#end
+#if ($permission.key == "addAdmin")#if (${permission.value}) #set ($addAdmin = "1")#else #set ($addAdmin = "0") #end#end
+#if ($permission.key == "removeValue")#if (${permission.value}) #set ($removeValue = "1")#else #set ($removeValue = "0") #end#end
+#if ($permission.key == "deleteNa")#if (${permission.value}) #set ($deleteNa = "1")#else #set ($deleteNa = "0") #end#end
+#if ($permission.key == "addValue")#if (${permission.value}) #set ($addValue = "1")#else #set ($addValue = "0") #end#end
+#if ($permission.key == "addHandle")#if (${permission.value}) #set ($addHandle = "1")#else #set ($addHandle = "0") #end#end
+#if ($permission.key == "listHandles")#if (${permission.value}) #set ($listHandles = "1")#else #set ($listHandles = "0") #end#end
+#if ($permission.key == "removeAdmin")#if (${permission.value}) #set ($removeAdmin = "1")#else #set ($removeAdmin = "0") #end#end
+#if ($permission.key == "modifyValue")#if (${permission.value}) #set ($modifyValue = "1")#else #set ($modifyValue = "0") #end#end
+#if ($permission.key == "modifyAdmin")#if (${permission.value}) #set ($modifyAdmin = "1")#else #set ($modifyAdmin = "0") #end#end
+#end
+        "data" : {
+                "adminRef" : "hdl:${this.handle}?index=${value.index}" ,
+                "adminPermission" : "${readValue}${addNa}${deleteHandle}${addAdmin}${removeValue}${deleteNa}${addValue}${addHandle}${listHandles}${removeAdmin}${modifyValue}${modifyAdmin}"
+            } ,
+#else
             "data" : {
-                "adminRef" : "<info:hdl/${this.handle}#index=${value.index}/>" ,
+                "adminRef" : {
+                    "handle" : "hdl:${this.handle}" ,
+                    "handleValueIndex" : "${value.index}"
+                } ,
                 "adminPermission" : {
 #foreach ($permission in $value.admin.permissions.entrySet())
 #if ($velocityCount.equals($value.admin.permissions.entrySet().size()))
@@ -44,7 +88,11 @@
 #end
                  }
             } ,
+#end
 #elseif ($value.type.site)
+########################################################################
+## Handle Value Field - Data (HS_SITE)
+########################################################################
             "data" : {
                 "version" : "${value.site.dataFormatVersion}" ,
                 "protocolVersion" : {
@@ -101,45 +149,118 @@
 #end
                 ]
             } ,
-#elseif ($value.type.service)
+#elseif ($value.type.na_delegate)
+########################################################################
+## Handle Value Field - Data (HS_NA_DELEGATE)
+########################################################################
             "data" : {
             } ,
-#elseif ($value.type.primary)
+#elseif ($value.type.service)
+########################################################################
+## Handle Value Field - Data (HS_SERV)
+########################################################################
             "data" : {
             } ,
 #elseif ($value.type.alias)
+########################################################################
+## Handle Value Field - Data (HS_ALIAS)
+########################################################################
+            "data" : {
+            } ,
+#elseif ($value.type.primary)
+########################################################################
+## Handle Value Field - Data (HS_PRIMARY)
+########################################################################
             "data" : {
             } ,
 #elseif ($value.type.valueReferenceList)
+########################################################################
+## Handle Value Field - Data (HS_VLIST)
+########################################################################
             "data" : {
             } ,
 #end
+########################################################################
+## Handle Value Field - Permission
+########################################################################
+#if ($compact)
+#if (${value.permissions.adminRead}) #set ($adminRead = "1")#else #set ($adminRead = "0") #end
+#if (${value.permissions.adminWrite}) #set ($adminWrite = "1")#else #set ($adminWrite = "0") #end
+#if (${value.permissions.publicRead}) #set ($publicRead = "1")#else #set ($publicRead = "0") #end
+#if (${value.permissions.publicWrite}) #set ($publicWrite = "1")#else #set ($publicWrite = "0") #end
+           "permission" : "${adminRead}${adminWrite}${publicRead}${publicWrite}" ,
+#else
             "permission" : {
                 "adminRead" : "${value.permissions.adminRead}" ,
                 "adminWrite" : "${value.permissions.adminWrite}" ,
                 "publicRead" : "${value.permissions.publicRead}" ,
                 "publicWrite" : "${value.permissions.publicWrite}"
             } ,
+#end
+########################################################################
+## Handle Value Field - TTL
+########################################################################
+#if ($compact)
+#if ($value.ttlType == "0") #set ($ttlType = "+") #else #set ($ttlType = "") #end
+#set ($ttlValue = ${value.ttl})
+           "ttl" : "${ttlType}${ttlValue}" ,
+#else
             "ttl" : {
                 "ttlType" : "${value.ttlType}" ,
                 "ttlValue" : "${value.ttl}"
             } ,
+#end
+########################################################################
+## Handle Value Field - Timestamp
+########################################################################
+#if ($compact)
             "timestamp" : "${value.timestamp}" ,
+#else
+            "timestamp" : "${value.timestamp}" ,
+#end
+########################################################################
+## Handle Value Field - Reference
+########################################################################
+#if ($compact)
+            "reference"  : [##
+#foreach ($reference in $value.valueReferences)
+#if ($velocityCount < $value.valueReferences.size())
+hdl:${reference.handle}?index=${reference.index}/ ,
+#else
+hdl:${reference.handle}?index=${reference.index}/
+#end
+#end
+]
+        }#if(!($velocityCount.equals($this.values.size()))) ,#end
+
+#else
             "reference"  : {
                 "referenceCount" : "${value.references.size()}" ,
                 "referenceList" : [
 #foreach ($reference in $value.valueReferences)
 #if ($velocityCount < $value.valueReferences.size())
-                    <info:hdl/${reference.handle}#index=${reference.index}/> ,
+                    {
+                        "handle" : "hdl:${this.handle}" ,
+                        "handleValueIndex" : "${value.index}"
+                    } ,
 #else
-                    <info:hdl/${reference.handle}#index=${reference.index}/>
+                    {
+                        "handle" : "hdl:${this.handle}" ,
+                        "handleValueIndex" : "${value.index}"
+                    }
 #end
 #end
                 ]
             }
         }#if(!($velocityCount.equals($this.values.size()))) ,#end
+########################################################################
+## Handle Value (End)
+########################################################################
 
 #end
-
+#end
     ]
 }
+########################################################################
+## EOF
+########################################################################
