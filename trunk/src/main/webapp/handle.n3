@@ -25,11 +25,11 @@
 #end
 # OpenHandle (RDF/N3) - see http://openhandle.googlecode.com/
 
-@prefix h: <http://hdl.handle.net/10100/handle.rdfs#>
+@prefix h: <http://hdl.handle.net/10100/handle.rdfs#> .
 @prefix r: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
  
-<hdl:${this.handle}> a :Handle ;
-    :handleValues  (
+<hdl:${this.handle}> a h:Handle ;
+    h:handleValues  (
 #foreach ($value in $this.values)
 ########################################################################
 ## Handle Value (Begin)
