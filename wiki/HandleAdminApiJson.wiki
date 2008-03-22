@@ -4,50 +4,80 @@
 
 A simple text-based API for Handle admin could be JSON, whereby a JSON admin object is sent to a server and a JSON response received. The inspiration for this work comes from [http://freebase.com Freebase] and its associated [http://freebase.com/view/9202a8c04000641f800000000544e13e Metaweb Query Language] which allows for a JSON query/result exchange.
 
-Such a JSON request could look like the following skeleton which would be used to create a Handle using secret key authentication:
+Such a JSON request could look like the following skeleton (here using the JSON compact syntax) which would be used to create a Handle using secret key authentication:
 
 {{{
 {
     "admin" : [
         {
-            "operation" : "AUTHENTICATE"
+            "operation" : "AUTHENTICATE" ,
             "arguments" : {
                 "password" : "secret" ,
-                "handle" : "" ,
-                "values" : [
-                    {
-                        "index" : "" ,
-                     }
-                ]
+                "handle" : "321/admin" ,
+                "values" : [ { "index" : "300" } ]
             }
         } ,
         {
-            "operation" : "CREATE"
+            "operation" : "CREATE" ,
             "arguments" : {
-                "handle" : "" ,
-                "values" : [
+                "handle" : "1234/567" ,
+                "valueValues" : [
                     {
-                        "index" : "" ,
-                        "type" : "" ,
-                        "value" : {} ,
-                        "ttl" : {} ,
+                        "index" : "100" ,
+                        "type" : "HS_ADMIN" ,
+                        "data" : {
+                             "adminPermission" : "11111111111" ,
+                             "adminRef" : "hdl:0.NA/10101?index=200"
+                         } ,
+                        "ttl" : "+86400" ,
                         "timestamp" : "" ,
-                        "permission" : {} ,
-                        "reference" : {} ,
+                        "permission" : "1110" ,
+                        "reference" : []
                     } ,
                     {
-                        "index" : "" ,
-                        "type" : "" ,
-                        "value" : {} ,
-                        "ttl" : {} ,
+                        "index" : "1" ,
+                        "type" : "URL" ,
+                        "data" : "http://apple.com/" ,
+                        "ttl" : "+86400" ,
                         "timestamp" : "" ,
-                        "permission" : {} ,
-                        "reference" : {} ,
-                    } ,
-                    ...
+                        "permission" : "1110" ,
+                        "reference" : []
+                    }
                 ] 
             }
         }
     ]
-} 
+}
+}}}
+A similar format could be used for selective resolution:
+
+{{{
+{
+    "resolve" : {
+        "handle" : "hdl:10100/tony" ,
+        "values" : [
+            {
+                "index" : "100" ,
+                "type" : "HS_ADMIN" ,
+                "data" : {
+                    "adminPermission" : "11111111111" ,
+                    "adminRef" : "hdl:0.NA?10101#index=200"
+                 } ,
+                 "ttl" : "+86400" ,
+                 "timestamp" : "" ,
+                 "permission" : "1110" ,
+                 "reference" : []
+            } ,
+            {
+                "index" : "1" ,
+                "type" : "URL" ,
+                "data" : "<http://apple.com/>" ,
+                "ttl" : "+86400" ,
+                "timestamp" : "" ,
+                "permission" : "1110" ,
+                "reference" : []
+            }
+        ] 
+    }
+}
 }}}
