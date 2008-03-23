@@ -66,3 +66,25 @@ or can be run interactively which gives:
 }}}
 
 || http://nurture.nature.com/tony/imx/openhandle_scpt.jpg || http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg ||
+
+Alternatively to read Handle as JSON text into TextEdit one can do this:
+{{{
+% cat handler.scpt
+property openhandle : "http://nascent.nature.com/openhandle/handle"
+
+try
+    set result to display dialog "Enter handle" default answer "10100/nature"
+    set handle to text returned of result
+on error
+    set handle to "10100/nature"
+end try
+
+set the_url to openhandle & "?id=" & handle & "&format=json&compact"
+set json to do shell script "curl " & quoted form of the_url
+
+tell application "TextEdit"
+    activate
+    make new document at the front
+    set text of the front document to json
+end tell
+}}}
