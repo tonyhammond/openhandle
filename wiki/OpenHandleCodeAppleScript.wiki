@@ -7,58 +7,47 @@ Here's how a native Apple**Script program (contained in file "`handler.scpt`") c
 
 {{{
 % cat handler.scpt
+(*
+    AppleScript to get OpenHandle Result
+*)
+
 property openhandle : "http://nascent.nature.com/openhandle/handle"
+property default_handle : "10100/nature"
 
-try
-    set result to display dialog "Enter handle" default answer "10100/nature"
-    set handle to text returned of result
-on error
-    set handle to "10100/nature"
-end try
+on run argv
+	try
+		-- run interactively with "Script Editor"
+		set result to display dialog "Enter handle" default answer default_handle
+		set handle to text returned of result
+	on error
+		-- run in batch mode with "osascript"
+		try
+			set handle to item 1 of argv
+		on error
+			set handle to default_handle
+		end try
+	end try
+	getHandle(handle)
+end run
 
-set the_url to openhandle & "?id=" & handle & "&format=json&compact"
-set json to do shell script "curl " & quoted form of the_url
-
-try
-    display dialog json
-on error
-    json
-end try
+on getHandle(handle)
+	
+	set the_url to openhandle & "?id=" & handle & "&format=json"
+	set json to do shell script "curl " & quoted form of the_url
+	
+	tell application "TextEdit"
+		activate
+		make new document at the front
+		set text of the front document to json
+	end tell
+	
+end getHandle
 }}}
 
 And this can be run as:
 {{{
-% osascript handler.scpt
-{
-    "comment" : "OpenHandle (JSON) - see http://openhandle.googlecode.com/" ,
-    "handle" : "hdl:10100/nature" ,
-    "handleValues" : [
-        {
-            "index" : "100" ,
-            "type" : "HS_ADMIN" ,
-        "data" : {
-                "adminRef" : "hdl:10100/nature#index=100" ,
-                "adminPermission" : "111111111111" ,
-            } ,
-            "permission" : "1110" ,
-            "ttl" : "+86400" ,
-            "timestamp" : "Wed Feb 28 15:37:06 GMT 2007" ,
-            "reference"  : []
-        } ,
-        {
-            "index" : "1" ,
-            "type" : "URL" ,
-            "data" : "http://www.nature.com/" ,
-            "permission" : "1110" ,
-            "ttl" : "+86400" ,
-            "timestamp" : "Wed Feb 28 15:37:06 GMT 2007" ,
-            "reference"  : []
-        }
-
-    ]
-}
+% osascript handler.scpt <handle>
 }}}
-
 
 or can be run interactively which gives:
 {{{
@@ -67,27 +56,3 @@ or can be run interactively which gives:
 
 
 || http://nurture.nature.com/tony/imx/openhandle_scpt.jpg || http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg ||
-
-Alternatively to read Handle as JSON text into TextEdit one can do this:
-{{{
-% cat handler.scpt
-property openhandle : "http://nascent.nature.com/openhandle/handle"
-
-try
-    set result to display dialog "Enter handle" default answer "10100/nature"
-    set handle to text returned of result
-on error
-    set handle to "10100/nature"
-end try
-
-set the_url to openhandle & "?id=" & handle & "&format=json&compact"
-set json to do shell script "curl " & quoted form of the_url
-
-tell application "TextEdit"
-    activate
-    set text of the front document to json
-end tell
-}}}
-
-
-http://nurture.nature.com/tony/imx/openhandle_textedit_scpt.jpg
