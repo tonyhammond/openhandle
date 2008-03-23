@@ -65,7 +65,7 @@ or can be run interactively which gives:
 % open handler.scpt
 }}}
 
-|| http://nurture.nature.com/tony/imx/openhandle_scpt.jpg || http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg ||
+http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg
 
 Alternatively to read Handle as JSON text into TextEdit one can do this:
 {{{
@@ -88,3 +88,6 @@ tell application "TextEdit"
     set text of the front document to json
 end tell
 }}}
+
+
+http://nurture.nature.com/tony/imx/openhandle_textedit_scpt.jpg
