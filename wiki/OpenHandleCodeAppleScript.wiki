@@ -44,9 +44,9 @@ on getHandle(handle)
 end getHandle
 }}}
 
-And this can be run as
+And this can be run (with optional Handle argument) as
 {{{
-% osascript handler.scpt <handle>
+% osascript handler.scpt [handle]
 }}}
 which gives:
 
@@ -56,5 +56,7 @@ Alternatively it can be run interactively by opening from the Finder (or from wi
 {{{
 % open handler.scpt
 }}}
+
+http://nurture.nature.com/tony/imx/openhandle_scpt.jpg 
 
 The Script Editor will prompt for the Handle to lookup.
