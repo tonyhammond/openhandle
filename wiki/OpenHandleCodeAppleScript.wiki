@@ -84,7 +84,6 @@ set json to do shell script "curl " & quoted form of the_url
 
 tell application "TextEdit"
     activate
-    make new document at the front
     set text of the front document to json
 end tell
 }}}
