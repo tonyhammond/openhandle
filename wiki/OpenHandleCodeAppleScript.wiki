@@ -55,4 +55,4 @@ or can be run interactively which gives:
 }}}
 
 
-|| http://nurture.nature.com/tony/imx/openhandle_scpt.jpg || http://nurture.nature.com/tony/imx/openhandle_from_scpt.jpg ||
+|| http://nurture.nature.com/tony/imx/openhandle_scpt.jpg || http://nurture.nature.com/tony/imx/openhandle_textedit_scpt.jpg ||
