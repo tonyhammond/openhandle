@@ -44,15 +44,17 @@ on getHandle(handle)
 end getHandle
 }}}
 
-And this can be run as:
+And this can be run as
 {{{
 % osascript handler.scpt <handle>
 }}}
+which gives:
 
-or can be run interactively which gives:
+http://nurture.nature.com/tony/imx/openhandle_textedit_scpt.jpg 
+
+Alternatively it can be run interactively by opening from the Finder (or from within the Script Editor itself) or by issuing this command:
 {{{
 % open handler.scpt
 }}}
 
-
-|| http://nurture.nature.com/tony/imx/openhandle_scpt.jpg || http://nurture.nature.com/tony/imx/openhandle_textedit_scpt.jpg ||
+The Script Editor will prompt for the Handle to lookup.
