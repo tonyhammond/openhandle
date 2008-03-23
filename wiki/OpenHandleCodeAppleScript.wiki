@@ -12,19 +12,19 @@ Here's how a native Apple**Script program (contained in file "`handler.scpt`") c
 *)
 
 property openhandle : "http://nascent.nature.com/openhandle/handle"
-property default_handle : "10100/nature"
+property my_handle : "10100/nature"
 
 on run argv
 	try
 		-- run interactively with "Script Editor"
-		set result to display dialog "Enter handle" default answer default_handle
+		set result to display dialog "Enter handle" default answer my_handle
 		set handle to text returned of result
 	on error
 		-- run in batch mode with "osascript"
 		try
 			set handle to item 1 of argv
 		on error
-			set handle to default_handle
+			set handle to my_handle
 		end try
 	end try
 	getHandle(handle)
@@ -52,7 +52,7 @@ which gives:
 
 http://nurture.nature.com/tony/imx/openhandle_textedit_scpt.jpg 
 
-Alternatively it can be run interactively by opening from the Finder (or from within the Script Editor itself) or by issuing this command:
+Alternatively it can be run interactively by opening from the Finder (or from within the Script Editor itself) or by launching from the command line as:
 {{{
 % open handler.scpt
 }}}
@@ -60,3 +60,5 @@ Alternatively it can be run interactively by opening from the Finder (or from wi
 http://nurture.nature.com/tony/imx/openhandle_scpt.jpg 
 
 The Script Editor will prompt for the Handle to lookup.
+
+Note that as no JSON parsers seems to exist for AppleScript one can choose to filter the JSON through a script handler (e.g. Perl, Ruby, etc.) or to attempt simple text parsing from within AppleScript.
