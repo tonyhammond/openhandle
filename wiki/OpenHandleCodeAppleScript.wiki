@@ -61,4 +61,4 @@ http://nurture.nature.com/tony/imx/openhandle_scpt.jpg
 
 The Script Editor will prompt for the Handle to lookup.
 
-Note that as no JSON parsers seems to exist for AppleScript one can choose to filter the JSON through a script handler (e.g. Perl, Ruby, etc.) or to attempt simple text parsing from within AppleScript.
+Note that as no JSON parsers seems to exist for Apple**Script one can choose to filter the JSON through a script handler (e.g. Perl, Ruby, etc.) or to attempt simple text parsing from within Apple**Script.
