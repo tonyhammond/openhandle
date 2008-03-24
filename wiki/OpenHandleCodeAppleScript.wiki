@@ -1,4 +1,4 @@
-#summary AppleScript ocde examples for OpenHandle
+#summary AppleScript code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Apple**Script Code Examples ==
