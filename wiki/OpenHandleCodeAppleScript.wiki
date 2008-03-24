@@ -77,9 +77,9 @@ does the job sufficiently. JSON is more or less the same as Apple**Script record
  * Newlines are not tolerated (remove or replace by option return)
  * Lists are delimited by '{}' rather than '[]'
 
-So, the *string* returned from the above filter is in Apple**Script record format, but ...
+So, the *string* returned from the above filter is in Apple**Script *record* format, but ...
 
-But there is a real problem coercing an Apple**Script string to record format. This seems to be due to some arcane management of text, strings - internationalized and styled. It i snot clear if there is a simple means of achieving this.
+But there is a real problem in coercing an Apple**Script string to record format. This seems to be due to some arcane management of text, strings - internationalized and styled. It is not clear if there is a simple means of achieving this.
 
 One possible workaround could be to use the script to write out a new script and execute that. For example, if the `getHandle` handler is replaced by
 
