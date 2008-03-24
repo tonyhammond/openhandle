@@ -71,7 +71,7 @@ property filter : " | perl -ne 'chomp; s/\"(\\w+)\"(\\s+:)/$1$2/; s/\\[/{/g; s/\
 set json to do shell script "curl " & quoted form of the_url & filter
 }}}
 
-does the job sufficiently. JSON is more or less the same as Apple••Script record format the main differences being:
+does the job sufficiently. JSON is more or less the same as Apple**Script record format the main differences being:
 
  * Keys should be unquoted
  * Newlines are not tolerated (remove or replace by option return)
