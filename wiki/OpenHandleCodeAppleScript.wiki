@@ -154,3 +154,5 @@ end getHandle
 }}}
 
 This results in the following:
+
+http://nurture.nature.com/tony/imx/openhandle_textedit1_scpt.jpg 
