@@ -62,3 +62,93 @@ http://nurture.nature.com/tony/imx/openhandle_scpt.jpg
 The Script Editor will prompt for the Handle to lookup.
 
 Note that as no JSON parsers seem to be available for Apple**Script one can choose to filter the JSON through a script handler (e.g. Perl, Ruby, etc.) or to attempt simple text parsing from within Apple**Script.
+
+In fact, a simple Perl filter such as 
+
+{{{
+property filter : " | perl -ne 'chomp; s/\"(\\w+)\"(\\s+:)/$1$2/; s/\\[/{/g; s/\\]/}/g;  print;'"
+...
+set json to do shell script "curl " & quoted form of the_url & filter
+}}}
+
+does the job sufficiently. JSON is more or less the same as Apple••Script record format the main differences being:
+
+ * Keys should be unquoted
+ * Newlines are not tolerated (remove or replace by option return)
+ * Lists are delimited by '{}' rather than '[]'
+
+So, the *string* returned from the above filter is in Apple••Script record format, but ...
+
+But there is a real problem coercing an Apple••Script string to record format. This seems to be due to some arcane management of text, strings - internationalized and styled. It i snot clear if there is a simple means of achieving this.
+
+One possible workaround could be to use the script to write out a new script and execute that. For example, if the `getHandle` handler is replaced by
+
+{{{
+on getHandle(handle)
+	
+	set the_url to openhandle & "?id=" & handle & "&format=json"
+	set json to do shell script "curl " & quoted form of the_url & filter
+	
+	-- here we set the record explicitly
+	set json to ¬
+		{comment:"OpenHandle (JSON) - see http://openhandle.googlecode.com/", handle:"hdl:10100/nature", handleValues:{¬
+			{index:"100", type:"HS_ADMIN", data:¬
+				{adminRef:"hdl:10100/nature?index=100", adminPermission:¬
+					"111111111111"} ¬
+					, permission:"1110", ttl:"+86400", timestamp:"Wed Feb 28 15:37:06 GMT 2007", reference:{} ¬
+				}, ¬
+			{index:"1", type:"URL", data:"http://www.nature.com/", permission:"1110", ttl:"+86400", timestamp:"Wed Feb 28 15:37:06 GMT 2007", reference:{} ¬
+				} ¬
+				} ¬
+			} ¬
+			
+	
+	set results to "The handle <" & handle of json & "> "
+	set values to handleValues of json
+	set nvalues to length of handleValues of json
+	set results to results & "has " & nvalues & " values:
+
+"
+	-- set results to results & h as text
+	
+	repeat with n from 1 to nvalues
+		
+		set this_item to item n of values
+		
+		set results to results & "value #" & n & ":
+"
+		
+		set results to results & "    index is " & index of this_item & "
+"
+		set results to results & "    type is " & type of this_item & "
+"
+		try
+			set results to results & "    data is " & data of this_item & "
+"
+		on error
+			set results to results & "    data is a " & class of data of this_item & "
+"
+		end try
+		set results to results & "    permission is " & permission of this_item & "
+"
+		set results to results & "    ttl is " & (ttl of this_item) div 3600 & " hours " & "
+"
+		set results to results & "    timestamp is " & timestamp of this_item & "
+"
+		if length of reference of this_item is 0 then
+			set results to results & "    reference is an empty " & class of reference of this_item & "
+"
+		else
+			set results to results & "    reference is a " & class of reference of this_item of h & "
+"
+		end if
+	end repeat
+
+	tell application "TextEdit"
+		activate
+		make new document at the front
+		set text of the front document to results
+	end tell
+	
+end getHandle
+}}}
