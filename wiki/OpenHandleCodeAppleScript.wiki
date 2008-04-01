@@ -15,31 +15,31 @@ property openhandle : "http://nascent.nature.com/openhandle/handle"
 property my_handle : "10100/nature"
 
 on run argv
-	try
-		-- run interactively with "Script Editor"
-		set result to display dialog "Enter handle" default answer my_handle
-		set handle to text returned of result
-	on error
-		-- run in batch mode with "osascript"
-		try
-			set handle to item 1 of argv
-		on error
-			set handle to my_handle
-		end try
-	end try
-	getHandle(handle)
+    try
+        -- run interactively with "Script Editor"
+        set result to display dialog "Enter handle" default answer my_handle
+        set handle to text returned of result
+    on error
+        -- run in batch mode with "osascript"
+        try
+            set handle to item 1 of argv
+        on error
+            set handle to my_handle
+        end try
+    end try
+    getHandle(handle)
 end run
 
 on getHandle(handle)
 	
-	set the_url to openhandle & "?id=" & handle & "&format=json"
-	set json to do shell script "curl " & quoted form of the_url
+    set the_url to openhandle & "?id=" & handle & "&format=json"
+    set json to do shell script "curl " & quoted form of the_url
 	
-	tell application "TextEdit"
-		activate
-		make new document at the front
-		set text of the front document to json
-	end tell
+    tell application "TextEdit"
+        activate
+        make new document at the front
+        set text of the front document to json
+    end tell
 	
 end getHandle
 }}}
@@ -86,63 +86,53 @@ One possible workaround could be to use the script to write out a new script and
 {{{
 on getHandle(handle)
 	
-	set the_url to openhandle & "?id=" & handle & "&format=json"
-	set json to do shell script "curl " & quoted form of the_url & filter
+    set the_url to openhandle & "?id=" & handle & "&format=json"
+    set json to do shell script "curl " & quoted form of the_url & filter
 	
-	-- here we set the record explicitly
-	set json to ¬
-		{comment:"OpenHandle (JSON) - see http://openhandle.googlecode.com/", handle:"hdl:10100/nature", handleValues:{¬
-			{index:"100", type:"HS_ADMIN", data:¬
-				{adminRef:"hdl:10100/nature?index=100", adminPermission:¬
-					"111111111111"} ¬
-					, permission:"1110", ttl:"+86400", timestamp:"Wed Feb 28 15:37:06 GMT 2007", reference:{} ¬
-				}, ¬
-			{index:"1", type:"URL", data:"http://www.nature.com/", permission:"1110", ttl:"+86400", timestamp:"Wed Feb 28 15:37:06 GMT 2007", reference:{} ¬
-				} ¬
-				} ¬
-			} ¬
+    -- here we set the record explicitly
+    set json to ¬
+        {comment:"OpenHandle (JSON) - see http://openhandle.googlecode.com/", handle:"hdl:10100/nature", handleValues:{¬
+        {index:"100", type:"HS_ADMIN", data:¬
+            {adminRef:"hdl:10100/nature?index=100", adminPermission:¬
+                "111111111111"} ¬
+            , permission:"1110", ttl:"+86400", timestamp:"Wed Feb 28 15:37:06 GMT 2007", reference:{} ¬
+        }, ¬
+        {index:"1", type:"URL", data:"http://www.nature.com/", permission:"1110", ttl:"+86400", timestamp:"Wed Feb 28 15:37:06 GMT 2007", reference:{} ¬
+            } ¬
+        } ¬
+    } ¬
 			
 	
-	set results to "The handle <" & handle of json & "> "
-	set values to handleValues of json
-	set nvalues to length of handleValues of json
-	set results to results & "has " & nvalues & " values:
+    set results to "The handle <" & handle of json & "> "
+    set values to handleValues of json
+    set nvalues to length of handleValues of json
+    set results to results & "has " & nvalues & " values:" & return & return
 
-"
-	-- set results to results & h as text
+    -- set results to results & h as text
 	
-	repeat with n from 1 to nvalues
+    repeat with n from 1 to nvalues
 		
-		set this_item to item n of values
+        set this_item to item n of values
 		
-		set results to results & "value #" & n & ":
-"
+        set results to results & "value #" & n & ":" & return
 		
-		set results to results & "    index is " & index of this_item & "
+        set results to results & "    index is " & index of this_item & return
+        set results to results & "    type is " & type of this_item & return
+        try
+            set results to results & "    data is " & data of this_item & return
+        on error
+            set results to results & "    data is a " & class of data of this_item & return
+        end try
+        set results to results & "    permission is " & permission of this_item & return
 "
-		set results to results & "    type is " & type of this_item & "
-"
-		try
-			set results to results & "    data is " & data of this_item & "
-"
-		on error
-			set results to results & "    data is a " & class of data of this_item & "
-"
-		end try
-		set results to results & "    permission is " & permission of this_item & "
-"
-		set results to results & "    ttl is " & (ttl of this_item) div 3600 & " hours " & "
-"
-		set results to results & "    timestamp is " & timestamp of this_item & "
-"
-		if length of reference of this_item is 0 then
-			set results to results & "    reference is an empty " & class of reference of this_item & "
-"
-		else
-			set results to results & "    reference is a " & class of reference of this_item of h & "
-"
-		end if
-	end repeat
+        set results to results & "    ttl is " & (ttl of this_item) div 3600 & " hours " & return
+        set results to results & "    timestamp is " & timestamp of this_item & return
+        if length of reference of this_item is 0 then
+           set results to results & "    reference is an empty " & class of reference of this_item & return
+        else
+            set results to results & "    reference is a " & class of reference of this_item of h & return
+        end if
+    end repeat
 
 	tell application "TextEdit"
 		activate
