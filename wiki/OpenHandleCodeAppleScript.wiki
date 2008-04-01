@@ -112,24 +112,24 @@ on getHandle(handle)
 	
     repeat with n from 1 to nvalues
 		
-        set this_item to item n of values
+        set _item to item n of values
 		
         set results to results & "value #" & n & ":" & return
 		
-        set results to results & "    index is " & index of this_item & return
-        set results to results & "    type is " & type of this_item & return
+        set results to results & "    index is " & index of _item & return
+        set results to results & "    type is " & type of _item & return
         try
-            set results to results & "    data is " & data of this_item & return
+            set results to results & "    data is " & data of _item & return
         on error
-            set results to results & "    data is a " & class of data of this_item & return
+            set results to results & "    data is a " & class of data of _item & return
         end try
-        set results to results & "    permission is " & permission of this_item & return
-        set results to results & "    ttl is " & (ttl of this_item) div 3600 & " hours " & return
-        set results to results & "    timestamp is " & timestamp of this_item & return
-        if length of reference of this_item is 0 then
-           set results to results & "    reference is an empty " & class of reference of this_item & return
+        set results to results & "    permission is " & permission of _item & return
+        set results to results & "    ttl is " & (ttl of _item) div 3600 & " hours " & return
+        set results to results & "    timestamp is " & timestamp of _item & return
+        if length of reference of _item is 0 then
+           set results to results & "    reference is an empty " & class of reference of _item & return
         else
-            set results to results & "    reference is a " & class of reference of this_item of h & return
+            set results to results & "    reference is a " & class of reference of _item & return
         end if
     end repeat
 
