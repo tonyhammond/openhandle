@@ -124,7 +124,6 @@ on getHandle(handle)
             set results to results & "    data is a " & class of data of this_item & return
         end try
         set results to results & "    permission is " & permission of this_item & return
-"
         set results to results & "    ttl is " & (ttl of this_item) div 3600 & " hours " & return
         set results to results & "    timestamp is " & timestamp of this_item & return
         if length of reference of this_item is 0 then
