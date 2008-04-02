@@ -6,6 +6,7 @@
 Here's how a native Perl program (contained in file "[http://nurture.nature.com/tony/openhandle/code/perl/handler.pl handler.pl]") can grab a handle data record:
 
 {{{
+% cat handler.pl
 use LWP::Simple;
 use JSON;
 
