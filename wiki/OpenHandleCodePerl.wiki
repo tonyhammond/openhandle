@@ -74,6 +74,7 @@ $OPENHANDLE = "http://nascent.nature.com/openhandle/handle";
 
 $json = get($OPENHANDLE . "?id=$ARGV[0]&format=json");
 $h = from_json($json);
+
 print Dumper($h);
 
 __END__
