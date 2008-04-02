@@ -38,11 +38,7 @@ s += " has #{values.length} values:\n"
   s += "  permission = #{value['permission']}\n"
   s += "  ttl = #{value['ttl'].to_i / 3600} hours\n"
   s += "  timestamp = #{value['timestamp']}\n"
-  if value['reference'].length == 0
-    s += "  reference = [#{value['reference'].class}]\n"
-  else
-    s += "  reference = [#{value['reference'].class}]\n"
-  end
+  s += "  reference = [#{value['reference'].class}]\n"
 
 end
 puts s
