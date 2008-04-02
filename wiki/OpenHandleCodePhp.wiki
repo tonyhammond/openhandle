@@ -16,69 +16,53 @@ $params = array(
   'format' => 'json',
   );
 
-$data = json_decode(file_get_contents(OPENHANDLE . '?' . http_build_query($params)));
-print_r($data);
+$h = json_decode(file_get_contents(OPENHANDLE . '?' . http_build_query($params)));
+# print_r($h);
+
+$values = $h->handleValues;
+$s = "The handle <$h->handle>";
+$s .= " has " . count($values) . " values:\n";
+
+foreach ($values as $value) {
+  $n++;
+  $s .= "\nvalue #$n:\n";
+  $s .= "  index = $value->index\n";
+  $s .= "  type = $value->type\n";
+  if (get_class($value->data)) {
+    $s .= "  data = [" . get_class($value->data) . "]\n";
+  } else {
+    $s .= "  data = $value->data\n";
+  }
+  $s .= "  permission = $value->permission\n";
+  $s .= "  ttl = " . $value->ttl / 3600 . " hours\n";
+  $s .= "  timestamp = $value->timestamp\n";
+  $s .= "  reference = [$value->reference]\n";
+}
+print $s;
 
 ?>
 }}}
 
 This can be run as:
 {{{
-% php handler.php 10.1038/nature05932
-stdClass Object
-(
-    [comment] => OpenHandle (JSON) - see http://openhandle.googlecode.com/
-    [handle] => hdl:10.1038/nature05932
-    [handleValues] => Array
-        (
-            [0] => stdClass Object
-                (
-                    [index] => 1
-                    [type] => URL
-                    [data] => http://www.nature.com/doifinder/10.1038/nature05932
-                    [permission] => 1110
-                    [ttl] => +86400
-                    [timestamp] => Wed Jun 20 18:14:42 BST 2007
-                    [reference] => Array
-                        (
-                        )
+% php handler.php 10100/nature
+The handle <hdl:10100/nature> has 2 values:
 
-                )
+value #1:
+  index = 100
+  type = HS_ADMIN
+  data = [stdClass]
+  permission = 1110
+  ttl = 24 hours
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = [Array]
 
-            [1] => stdClass Object
-                (
-                    [index] => 2
-                    [type] => 700050
-                    [data] => 20070711131808
-                    [permission] => 1110
-                    [ttl] => +86400
-                    [timestamp] => Wed Jul 11 20:40:04 BST 2007
-                    [reference] => Array
-                        (
-                        )
-
-                )
-
-            [2] => stdClass Object
-                (
-                    [index] => 100
-                    [type] => HS_ADMIN
-                    [data] => stdClass Object
-                        (
-                            [adminRef] => hdl:10.1038/nature05932?index=100
-                            [adminPermission] => 101110101111
-                        )
-
-                    [permission] => 1110
-                    [ttl] => +86400
-                    [timestamp] => Wed Jun 20 18:14:42 BST 2007
-                    [reference] => Array
-                        (
-                        )
-
-                )
-
-        )
-
-)
+value #2:
+  index = 1
+  type = URL
+  data = http://www.nature.com/
+  permission = 1110
+  ttl = 24 hours
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = [Array]
 }}}
