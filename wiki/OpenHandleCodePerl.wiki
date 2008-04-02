@@ -3,7 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Perl Code Examples ==
 
-Here's how a native Perl program (contained in file "`[http://nurture.nature.com/tony/openhandle/code/perl/handler.pl handler.pl]`") can grab a handle data record:
+Here's how a native Perl program (contained in file "[http://nurture.nature.com/tony/openhandle/code/perl/handler.pl handler.pl]") can grab a handle data record:
 
 {{{
 use LWP::Simple;
