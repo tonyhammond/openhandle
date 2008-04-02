@@ -5,7 +5,7 @@
 
 It is expected that there could be an OpenHandle Ruby library but in the meantime OpenHandle can be accessed straightforwardly from native Ruby code.
 
-Here's how a native Ruby program (contained in file "`handler.rb`") can grab a handle data record:
+Here's how a native Ruby program (contained in file "[http://nurture.nature.com/tony/openhandle/code/ruby/handler.rb handler.rb]") can grab a handle data record:
 
 {{{
 % cat handler.rb
@@ -44,8 +44,7 @@ end
 puts s
 }}}
 
-which can be run as
-
+This can be run as:
 {{{
 % ruby handler.rb 10.1038/nature05392
 The handle <hdl:10.1038/nature05392> has 3 values:
