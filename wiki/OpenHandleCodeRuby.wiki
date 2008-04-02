@@ -46,33 +46,24 @@ puts s
 
 This can be run as:
 {{{
-% ruby handler.rb 10.1038/nature05392
-The handle <hdl:10.1038/nature05392> has 3 values:
+% ruby handler.rb 10100/nature
+The handle <hdl:10100/nature> has 2 values:
 
 value #1:
-  index = 1
-  type = URL
-  data = http://www.nature.com/doifinder/10.1038/nature05392
-  permission = 1110
-  ttl = 24 hours
-  timestamp = Wed Jan 10 18:08:30 GMT 2007
-  reference = [Array]
-
-value #2:
-  index = 2
-  type = 700050
-  data = 20070110130704
-  permission = 1110
-  ttl = 24 hours
-  timestamp = Wed Jan 10 18:08:30 GMT 2007
-  reference = [Array]
-
-value #3:
   index = 100
   type = HS_ADMIN
   data = [Hash]
   permission = 1110
   ttl = 24 hours
-  timestamp = Wed Jan 10 18:08:30 GMT 2007
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = [Array]
+
+value #2:
+  index = 1
+  type = URL
+  data = http://www.nature.com/
+  permission = 1110
+  ttl = 24 hours
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
   reference = [Array]
 }}}
