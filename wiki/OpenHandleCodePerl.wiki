@@ -14,9 +14,9 @@ $OPENHANDLE = "http://nascent.nature.com/openhandle/handle";
 $json = get($OPENHANDLE . "?id=$ARGV[0]&format=json");
 $h = from_json($json);
 
+@values = @{$h->{'handleValues'}};
 $s = "The handle <$h->{'handle'}>";
 $s .= " has " . eval($#values + 1) . " values:\n";
-@values = @{$h->{'handleValues'}};
 
 for $value (@values) {
 
