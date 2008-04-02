@@ -63,7 +63,7 @@ value #2:
   reference = [ARRAY]
 }}}
 
-Here's the same thing which this time merely dumps the parsed JSON string.
+Here's the same thing (contained in file "[http://nurture.nature.com/tony/openhandle/code/perl/handler1.pl handler1.pl]") which this time merely dumps the parsed JSON string.
 {{{
 % cat handler1.pl
 use Data::Dumper;
