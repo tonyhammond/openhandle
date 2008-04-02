@@ -52,7 +52,6 @@ which can be run as
 
 {{{
 % ruby handler.rb 10.1038/nature05392
-% ruby test.rb 10.1038/nature05392
 The handle <hdl:10.1038/nature05392> has 3 values:
 
 value #1:
