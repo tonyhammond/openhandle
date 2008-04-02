@@ -19,6 +19,7 @@ uri = URI.parse("#{OPENHANDLE}?id=#{ARGV[0]}&format=json")
 json = uri.open.read
 
 h = JSON.parse(json)
+
 values = h['handleValues']
 s = "The handle <#{h['handle']}>"
 s += " has #{values.length} values:\n"
