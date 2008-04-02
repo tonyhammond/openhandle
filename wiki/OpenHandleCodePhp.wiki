@@ -3,7 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle PHP Code Examples ==
 
-Here's how a native PHP program (contained in file "`handler.php`") can grab a handle data record:
+Here's how a native PHP program (contained in file "[http://nurture.nature.com/tony/openhandle/code/php/handler.php handler.php]") can grab a handle data record:
 
 {{{
 % cat handler.php 
@@ -17,7 +17,6 @@ $params = array(
   );
 
 $h = json_decode(file_get_contents(OPENHANDLE . '?' . http_build_query($params)));
-# print_r($h);
 
 $values = $h->handleValues;
 $s = "The handle <$h->handle>";
