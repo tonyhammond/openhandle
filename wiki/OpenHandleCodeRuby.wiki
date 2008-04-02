@@ -96,5 +96,8 @@ And this gives:
 {"handle"=>"hdl:10100/nature", "comment"=>"OpenHandle (JSON) - see
 http://openhandle.googlecode.com/", "handleValues"=>[{"reference"=>[], "timestamp"=>"Wed
 Feb 28 15:37:06 GMT 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"HS_ADMIN",
-"index"=>"100", "data"=>{"adminPermission"=>"111111111111", "adminRef"=>"hdl:10100/nature?index=100"}}, {"reference"=>[], "timestamp"=>"Wed Feb 28 15:37:06 GMT 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"URL", "index"=>"1", "data"=>"http://www.nature.com/"}]}
+"index"=>"100", "data"=>{"adminPermission"=>"111111111111",
+"adminRef"=>"hdl:10100/nature?index=100"}}, {"reference"=>[], "timestamp"=>"Wed Feb 28
+15:37:06 GMT 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"URL", "index"=>"1",
+"data"=>"http://www.nature.com/"}]}
 }}}
