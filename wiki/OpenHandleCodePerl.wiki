@@ -76,7 +76,7 @@ print Dumper($h);
 }}}
 
 
-And here;'s the dump:
+And here's the dump:
 {{{
 % perl handler1.pl 10.1038/nature05932
 $VAR1 = {
