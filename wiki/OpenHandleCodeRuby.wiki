@@ -9,6 +9,8 @@ Here's how a native Ruby program (contained in file "[http://nurture.nature.com/
 
 {{{
 % cat handler.rb
+#!/usr/bin/env ruby
+
 require 'rubygems'    # only if "json" lib installed as gem
 require 'json'
 require 'open-uri'
@@ -104,6 +106,8 @@ Or, alternatively, selecting only certain fields:
 Here's the same thing (contained in file "[http://nurture.nature.com/tony/openhandle/code/ruby/handler1.rb handler1.rb]") which this time merely dumps the parsed JSON string.
 {{{
 % cat handler1.rb
+#!/usr/bin/env ruby
+
 require 'rubygems'    # only if "json" lib installed as gem
 require 'json'
 require 'open-uri'
