@@ -23,7 +23,6 @@ url = OPENHANDLE + '?' + urllib.urlencode(args)
 h = simplejson.load(urllib.urlopen(url))
 
 print h
-
 }}}
 
 
