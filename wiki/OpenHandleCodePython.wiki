@@ -18,8 +18,8 @@ args.update({
 })
 
 url = OPENHANDLE + '?' + urllib.urlencode(args)
-result = simplejson.load(urllib.urlopen(url))
-print result
+h = simplejson.load(urllib.urlopen(url))
+print h
 }}}
 
 
