@@ -13,8 +13,8 @@ OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
 
 args = {}
 args.update({
-        'id': '10100/nature',
-        'format': 'json'
+    'id': '10100/nature',
+    'format': 'json'
 })
 
 url = OPENHANDLE + '?' + urllib.urlencode(args)
