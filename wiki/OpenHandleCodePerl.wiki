@@ -21,18 +21,18 @@ $s .= " has " . eval($#values + 1) . " values:\n";
 
 for $value (@values) {
 
-  $s .= "\nvalue \#" . ++$n . ":\n";
-  $s .= "  index = $value->{'index'}\n";
-  $s .= "  type = $value->{'type'}\n";
-  if (ref($value->{'data'})) {
-    $s .= "  data = [" . ref($value->{'data'}) . "]\n";
-  } else {
-    $s .= "  data = $value->{'data'}\n";
-  }
-  $s .= "  permission = $value->{'permission'}\n";
-  $s .= "  ttl = " . eval($value->{'ttl'} / 3600) . " hours\n";
-  $s .= "  timestamp = $value->{'timestamp'}\n";
-  $s .= "  reference = [" . ref($value->{'reference'}) . "]\n";
+    $s .= "\nvalue \#" . ++$n . ":\n";
+    $s .= "  index = $value->{'index'}\n";
+    $s .= "  type = $value->{'type'}\n";
+    if (ref($value->{'data'})) {
+        $s .= "  data = [" . ref($value->{'data'}) . "]\n";
+    } else {
+        $s .= "  data = $value->{'data'}\n";
+    }
+    $s .= "  permission = $value->{'permission'}\n";
+    $s .= "  ttl = " . eval($value->{'ttl'} / 3600) . " hours\n";
+    $s .= "  timestamp = $value->{'timestamp'}\n";
+    $s .= "  reference = [" . ref($value->{'reference'}) . "]\n";
 
 }
 print $s;
