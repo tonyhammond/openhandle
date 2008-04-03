@@ -7,6 +7,8 @@ Here's how a native Python program (contained in file "[http://nurture.nature.co
 
 {{{
 % cat handler.py
+#!/usr/bin/env python
+
 import simplejson, urllib
 
 OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
@@ -19,7 +21,10 @@ args.update({
 
 url = OPENHANDLE + '?' + urllib.urlencode(args)
 h = simplejson.load(urllib.urlopen(url))
+
 print h
+
+__END__
 }}}
 
 
