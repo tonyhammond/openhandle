@@ -1,7 +1,7 @@
 #summary Python code examples for OpenHandle
 
 [OpenHandleCodeExamples Code Examples]
-== Open**Handle Python Code Examples ==
+== OpenHandle Python Code Examples ==
 
 Here's how a native Python program (contained in file "`handler.py`") can grab a handle data record:
 
