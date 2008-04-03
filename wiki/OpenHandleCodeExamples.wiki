@@ -5,7 +5,7 @@
 This page will maintain links to language-specific pages for using OpenHandle from code. Language examples include:
 
   * [OpenHandleCodeRuby Ruby] 
-  * _([OpenHandleCodePython Python])_
+  * [OpenHandleCodePython Python]
   * [OpenHandleCodePhp PHP]
   * [OpenHandleCodePerl Perl]
   * _([OpenHandleCodeJavaScript JavaScript])_
