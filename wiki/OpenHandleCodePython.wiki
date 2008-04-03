@@ -24,7 +24,6 @@ h = simplejson.load(urllib.urlopen(url))
 
 print h
 
-__END__
 }}}
 
 
