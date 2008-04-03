@@ -7,6 +7,8 @@ Here's how a native Perl program (contained in file "[http://nurture.nature.com/
 
 {{{
 % cat handler.pl
+#!/usr/bin/env perl
+
 use LWP::Simple;
 use JSON;
 
@@ -67,6 +69,8 @@ value #2:
 Here's the same thing (contained in file "[http://nurture.nature.com/tony/openhandle/code/perl/handler1.pl handler1.pl]") which this time merely dumps the parsed JSON string.
 {{{
 % cat handler1.pl
+#!/usr/bin/env perl
+
 use Data::Dumper;
 use LWP::Simple;
 use JSON;
