@@ -12,9 +12,9 @@ Here's how a native PHP program (contained in file "[http://nurture.nature.com/t
 define('OPENHANDLE', 'http://nascent.nature.com/openhandle/handle');
 
 $params = array(
-  'id' => $argv[1],
-  'format' => 'json',
-  );
+    'id' => $argv[1],
+    'format' => 'json',
+);
 
 $h = json_decode(file_get_contents(OPENHANDLE . '?' . http_build_query($params)));
 
@@ -23,19 +23,19 @@ $s = "The handle <$h->handle>";
 $s .= " has " . count($values) . " values:\n";
 
 foreach ($values as $value) {
-  $n++;
-  $s .= "\nvalue #$n:\n";
-  $s .= "  index = $value->index\n";
-  $s .= "  type = $value->type\n";
-  if (get_class($value->data)) {
-    $s .= "  data = [" . get_class($value->data) . "]\n";
-  } else {
-    $s .= "  data = $value->data\n";
-  }
-  $s .= "  permission = $value->permission\n";
-  $s .= "  ttl = " . $value->ttl / 3600 . " hours\n";
-  $s .= "  timestamp = $value->timestamp\n";
-  $s .= "  reference = [$value->reference]\n";
+    $n++;
+    $s .= "\nvalue #$n:\n";
+    $s .= "  index = $value->index\n";
+    $s .= "  type = $value->type\n";
+    if (get_class($value->data)) {
+        $s .= "  data = [" . get_class($value->data) . "]\n";
+    } else {
+        $s .= "  data = $value->data\n";
+    }
+    $s .= "  permission = $value->permission\n";
+    $s .= "  ttl = " . $value->ttl / 3600 . " hours\n";
+    $s .= "  timestamp = $value->timestamp\n";
+    $s .= "  reference = [$value->reference]\n";
 }
 print $s;
 
@@ -75,9 +75,9 @@ Here's the same thing (contained in file "[http://nurture.nature.com/tony/openha
 define('OPENHANDLE', 'http://nascent.nature.com/openhandle/handle');
 
 $params = array(
-  'id' => $argv[1],
-  'format' => 'json',
-  );
+    'id' => $argv[1],
+    'format' => 'json',
+);
 
 $h = json_decode(file_get_contents(OPENHANDLE . '?' . http_build_query($params)));
 
