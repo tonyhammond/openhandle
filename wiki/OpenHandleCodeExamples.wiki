@@ -1,6 +1,6 @@
 #summary Code examples for OpenHandle
 
-== Open**Handle Code Examples ==
+== OpenHandle Code Examples ==
 
 This page will maintain links to language-specific pages for using OpenHandle from code. Language examples include:
 
