@@ -135,3 +135,126 @@ Feb 28 15:37:06 GMT 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"HS_AD
 15:37:06 GMT 2007", "ttl"=>"+86400", "permission"=>"1110", "type"=>"URL", "index"=>"1",
 "data"=>"http://www.nature.com/"}]}
 }}}
+
+A fuller version of the handler (contained in file "[http://nurture.nature.com/tony/openhandle/code/ruby/handler2.rb handler2.rb]") with support for querystrings is here:
+{{{
+% cat handler2.rb
+#!/usr/bin/env ruby
+
+require 'rubygems'    # only if "json" lib installed as gem
+require 'json'
+require 'open-uri'
+
+OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
+
+handle, querystring = ARGV[0].split('?')
+handle.sub!(/^hdl:/, "")
+args = {}
+if querystring
+    querystring.split('&').each do |arg|
+        key, val = arg.split('=')
+        if args.has_key?(key)
+            args[key] << val
+        else
+            args[key] = [ val ]
+        end
+    end
+end
+
+begin
+    uri = URI.parse(OPENHANDLE + '?' + URI.encode("id=#{handle}&format=json"))
+    json = uri.open.read
+    
+    h = JSON.parse(json)
+    
+    values = h['handleValues']
+    n_values = 0
+    s = ""
+ 
+    1.upto(values.length) do |n|
+    
+        value = values[n-1]
+    
+        skip = false
+
+        if args.length > 0
+            skip = true
+            args.keys.each do |key|
+                if value.has_key?(key)
+                    args[key].each do |val|
+                        skip = false if value[key].to_s =~ /^#{val}$/i
+                    end
+                end
+            end
+        end
+
+        next if skip
+
+        s += "\nvalue \##{n}:\n"
+        s += "  index = #{value['index']}\n"
+        s += "  type = #{value['type']}\n"
+        if value['data'].class == String
+            s += "  data = #{value['data']}\n"
+        else
+            s += "  data = [#{value['data'].class}]\n"
+        end
+        s += "  permission = #{value['permission']}\n"
+        s += "  ttl = #{value['ttl'].to_i / 3600} hours\n"
+        s += "  timestamp = #{value['timestamp']}\n"
+        s += "  reference = [#{value['reference'].class}]\n"
+    
+        n_values += 1
+
+    end
+    s1 = "The handle <hdl:#{handle}"
+    s1 += "?#{querystring}" if querystring.length > 0
+    s1 += "> has #{n_values} values (of #{values.length}):\n"
+    puts s1, s
+rescue
+    puts "! Error reading handle \"#{handle}\""
+end
+
+__END__
+{
+    "comment" : "OpenHandle (JSON) - see http://openhandle.googlecode.com/" ,
+    "handle" : "hdl:10100/nature" ,
+    "handleValues" : [
+        {
+            "index" : "100" ,
+            "type" : "HS_ADMIN" ,
+            "data" : {
+                "adminRef" : "hdl:10100/nature?index=100" ,
+                "adminPermission" : "111111111111"
+            } ,
+            "permission" : "1110" ,
+            "ttl" : "+86400" ,
+            "timestamp" : "Wed Feb 28 15:37:06 GMT 2007" ,
+            "reference"  : {}
+        } ,
+        {
+            "index" : "1" ,
+            "type" : "URL" ,
+            "data" : "http://www.nature.com/" ,
+            "permission" : "1110" ,
+            "ttl" : "+86400" ,
+            "timestamp" : "Wed Feb 28 15:37:06 GMT 2007" ,
+            "reference"  : {}
+        }
+    ]
+}
+}}}
+
+And this can be invoked as
+{{{
+% handler.rb '10100/10.1038/nature06264?type=xmp'
+The handle <hdl:10100/10.1038/nature06264?type=xmp> has 1 values (of 3):
+
+value #2:
+  index = 0
+  type = XMP
+  data = http://nurture.nature.com/xmp/nature/n7169/xmp/nature06264.xmp
+  permission = 1110
+  ttl = 24 hours
+  timestamp = Sun Mar 09 16:49:52 GMT 2008
+  reference = [Array]
+}}}
