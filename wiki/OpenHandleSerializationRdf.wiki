@@ -1,3 +1,7 @@
 #summary RDF/XML serialization for Handle
 
 == RDF/XML ==
+
+Since the OpenHandle returns RDF/XML this is how it appears in Firefox with the [http://www.w3.org/2005/ajar/tab Tabulator] extension installed:
+
+http://nurture.nature.com/tony/imx/tabulator.jpg
