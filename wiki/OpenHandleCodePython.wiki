@@ -9,13 +9,18 @@ Here's how a native Python program (contained in file "[http://nurture.nature.co
 % cat handler.py
 #!/usr/bin/env python
 
-import simplejson, urllib
+import sys, simplejson, urllib
 
 OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
 
+if len(sys.argv) > 1:
+    hdl = sys.argv[1]
+else:
+    hdl = "10100/nature"
+
 args = {}
 args.update({
-        'id': '10100/nature',
+        'id': hdl,
         'format': 'json'
 })
 url = OPENHANDLE + '?' + urllib.urlencode(args)
@@ -79,20 +84,26 @@ Here's the same thing (contained in file "[http://nurture.nature.com/tony/openha
 % cat handler1.py
 #!/usr/bin/env python
 
-import simplejson, urllib
+import sys, simplejson, urllib
 
 OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
 
+if len(sys.argv) > 1:
+    hdl = sys.argv[1]
+else:
+    hdl = "10100/nature"
+
 args = {}
 args.update({
-    'id': '10100/nature',
-    'format': 'json'
+        'id': hdl,
+        'format': 'json'
 })
-
 url = OPENHANDLE + '?' + urllib.urlencode(args)
 h = simplejson.load(urllib.urlopen(url))
 
 print h
+
+#__END__
 }}}
 
 And this gives:
