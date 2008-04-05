@@ -6,6 +6,7 @@
 Here's how a native Python program (contained in file "[http://nurture.nature.com/tony/openhandle/code/python/handler.py handler.py]") can grab a handle data record:
 
 {{{
+% cat handler.py
 #!/usr/bin/env python
 
 import simplejson, urllib
@@ -43,10 +44,14 @@ for value in values:
 s1 = "The handle <" + handle + ">"
 s1 += " has " + str(n_value) + " values (of " + str(len(values)) + "):\n"
 print s1, s
+
+#__END__
 }}}
 
+
+This can be run as:
 {{{
-% handler.py 10100/nature
+% python handler.py 10100/nature
 The handle <hdl:10100/nature> has 2 values (of 2):
 
 value #1:
@@ -69,9 +74,9 @@ value #2:
 
 }}}
 
-which gives us
+Here's the same thing (contained in file "[http://nurture.nature.com/tony/openhandle/code/python/handler1.py handler1.py]") which this time merely dumps the parsed JSON string:
 {{{
-% cat handler.py
+% cat handler1.py
 #!/usr/bin/env python
 
 import simplejson, urllib
@@ -90,9 +95,9 @@ h = simplejson.load(urllib.urlopen(url))
 print h
 }}}
 
-
+And this gives:
 {{{
-% python handler.py 10100/nature
+% python handler1.py 10100/nature
 {u'comment': u'OpenHandle (JSON) - see http://openhandle.googlecode.com/',
 u'handleValues': [{u'index': u'100', u'reference': [], u'permission': u'1110',
 u'timestamp': u'Wed Feb 28 15:37:06 GMT 2007', u'data': {u'adminRef':
