@@ -6,6 +6,71 @@
 Here's how a native Python program (contained in file "[http://nurture.nature.com/tony/openhandle/code/python/handler.py handler.py]") can grab a handle data record:
 
 {{{
+#!/usr/bin/env python
+
+import simplejson, urllib
+
+OPENHANDLE = "http://nascent.nature.com/openhandle/handle"
+
+args = {}
+args.update({
+        'id': '10100/nature',
+        'format': 'json'
+})
+url = OPENHANDLE + '?' + urllib.urlencode(args)
+h = simplejson.load(urllib.urlopen(url))
+
+handle = h['handle']
+values = h['handleValues']
+
+s = ""
+n_value = 0
+
+for value in values:
+    n_value += 1
+    s += "\nvalue #" + str(n_value) + ":\n"
+    s += "  index = " + value['index'] + "\n"
+    s += "  type = " + value['type'] + "\n"
+    if type(value['data']) is dict:
+        s += "  data = " + str(type(value['data'])) + "\n"
+    else:
+        s += "  data = " + value['data'] + "\n"
+    s += "  permission = " + value['permission'] + "\n"
+    s += "  ttl = " + value['ttl'] + "\n"
+    s += "  timestamp = " + value['timestamp'] + "\n"
+    s += "  reference = " + str(type(value['reference'])) + "\n"
+
+s1 = "The handle <" + handle + ">"
+s1 += " has " + str(n_value) + " values (of " + str(len(values)) + "):\n"
+print s1, s
+}}}
+
+{{{
+% handler.py 10100/nature
+The handle <hdl:10100/nature> has 2 values (of 2):
+
+value #1:
+  index = 100
+  type = HS_ADMIN
+  data = <type 'dict'>
+  permission = 1110
+  ttl = +86400
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = <type 'list'>
+
+value #2:
+  index = 1
+  type = URL
+  data = http://www.nature.com/
+  permission = 1110
+  ttl = +86400
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = <type 'list'>
+
+}}}
+
+which gives us
+{{{
 % cat handler.py
 #!/usr/bin/env python
 
