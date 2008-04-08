@@ -1,6 +1,6 @@
 #summary To-do list for OpenHandle
 
-== To-do List =
+== To-Do List =
 
 What should the OpenHandle project be aiming to do? Here's the beginnings of a roadmap for OpenHandle.
 
