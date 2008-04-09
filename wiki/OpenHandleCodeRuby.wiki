@@ -171,12 +171,12 @@ begin
     h = JSON.parse(json)
     
     values = h['handleValues']
-    n_values = 0
+    n_value = 0
     s = ""
  
-    1.upto(values.length) do |n|
+    values.each do |value|
     
-        value = values[n-1]
+        n_value += 1
     
         skip = false
 
@@ -193,7 +193,7 @@ begin
 
         next if skip
 
-        s += "\nvalue \##{n}:\n"
+        s += "\nvalue \##{n_value}:\n"
         s += "  index = #{value['index']}\n"
         s += "  type = #{value['type']}\n"
         if value['data'].class == String
@@ -206,15 +206,18 @@ begin
         s += "  timestamp = #{value['timestamp']}\n"
         s += "  reference = [#{value['reference'].class}]\n"
     
-        n_values += 1
-
     end
     s1 = "The handle <hdl:#{handle}"
-    s1 += "?#{querystring}" if querystring.length > 0
-    s1 += "> has #{n_values} values (of #{values.length}):\n"
+    s1 += "?#{querystring}" unless querystring.nil?
+    s1 += "> has #{n_value} values (of #{values.length}):\n"
     puts s1, s
-rescue
+
+rescue => e
+
     puts "! Error reading handle \"#{handle}\""
+    puts "#{$!.inspect}\n\n"
+    puts "#{e.backtrace.join("\n")}\n\n"
+
 end
 
 __END__
