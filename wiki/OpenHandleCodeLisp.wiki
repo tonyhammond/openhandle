@@ -1,8 +1,11 @@
 #summary Lisp code examples for OpenHandle
 
+[OpenHandleCodeExamples Code Examples]
 == OpenHandle Lisp Code Examples ==
 
-Here we show an Elisp (Emacs Lisp) example. Running emacs as
+Here we show an Elisp (Emacs Lisp) example. This makes use of the 'json' library available at [http://edward.oconnor.cx/elisp/json.el json.el].
+
+Here's how Emacs (using the 'openhandle' library contained in file "[http://nurture.nature.com/tony/openhandle/code/lisp/openhandle.el openhandle.el]") can grab a handle data record:
 
 {{{
 % emacs -l json.el -l openhandle.el -f openhandle-get-handle
@@ -14,6 +17,7 @@ http://nurture.nature.com/tony/imx/openhandle_lisp.jpg
 
 Here's the code for the OpenHandle package:
 {{{
+% cat openhandle.el
 ;;; openhandle.el --- example code for OpenHandle
 
 ;; This file is in the Public Domain.
