@@ -26,27 +26,30 @@ values = h['handleValues']
 s = "The handle <#{h['handle']}>"
 s += " has #{values.length} values:\n"
 
-1.upto(values.length) do |n|
+n_value = 0
 
-    value = values[n-1]
+values.each do |value|
 
-    s += "\nvalue \##{n}:\n"
-    s += "  index = #{value['index']}\n"
-    s += "  type = #{value['type']}\n"
-    if value['data'].class == String
-        s += "  data = #{value['data']}\n"
-    else
-        s += "  data = [#{value['data'].class}]\n"
-    end
-    s += "  permission = #{value['permission']}\n"
-    s += "  ttl = #{value['ttl'].to_i / 3600} hours\n"
-    s += "  timestamp = #{value['timestamp']}\n"
-    s += "  reference = [#{value['reference'].class}]\n"
+  n_value += 1
+
+  s += "\nvalue \##{n_value}:\n"
+  s += "  index = #{value['index']}\n"
+  s += "  type = #{value['type']}\n"
+  if value['data'].class == String
+    s += "  data = #{value['data']}\n"
+  else
+    s += "  data = [#{value['data'].class}]\n"
+  end
+  s += "  permission = #{value['permission']}\n"
+  s += "  ttl = #{value['ttl'].to_i / 3600} hours\n"
+  s += "  timestamp = #{value['timestamp']}\n"
+  s += "  reference = [#{value['reference'].class}]\n"
 
 end
 puts s
 
 __END__
+
 }}}
 
 This can be run as:
