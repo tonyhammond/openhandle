@@ -42,7 +42,7 @@ Here's the code for the OpenHandle package:
   (interactive "sEnter handle: ")
   (let* ((temp-buffer (openhandle-retrieve-data handle openhandle-base-url))
 	 (json (openhandle-parse-json temp-buffer))
-	 (result-buffer (get-buffer-create (format "*HANDLE <%s>*" handle))))
+	 (result-buffer (get-buffer-create (format "*<hdl:%s>*" handle))))
     (save-excursion
       (kill-buffer temp-buffer)
       (set-buffer result-buffer)
