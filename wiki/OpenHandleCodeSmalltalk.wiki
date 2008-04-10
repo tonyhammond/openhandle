@@ -11,7 +11,7 @@ See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these po
 {{{
 % cat handler.st
 doHandle: aHandle
-    | openHandle term json |
+    | openHandle term json h |
     "Answer a text description of the Handle value set"
     openHandle := 'http://nascent.nature.com/openhandle/handle'.
     term := aHandle encodeForHTTP.
