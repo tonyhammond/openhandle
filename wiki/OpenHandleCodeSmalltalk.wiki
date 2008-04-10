@@ -9,9 +9,9 @@ OK, this is very experimental. Not tried but looks promising. See the blog [http
 {{{
 % cat handler.st
 doHandle: aHandle
-    | baseURI document term json |
-    ""
-    baseURI := 'http://nascent.nature.com/openhandle/handle'.
+    | openHandle term json |
+    "Answer a text description of the Handle value set"
+    openHandle := 'http://nascent.nature.com/openhandle/handle'.
     term := aHandle encodeForHTTP.
     json := Curl new getContentsUrl: baseURI , '?format=json&id=' , term.
     h := Json readFrom: json readStream.
