@@ -3,7 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Smalltalk Code Examples ==
 
-OK, this is very experimental. Not tried but looks promising. See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these posts: [http://blogs.corriga.net/giovanni/archives/2007/7/3/restful_web_services_example_215/ RESTful Web Services Example 2.15 - Yahoo! News Search w/ JSON] and the earlier post for XML, [http://blogs.corriga.net/giovanni/archives/2007/6/28/restful_web_services_example_21/ RESTful Web Services Example 2.1 - Yahoo! Web Search]
+OK, this is very experimental. Not tried but looks promising. See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these posts on RESTful Web Services for Yahoo! Web Search: [http://blogs.corriga.net/giovanni/archives/2007/7/3/restful_web_services_example_215/ Example 2.15 (JSON)] and the earlier post [http://blogs.corriga.net/giovanni/archives/2007/6/28/restful_web_services_example_21/ Example 2.1 (XML)]
 
 
 {{{
