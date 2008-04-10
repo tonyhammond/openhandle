@@ -1,0 +1,23 @@
+#summary Smalltalk code examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Smalltalk Code Examples ==
+
+OK, this is very experimental. Not tried but looks promising. See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these posts: [http://blogs.corriga.net/giovanni/archives/2007/7/3/restful_web_services_example_215/ RESTful Web Services Example 2.15 - Yahoo! News Search w/ JSON] and the earlier post for XML, [http://blogs.corriga.net/giovanni/archives/2007/6/28/restful_web_services_example_21/ RESTful Web Services Example 2.1 - Yahoo! Web Search]
+
+
+{{{
+% cat handler.st
+yahooNewsSearch: aHandle
+    | baseURI document term json |
+    ""
+    baseURI := 'http://nascent.nature.com/openhandle/handle'.
+    term := aHandle encodeForHTTP.
+    json := Curl new getContentsUrl: baseURI , '?format=json&id=' , term.
+    h := Json readFrom: json readStream.
+    ((h at: #ResultSet) at: #Result) do:
+        [:element |
+        Transcript
+            show: (element at: #Title) printString;
+            cr]
+}}}
