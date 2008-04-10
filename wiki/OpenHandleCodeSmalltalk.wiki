@@ -22,7 +22,7 @@ doHandle: aHandle
         Transcript
             show: (value at: #index) printString;
             cr;
-             show: (value at: #type) printString;
+            show: (value at: #type) printString;
             cr;
             show: (value at: #data) printString;
             cr.
