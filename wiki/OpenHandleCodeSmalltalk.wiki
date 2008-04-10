@@ -15,9 +15,16 @@ yahooNewsSearch: aHandle
     term := aHandle encodeForHTTP.
     json := Curl new getContentsUrl: baseURI , '?format=json&id=' , term.
     h := Json readFrom: json readStream.
-    ((h at: #ResultSet) at: #Result) do:
-        [:element |
+    ((h at: #handleValues) do:
+        [:value |
         Transcript
-            show: (element at: #Title) printString;
-            cr]
+            show: (value at: #index) printString;
+            cr.
+        Transcript
+            show: (value at: #type) printString;
+            cr.
+        Transcript
+            show: (value at: #data) printString;
+            cr.
+        ]
 }}}
