@@ -8,7 +8,7 @@ OK, this is very experimental. Not tried but looks promising. See the blog [http
 
 {{{
 % cat handler.st
-yahooNewsSearch: aHandle
+doHandle: aHandle
     | baseURI document term json |
     ""
     baseURI := 'http://nascent.nature.com/openhandle/handle'.
