@@ -21,11 +21,9 @@ doHandle: aHandle
         [:value |
         Transcript
             show: (value at: #index) printString;
-            cr.
-        Transcript
-            show: (value at: #type) printString;
-            cr.
-        Transcript
+            cr;
+             show: (value at: #type) printString;
+            cr;
             show: (value at: #data) printString;
             cr.
         ]
