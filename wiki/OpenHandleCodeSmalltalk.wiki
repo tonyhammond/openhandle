@@ -4,7 +4,7 @@
 == OpenHandle Smalltalk Code Examples ==
 
 
-The examples here are for [http://www.squeak.org/ Squeak] - the free, cross-platform Smalltalk-80 implementation. But this is very experimental. Main problem being that I don't have a working version of the [http://wiki.squeak.org/squeak/5865 CurlPlugin] for Mac OS X. Anyhows, not tried this but looks promising. This code uses the [http://map1.squeakfoundation.org/sm/package/d38bdc2d-e52a-4167-ae73-2cf438c65c2f json] package, which is distributed in [http://wiki.squeak.org/squeak/1287 Monticello] format (basic install instructions [http://wiki.squeak.org/squeak/43 here]).
+The examples here are for [http://www.squeak.org/ Squeak] - the free, cross-platform Smalltalk-80 implementation. As yet this is experimental. Main problem being that I don't have a working version of the [http://wiki.squeak.org/squeak/5865 CurlPlugin] for Mac OS X. Anyhows, not tried this but looks promising. This code uses the [http://map1.squeakfoundation.org/sm/package/d38bdc2d-e52a-4167-ae73-2cf438c65c2f json] package, which is distributed in [http://wiki.squeak.org/squeak/1287 Monticello] format (basic install instructions [http://wiki.squeak.org/squeak/43 here]).
 
 See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these posts on RESTful Web Services for Yahoo! News Search: [http://blogs.corriga.net/giovanni/archives/2007/7/3/restful_web_services_example_215/ Example 2.15 (JSON)] and the earlier post [http://blogs.corriga.net/giovanni/archives/2007/6/28/restful_web_services_example_21/ Example 2.1 (XML)]
 
