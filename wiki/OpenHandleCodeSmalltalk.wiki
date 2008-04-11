@@ -35,8 +35,7 @@ In the above I could have used this:
 {{{
 json := Curl new getContentsUrl: openHandle , '?format=json&id=' , term.
 }}}
-But I don't have a working version of the [http://wiki.squeak.org/squeak/5865 CurlPlugin] for Mac OS X. So instead of something like the following:
-I'm having to use this:
+But I don't have a working version of the [http://wiki.squeak.org/squeak/5865 CurlPlugin] for Mac OS X. So instead I'm having to use this:
 {{{
 json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
 }}}
