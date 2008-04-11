@@ -3,7 +3,6 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Smalltalk Code Examples ==
 
-
 The examples here are for [http://www.squeak.org/ Squeak] - the free, cross-platform Smalltalk-80 implementation. See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these posts on RESTful Web Services for Yahoo! News Search: [http://blogs.corriga.net/giovanni/archives/2007/7/3/restful_web_services_example_215/ Example 2.15 (JSON)] and the earlier post [http://blogs.corriga.net/giovanni/archives/2007/6/28/restful_web_services_example_21/ Example 2.1 (XML)] for useful examples.
 
 This code uses the [http://map1.squeakfoundation.org/sm/package/d38bdc2d-e52a-4167-ae73-2cf438c65c2f json] package, which is distributed in [http://wiki.squeak.org/squeak/1287 Monticello] format (basic install instructions [http://wiki.squeak.org/squeak/43 here]).
@@ -44,7 +43,7 @@ But I don't have a working version of the [http://wiki.squeak.org/squeak/5865 Cu
 json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
 }}}
 
-And here's a very rough cut at adding a new class and some class methods top package the above code:
+And here's a very rough cut ([http://nurture.nature.com/tony/openhandle/code/smalltalk/OpenHandle.st OpenHandle.st]) at adding a new class and some class methods top package the above code:
 
 {{{
 Object subclass: #Handle
@@ -53,7 +52,7 @@ Object subclass: #Handle
 	poolDictionaries: ''
 	category: 'OpenHandle'!
 !Handle commentStamp: 'tonyh 4/11/2008 16:46' prior: 0!
-Class for accessing handles usoing OpenHandle services!
+Class for accessing handles using OpenHandle services!
 
 
 !Handle methodsFor: 'actions' stamp: 'tonyh 4/11/2008 16:36'!
