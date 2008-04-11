@@ -6,37 +6,37 @@
 
 The examples here are for [http://www.squeak.org/ Squeak] - the free, cross-platform Smalltalk-80 implementation. See the blog [http://blogs.corriga.net/giovanni/ Jazz Programming], and these posts on RESTful Web Services for Yahoo! News Search: [http://blogs.corriga.net/giovanni/archives/2007/7/3/restful_web_services_example_215/ Example 2.15 (JSON)] and the earlier post [http://blogs.corriga.net/giovanni/archives/2007/6/28/restful_web_services_example_21/ Example 2.1 (XML)].
 
-As yet this is experimental. Main problem being that I don't have a working version of the [http://wiki.squeak.org/squeak/5865 CurlPlugin] for Mac OS X. So instead of something like the following:
+This code uses the [http://map1.squeakfoundation.org/sm/package/d38bdc2d-e52a-4167-ae73-2cf438c65c2f json] package, which is distributed in [http://wiki.squeak.org/squeak/1287 Monticello] format (basic install instructions [http://wiki.squeak.org/squeak/43 here]).
+
+{{{
+aHandle := FillInTheBlank request: 'Enter handle'.
+openHandle := 'http://nascent.nature.com/openhandle/handle'.
+term := aHandle encodeForHTTP.
+json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
+h := Json readFrom: json readStream.
+n := 0.
+(h at: #handleValues) do:
+    [ :value |
+        n := n + 1.
+        Transcript
+            show: 'value #' , (n printString); cr;
+            show: '  index = ' , ((value at: #index) printString); cr;
+            show: '  type = ' , ((value at: #type) printString); cr;
+            show: '  data = ' , ((value at: #data) printString); cr;
+            show: '  permission = ' , ((value at: #permission) printString); cr;
+            show: '  ttl = ' , ((value at: #ttl) printString); cr;
+            show: '  timestamp = ' , ((value at: #timestamp) printString); cr;
+            show: '  reference ' , ((value at: #reference) printString); cr;
+            cr.
+    ]
+}}}
+
+In the above I could have used this: 
 {{{
 json := Curl new getContentsUrl: openHandle , '?format=json&id=' , term.
 }}}
-
+But I don't have a working version of the [http://wiki.squeak.org/squeak/5865 CurlPlugin] for Mac OS X. So instead of something like the following:
 I'm having to use this:
 {{{
 json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
-}}}
-
-Anyhows, not tried this but looks promising. This code uses the [http://map1.squeakfoundation.org/sm/package/d38bdc2d-e52a-4167-ae73-2cf438c65c2f json] package, which is distributed in [http://wiki.squeak.org/squeak/1287 Monticello] format (basic install instructions [http://wiki.squeak.org/squeak/43 here]).
-
-
-{{{
-% cat handler.st
-doHandle: aHandle
-    | openHandle term json h |
-    "Answer a text description of the Handle value set"
-    openHandle := 'http://nascent.nature.com/openhandle/handle'.
-    term := aHandle encodeForHTTP.
-    json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
-    Transcript show: json.
-    h := Json readFrom: json readStream.
-    (h at: #handleValues) do:
-        [:value |
-        Transcript
-            show: (value at: #index) printString;
-            cr;
-            show: (value at: #type) printString;
-            cr;
-            show: (value at: #data) printString;
-            cr.
-        ]
 }}}
