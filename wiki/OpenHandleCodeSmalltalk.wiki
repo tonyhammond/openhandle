@@ -31,6 +31,10 @@ n := 0.
     ]
 }}}
 
+Running this code gives the following output on the Transcript:
+
+http://nurture.nature.com/tony/imx/openhandle_squeak.jpg
+
 In the above I could have used this: 
 {{{
 json := Curl new getContentsUrl: openHandle , '?format=json&id=' , term.
