@@ -15,7 +15,9 @@ doHandle: aHandle
     "Answer a text description of the Handle value set"
     openHandle := 'http://nascent.nature.com/openhandle/handle'.
     term := aHandle encodeForHTTP.
-    json := Curl new getContentsUrl: baseURI , '?format=json&id=' , term.
+    "json := Curl new getContentsUrl: baseURI , '?format=json&id=' , term."
+    json := baseURI , '?format=json&id=' , term asUrl retrieveContents contents.
+    Transcript show: json.
     h := Json readFrom: json readStream.
     ((h at: #handleValues) do:
         [:value |
