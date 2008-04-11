@@ -43,7 +43,7 @@ But I don't have a working version of the [http://wiki.squeak.org/squeak/5865 Cu
 json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
 }}}
 
-And here's a very rough cut ([http://nurture.nature.com/tony/openhandle/code/smalltalk/OpenHandle.st OpenHandle.st]) at adding a new class and some class methods top package the above code:
+And here's a very rough cut ([http://nurture.nature.com/tony/openhandle/code/smalltalk/OpenHandle.st OpenHandle.st]) at adding a new class and some class methods to package the above code:
 
 {{{
 Object subclass: #Handle
