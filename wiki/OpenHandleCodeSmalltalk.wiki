@@ -43,3 +43,51 @@ But I don't have a working version of the [http://wiki.squeak.org/squeak/5865 Cu
 {{{
 json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
 }}}
+
+And here's a very rough cut at adding a new class and some class methods top package the above code:
+
+{{{
+Object subclass: #Handle
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	category: 'OpenHandle'!
+!Handle commentStamp: 'tonyh 4/11/2008 16:46' prior: 0!
+Class for accessing handles usoing OpenHandle services!
+
+
+!Handle methodsFor: 'actions' stamp: 'tonyh 4/11/2008 16:36'!
+doHandle: aHandle 
+	"Answers a text description of aHandle"
+
+	| openHandle term json h n |
+	openHandle := 'http://nascent.nature.com/openhandle/handle'.
+term := aHandle encodeForHTTP.
+json := (openHandle , '?format=json&id=' , term) asUrl retrieveContents contents.
+h := Json readFrom: json readStream.
+n := 0.
+(h at: #handleValues) do:
+    [ :value |
+        n := n + 1.
+        Transcript
+            show: 'value #' , (n printString); cr;
+            show: '  index = ' , ((value at: #index) printString); cr;
+            show: '  type = ' , ((value at: #type) printString); cr;
+            show: '  data = ' , ((value at: #data) printString); cr;
+            show: '  permission = ' , ((value at: #permission) printString); cr;
+            show: '  ttl = ' , ((value at: #ttl) printString); cr;
+            show: '  timestamp = ' , ((value at: #timestamp) printString); cr;
+            show: '  reference ' , ((value at: #reference) printString); cr;
+            cr.
+    ]! !
+
+!Handle methodsFor: 'actions' stamp: 'tonyh 4/11/2008 16:48'!
+enterHandle
+	"Prompt user to enter a handle"
+
+	^ FillInTheBlank request: 'Enter handle'.! !
+}}}
+
+And here's a screenshot:
+
+http://nurture.nature.com/tony/imx/openhandle_squeak1.jpg
