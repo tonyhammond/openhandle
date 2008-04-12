@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
+    "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+    <head>
+        <meta http-equiv="content-type" content="application/xhtml+xml" />
+        <title>Openhandle</title>
+    </head>
+    <body id="openhandle">
+        <h1>Openhandle</h1>
+        <p>Welcome to the Openhandle web application. More information about Openhandle
+        can be found on the project&#8217;s <a href="http://openhandle.googlecode.com/">Googlecode homepage</a>.</p>
+
+        <p>The form below can be used to submit a query to the Openhandle application.
+        Please specify the <code>Handle ID</code> for which you want to view the
+        record (e.g. <code>10100/nature</code>).</p>
+
+        <p>Optionally, you can also specify:</p>
+        <ol>
+            <li>A comma-separated list of Handle data types to limit your query to</li>
+            <li>A comma-separated list of integer indexes from the record to return in the response</li>
+            <li>The format in which the response should be returned</li>
+            <li>A mimetype to use to return the response as (this is just a convenience feature for viewing responses in a web browser)</li>
+        </ol>
+        <form id="openhandleForm" method="get" action="handle">
+            <fieldset>
+                <p><label for="handleId">Handle ID</label> <input id="handleId" name="id" type="text" maxlength="255" /> <span class="required">(Required)</span></p>
+                <p><label for="datatypes">Data types</label> <input id="datatypes" name="include" type="text" maxlength="255" /></p>
+                <p><label for="indices">Indices</label> <input id="indices" name="index" type="text" maxlength="255" /></p>
+                <p>
+                    <label for="format">Format</label>
+                    <select id="format" name="format">
+                        <option value="rdf" selected="selected">rdf</option>
+                        <option value="json">json</option>
+                        <option value="n3">n3</option>
+                    </select>
+                </p>
+                <p><label for="mimetype">Mimetype</label> <input id="mimetype" name="mimetype" type="text" maxlength="255" /></p>
+                <p><input name="submit" type="submit" /></p>
+            </fieldset>
+        </form>
+    </body>
+</html>
+
