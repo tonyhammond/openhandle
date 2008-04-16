@@ -213,3 +213,8 @@ type := aString! !
 And here's a screenshot:
 
 http://nurture.nature.com/tony/imx/openhandle_squeak1.jpg
+
+And here's a little bit of Squeak screen real estate showing top-left a free button with a handler method at bottom right (just open for editing), which when pressed puts up a popup at top right and resolves handle entered and writes results out onto the
+default output - the Transcript.
+
+http://nurture.nature.com/tony/imx/squeak_real_estate.jpg
