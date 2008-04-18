@@ -12,4 +12,5 @@ This page will maintain links to language-specific pages for using OpenHandle fr
   * [OpenHandleCodeLisp Lisp]
   * _([OpenHandleCodeJavaScript JavaScript])_
   * _([OpenHandleCodeJava Java])_
+  * [OpenHandleCodeErlang Erlang]
   * [OpenHandleCodeAppleScript AppleScript]
