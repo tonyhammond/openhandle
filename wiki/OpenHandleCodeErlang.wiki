@@ -11,9 +11,18 @@ Here's how Erlang (using the 'openhandle' module contained in file "[http://nurt
 % erl openhandle.erl
 }}}
 
-prompts for a handle ('10100/nature', say) which gives us:
+opens and compiles the Erlang module, and one can then enter "`openhandle:get_handle("10100/nature")`" at the prompt as
+
+{{{
+1> openhandle:get_handle("10100/nature").
+}}}
+
+which gives us:
 
 http://nurture.nature.com/tony/imx/openhandle_erlang.jpg
+
+If the Erlang interpreter is opened without the module one will need to compile it first as "`c(openhandle).`"  That should compile and load both of the required modules (if not, you'll need to "`c(json).`" first).  Then one can call "`openhandle:get_handle("10100/nature").`" as before.
+
 
 Here's the code for the OpenHandle module:
 {{{
