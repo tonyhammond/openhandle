@@ -8,12 +8,12 @@ This page shows an Erlang example. This makes use of the 'json.erl' module avail
 Here's how Erlang (using the 'openhandle' module contained in file "[http://nurture.nature.com/tony/openhandle/code/erlang/openhandle.erl openhandle.erl]") can grab a handle data record:
 
 {{{
-% erlang ...
+% erl openhandle.erl
 }}}
 
 prompts for a handle ('10100/nature', say) which gives us:
 
-...
+http://nurtre.nature.com/tony/imx/Erlang.jpg
 
 Here's the code for the OpenHandle module:
 {{{
