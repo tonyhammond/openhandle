@@ -3,7 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Erlang Code Examples ==
 
-This page shows an Erlang example. This makes use of the 'json' library available at [http://edward.oconnor.cx/elisp/json.el json.el].
+This page shows an Erlang example. This makes use of the 'json.erl' module available [http://www.erlang-projects.org/Members/mremond/code/ejson/block_11381005072852/file here].
 
 Here's how Erlang (using the 'openhandle' module contained in file "[http://nurture.nature.com/tony/openhandle/code/erlang/openhandle.erl openhandle.erl]") can grab a handle data record:
 
