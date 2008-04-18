@@ -13,7 +13,7 @@ Here's how Erlang (using the 'openhandle' module contained in file "[http://nurt
 
 prompts for a handle ('10100/nature', say) which gives us:
 
-http://nurtre.nature.com/tony/imx/Erlang.jpg
+http://nurture.nature.com/tony/imx/Erlang.jpg
 
 Here's the code for the OpenHandle module:
 {{{
