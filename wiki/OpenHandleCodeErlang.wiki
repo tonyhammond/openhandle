@@ -5,7 +5,7 @@
 
 This page shows an Erlang example. This makes use of the 'json' library available at [http://edward.oconnor.cx/elisp/json.el json.el].
 
-Here's how Emacs (using the 'openhandle' library contained in file "[http://nurture.nature.com/tony/openhandle/code/lisp/openhandle.el openhandle.el]") can grab a handle data record:
+Here's how Erlang (using the 'openhandle' module contained in file "[http://nurture.nature.com/tony/openhandle/code/erlang/openhandle.erl openhandle.erl]") can grab a handle data record:
 
 {{{
 % erlang ...
