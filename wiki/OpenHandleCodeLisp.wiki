@@ -11,7 +11,7 @@ Here's how Emacs (using the 'openhandle' library contained in file "[http://nurt
 % emacs -l json.el -l openhandle.el -f openhandle-get-handle
 }}}
 
-prompts for a handle ('10100.nature', say) which gives us:
+prompts for a handle ('10100/nature', say) which gives us:
 
 http://nurture.nature.com/tony/imx/openhandle_lisp.jpg
 
