@@ -10,8 +10,8 @@ This page will maintain links to language-specific pages for using OpenHandle fr
   * [OpenHandleCodePhp PHP]
   * [OpenHandleCodePerl Perl]
   * [OpenHandleCodeLisp Lisp]
-  * _([OpenHandleCodeJavaScript JavaScript])_
-  * _([OpenHandleCodeJava Java])_
+  * [OpenHandleCodeJavaScript JavaScript]
+  * [OpenHandleCodeJava Java]
   * [OpenHandleCodeFSharp F#]
   * [OpenHandleCodeErlang Erlang]
   * [OpenHandleCodeCSharp C#]
