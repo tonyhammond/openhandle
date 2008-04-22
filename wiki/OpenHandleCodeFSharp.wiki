@@ -5,7 +5,7 @@
 
 This page shows an F# example.
 
-Here's the code for the F# handle clinet.
+Here's the code for the F# handle client (see file "[http://nurture.nature.com/tony/openhandle/code/fsharp/HandleClient.fs HandleClient.fs]"):
 {{{
 % cat HandleClient.fs
 #light

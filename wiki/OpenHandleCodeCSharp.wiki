@@ -5,7 +5,7 @@
 
 This page shows a C# example.
 
-Here's the code for the C# handle client:
+Here's the code for the C# handle client (see file "[http://nurture.nature.com/tony/openhandle/code/csharp/Program.cs Program.cs]"):
 {{{
 % cat Program.cs
 using System;
