@@ -38,3 +38,5 @@ json([comment=OpenHandle (JSON) - see http://openhandle.googlecode.com/, handle=
 data=json([adminRef=hdl:10100/nature?index=100, adminPermission=111111111111]), permission=1110, ttl= +86400, timestamp=Wed Feb 28 15:37:06 GMT 2007, reference=[]]),
 json([index=1, type=URL, data=http://www.nature.com/, permission=1110, ttl= +86400, timestamp=Wed Feb 28 15:37:06 GMT 2007, reference=[]])]])
 }}}
+
+This should be taken a step further using the '`http/json_convert`' module to read the Prolog term and walk that object to provide the standard listing given in the other code examples. 
