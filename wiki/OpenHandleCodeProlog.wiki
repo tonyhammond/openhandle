@@ -24,11 +24,11 @@ eval :-
     nl.
 
 main :-
-	catch(eval, E, (print_message(error, E), fail)),
-	halt.
+    catch(eval, E, (print_message(error, E), fail)),
+    halt.
 
 main :-
-	halt(1).
+    halt(1).
 }}}
 
 Running this gives the following:
