@@ -7,6 +7,7 @@ This page will maintain links to language-specific pages for using OpenHandle fr
   * [OpenHandleCodeSmalltalk Smalltalk]
   * [OpenHandleCodeRuby Ruby] 
   * [OpenHandleCodePython Python]
+  * [OpenHandleCodeProlog Prolog]
   * [OpenHandleCodePhp PHP]
   * [OpenHandleCodePerl Perl]
   * [OpenHandleCodeLisp Lisp]
