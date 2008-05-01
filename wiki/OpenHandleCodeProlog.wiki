@@ -6,7 +6,11 @@
 Here's how [http://www.swi-prolog.org/ SWI-Prolog] can process a Prolog program (contained in file "[http://nurture.nature.com/tony/openhandle/code/prolog/openhandle.pro openhandle.pro]") and grab a handle data record:
 {{{
 % cat openhandle.pro
-#!/opt/local/bin/swipl -q -t main -f
+#!/usr/bin/env swipl -q -t main -f
+
+/*
+  Prolog program to grab handle values.
+*/
 
 :- use_module(library('http/http_open')).
 :- use_module(library('http/json')).
@@ -18,9 +22,9 @@ eval :-
     concat_atom(Args, ' ', Handle),
     concat_atom([BaseUrl, Handle], OpenHandle),
     http_open(OpenHandle, In, []),
-    json_read(In, JSON),
+    json_read(In, Json),
     close(In),
-    write(JSON),
+    write(Json),
     nl.
 
 main :-
