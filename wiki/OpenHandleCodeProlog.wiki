@@ -5,7 +5,105 @@
 
 Here's how [http://www.swi-prolog.org/ SWI-Prolog] can process a Prolog program (contained in file "[http://nurture.nature.com/tony/openhandle/code/prolog/openhandle.pro openhandle.pro]") and grab a handle data record:
 {{{
-% cat openhandle.pro
+#!/usr/bin/env swipl -q -t main -f
+
+/*
+  Prolog program to grab handle values.
+*/
+
+:- use_module(library('http/http_open')).
+:- use_module(library('http/json')).
+
+json_list(json(List), List).
+
+json_handle([comment=Comment, handle=Handle, handleValues=HandleValues],
+            Comment, Handle, HandleValues).
+
+json_handle_value([index=Index, type=Type, data=Data, permission=Permission, ttl=Ttl, timestamp=Timestamp, reference=Reference],
+                  Index, Type, Data, Permission, Ttl, Timestamp, Reference).
+
+handle_values([], 0).
+handle_values([Head|Tail], Count) :- 
+    % write(Head), nl,
+    NewCount is Count + 1,
+    json_list(Head, List),
+    json_handle_value(List, Index, Type, Data, Permission, Ttl, Timestamp, Reference),
+    format('value #~w:~n', [NewCount]),
+    format('  index = ~w~n', [Index]),
+    format('  type = ~w~n', [Type]),
+    format('  data = ~w~n', [Data]),
+    format('  permission = ~w~n', [Permission]),
+    format('  ttl = ~w~n', [Ttl]),
+    format('  timestamp = ~w~n', [Timestamp]),
+    format('  reference = ~w~n~n', [Reference]),
+    handle_values(Tail, NewCount).
+
+% Get JSON from OpenHandle service and parse
+get_handle :-
+    BaseUrl = 'http://nascent.nature.com/openhandle/handle?format=json&id=',
+    current_prolog_flag(argv, Argv),
+    append(_, [--|Args], Argv),
+    concat_atom(Args, ' ', Handle),
+    concat_atom([BaseUrl, Handle], OpenHandle),
+    http_open(OpenHandle, In, []),
+    json_read(In, Json),
+    close(In),
+    parse_json(Json).
+
+% Get JSON from disk file and parse
+get_test_handle :-
+    JsonFile = 'h.json',
+    open(JsonFile, read, File, [alias(data)]),
+    json_read(data, Json),
+    close(File),
+    parse_json(Json).
+
+% Parse the JSON object
+parse_json(Json) :-
+    json_list(Json, List),
+    json_handle(List, _, Handle, HandleValues),
+    length(HandleValues, Values),
+    format('The handle <~w> has ~w values:~n~n', [Handle, Values]),
+    handle_values(HandleValues, 0).
+
+main :-
+    catch(get_handle, E, (print_message(error, E), get_test_handle)),
+    halt.
+
+main :-
+    halt(1).
+
+%__END__
+}}}
+
+Running this gives the following:
+{{{
+% openhandle.pro 10100/nature
+The handle <hdl:10100/nature> has 2 values:
+
+value #1:
+  index = 100
+  type = HS_ADMIN
+  data = json([adminRef=hdl:10100/nature?index=100, adminPermission=111111111111])
+  permission = 1110
+  ttl = +86400
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = []
+
+value #2:
+  index = 1
+  type = URL
+  data = http://www.nature.com/
+  permission = 1110
+  ttl = +86400
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = []
+
+}}}
+
+To just get the raw Prolog record for a handle this simple program will do:
+{{{
+% cat openhandle1.pro
 #!/usr/bin/env swipl -q -t main -f
 
 /*
@@ -37,10 +135,8 @@ main :-
 
 Running this gives the following:
 {{{
-% openhandle.pro 10100/nature
+% openhandle1.pro 10100/nature
 json([comment=OpenHandle (JSON) - see http://openhandle.googlecode.com/, handle=hdl:10100/nature, handleValues=[json([index=100, type=HS_ADMIN,
 data=json([adminRef=hdl:10100/nature?index=100, adminPermission=111111111111]), permission=1110, ttl= +86400, timestamp=Wed Feb 28 15:37:06 GMT 2007, reference=[]]),
 json([index=1, type=URL, data=http://www.nature.com/, permission=1110, ttl= +86400, timestamp=Wed Feb 28 15:37:06 GMT 2007, reference=[]])]])
 }}}
-
-This should be taken a step further using the '`http/json_convert`' module to read the Prolog term and walk that object to provide the standard listing given in the other code examples. 
