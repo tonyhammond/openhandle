@@ -3,7 +3,8 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle Prolog Code Examples ==
 
-Here's how [http://www.swi-prolog.org/ SWI-Prolog] can process a Prolog program (contained in file "[http://nurture.nature.com/tony/openhandle/code/prolog/openhandle.pro openhandle.pro]") and grab a handle data record (if working offline a test handle data record is read from the file "[http://nurture.nature.com/tony/openhandle/code/prolog/h.json h.json]"):
+Here's how [http://www.swi-prolog.org/ SWI-Prolog] can process a Prolog program (contained in file "[http://nurture.nature.com/tony/openhandle/code/prolog/openhandle.pro openhandle.pro]" - for working offline a test handle data record is read from the file "[http://nurture.nature.com/tony/openhandle/code/prolog/h.json h.json]")
+can grab a handle data record:
 {{{
 #!/usr/bin/env swipl -q -t main -f
 
