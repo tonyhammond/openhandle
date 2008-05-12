@@ -16,7 +16,7 @@ can grab a handle data record:
 :- use_module(library('http/http_open')).
 :- use_module(library('http/json')).
 
-%%   get_env(?Key, ?Value)
+%%   env(?Key, ?Value)
 %
 %    Environment variable table.
 
