@@ -3,7 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle 'Hello World' ==
 
-For providing a test for languages that can support the OpenHandle interface, the following 'hello world' type document is proposed: 
+In order to provide a simple test for languages that support the OpenHandle interface, the following 'hello world' type document is proposed: 
 
 {{{
 The handle <hdl:10100/nature> has 2 values:
@@ -28,3 +28,5 @@ value #2:
 }}}
 
 Note that there may be small differences in rendering the 'data' and 'references' fields which may be structured.
+
+See the ...
