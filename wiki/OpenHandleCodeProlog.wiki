@@ -9,39 +9,69 @@ can grab a handle data record:
 #!/usr/bin/env swipl -q -t main -f
 
 /*
-  Prolog program to grab handle values.
+    Prolog code example for OpenHandle. 
+    See http://code.google.com/p/openhandle/wiki/OpenHandleCodeExamples
 */
 
 :- use_module(library('http/http_open')).
 :- use_module(library('http/json')).
 
+%%   get_env(?Key, ?Value)
+%
+%    Environment variable table.
+
+env(baseurl, 'http://nascent.nature.com/openhandle/handle?format=json&id=').
+env(json, 'h.json').
+
+%%   json_list(+JsonList, -List)
+%
+%    Unbundles JSON list object into list.
+
 json_list(json(List), List).
+
+%%   json_handle(+JsonList, -Comment, -Handle, -HandleValues)
+%
+%    Unbundles handle JSON list object.
 
 json_handle([comment=Comment, handle=Handle, handleValues=HandleValues],
             Comment, Handle, HandleValues).
 
+%%   json_handle_value(+JsonList, -Index, -Type, -Data, -Permission, -Ttl, -Timestamp, -Reference)
+%
+%    Unbundles handle value JSON list object into separate fields.
+
 json_handle_value([index=Index, type=Type, data=Data, permission=Permission, ttl=Ttl, timestamp=Timestamp, reference=Reference],
                   Index, Type, Data, Permission, Ttl, Timestamp, Reference).
 
+%%   handle_values(+JsonList, +Count)
+%
+%    Recurses over list of handle values as JSON list object and prints values.
+
 handle_values([], 0).
 handle_values([Head|Tail], Count) :- 
-    % write(Head), nl,
-    NewCount is Count + 1,
+    Count_ is Count + 1,
     json_list(Head, List),
     json_handle_value(List, Index, Type, Data, Permission, Ttl, Timestamp, Reference),
-    format('value #~w:~n', [NewCount]),
+    format('value #~w:~n', [Count_]),
     format('  index = ~w~n', [Index]),
     format('  type = ~w~n', [Type]),
-    format('  data = ~w~n', [Data]),
+    ( atom(Data)
+      -> format('  data = ~w~n', [Data])
+      ;  json_list(Data, Data_), format('  data = ~w~n', [Data_])
+    ),
     format('  permission = ~w~n', [Permission]),
     format('  ttl = ~w~n', [Ttl]),
     format('  timestamp = ~w~n', [Timestamp]),
-    format('  reference = ~w~n~n', [Reference]),
-    handle_values(Tail, NewCount).
+    % format('  reference = ~w~n~n', [Reference]),
+    json_list(Reference, Reference_), format('  reference = ~w~n~n', [Reference_]),
+    handle_values(Tail, Count_).
 
-% Get JSON from OpenHandle service and parse
+%%   get_handle
+%
+%    Get JSON from OpenHandle service and parse.
+
 get_handle :-
-    BaseUrl = 'http://nascent.nature.com/openhandle/handle?format=json&id=',
+    env(baseurl, BaseUrl),
     current_prolog_flag(argv, Argv),
     append(_, [--|Args], Argv),
     concat_atom(Args, ' ', Handle),
@@ -51,21 +81,31 @@ get_handle :-
     close(In),
     parse_json(Json).
 
-% Get JSON from disk file and parse
+%%   get_test_handle
+%
+%    Get JSON from disk file and parse.
+
 get_test_handle :-
-    JsonFile = 'h.json',
+    env(json, JsonFile),
     open(JsonFile, read, File, [alias(data)]),
     json_read(data, Json),
     close(File),
     parse_json(Json).
 
-% Parse the JSON object
+%%   parse_json(+Json)
+%
+%    Parse the JSON object.
+
 parse_json(Json) :-
     json_list(Json, List),
     json_handle(List, _, Handle, HandleValues),
     length(HandleValues, Values),
     format('The handle <~w> has ~w values:~n~n', [Handle, Values]),
     handle_values(HandleValues, 0).
+
+%%   main
+%
+%    Entry point for program.
 
 main :-
     catch(get_handle, E, (print_message(error, E), get_test_handle)),
