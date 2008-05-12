@@ -62,8 +62,7 @@ handle_values([Head|Tail], Count) :-
     format('  permission = ~w~n', [Permission]),
     format('  ttl = ~w~n', [Ttl]),
     format('  timestamp = ~w~n', [Timestamp]),
-    % format('  reference = ~w~n~n', [Reference]),
-    json_list(Reference, Reference_), format('  reference = ~w~n~n', [Reference_]),
+    format('  reference = ~w~n~n', [Reference]),
     handle_values(Tail, Count_).
 
 %%   get_handle
