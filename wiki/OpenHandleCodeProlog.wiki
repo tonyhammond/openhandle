@@ -119,7 +119,7 @@ main :-
 
 Running this gives the following:
 {{{
-% openhandle.pro 10100/nature
+% swipl -q -t go -f openhandle.pro 10100/nature
 The handle <hdl:10100/nature> has 2 values:
 
 value #1:
@@ -176,7 +176,7 @@ main :-
 
 Running this gives the following:
 {{{
-% openhandle1.pro 10100/nature
+% swipl -q -t go -f openhandle1.pro 10100/nature
 json([comment=OpenHandle (JSON) - see http://openhandle.googlecode.com/, handle=hdl:10100/nature, handleValues=[json([index=100, type=HS_ADMIN,
 data=json([adminRef=hdl:10100/nature?index=100, adminPermission=111111111111]), permission=1110, ttl= +86400, timestamp=Wed Feb 28 15:37:06 GMT 2007, reference=[]]),
 json([index=1, type=URL, data=http://www.nature.com/, permission=1110, ttl= +86400, timestamp=Wed Feb 28 15:37:06 GMT 2007, reference=[]])]])
