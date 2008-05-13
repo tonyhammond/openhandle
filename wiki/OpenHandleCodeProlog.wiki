@@ -212,11 +212,11 @@ P = http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 O = http://hdl.handle.net/10100/handle.rdfs#Handle
 S = hdl:10100/nature
 P = http://hdl.handle.net/10100/handle.rdfs#handleValues
-O = __http://nascent.nature.com/openhandle/handle?&mimetype=text/plain&format=rdf&id=10100/nature#__List1
-S = __http://nascent.nature.com/openhandle/handle?&mimetype=text/plain&format=rdf&id=10100/nature#__Description1
+O = __http://nascent.nature.com/openhandle/handle?format=rdf&id=10100/nature#__List1
+S = __http://nascent.nature.com/openhandle/handle?format=rdf&id=10100/nature#__Description1
 P = http://www.w3.org/1999/02/22-rdf-syntax-ns#type
 O = http://hdl.handle.net/10100/handle.rdfs#HandleValue
-S = __http://nascent.nature.com/openhandle/handle?&mimetype=text/plain&format=rdf&id=10100/nature#__Description1
+S = __http://nascent.nature.com/openhandle/handle?format=rdf&id=10100/nature#__Description1
 P = http://hdl.handle.net/10100/handle.rdfs#index
 O = literal(100)
 ...
