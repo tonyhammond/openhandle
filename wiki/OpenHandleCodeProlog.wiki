@@ -185,8 +185,8 @@ json([index=1, type=URL, data=http://www.nature.com/, permission=1110, ttl= +864
 But we can also use [http://www.swi-prolog.org/ SWI-Prolog]'s semantic web libraries to read the RDF/XML. Here's a simple program which prints out all the triples for a handle.
 {{{
 % cat my_semantic_handle.pl
-:- use_module(library('semweb/ rdf_http_plugin')).
-:- use_module(library('semweb/ rdf_db')).
+:- use_module(library('semweb/rdf_http_plugin')).
+:- use_module(library('semweb/rdf_db')).
 
 list_triples :-
   rdf(S,P,O),
@@ -200,7 +200,7 @@ print_triple(S,P,O) :-
   format('O = ~w~n', O).
 
 go :-
-  rdf_load('http://nascent.nature.com/openhandle/handle?&format=rdf&id=10100/nature'),  
+  rdf_load('http://nascent.nature.com/openhandle/handle?&format=rdf&id=10100/nature'),  
   list_triples.
 }}}
 
