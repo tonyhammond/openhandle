@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
     CURLcode res;
  
     if (argc != 2) {
-        printf("Usage: %s handle\n", argv[0]);
+        printf("Usage: %s <handle>\n", argv[0]);
     }
     else {
         strcpy(uri, OPENHANDLE);
