@@ -87,4 +87,4 @@ value #2:
 
 Embedding the same script within an HTML page header between {{{<script>...</script>}}} tags and substituting {{{alert(s);}}} for {{{print(s);}}} gives the following popup:
 
-http://nurture.nature.com/tony/imx/openhandle.js
+http://nurture.nature.com/tony/imx/openhandle_js.jpg
