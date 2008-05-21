@@ -4,6 +4,7 @@
 
 This page will maintain links to language-specific pages for using OpenHandle from code. Language examples include:
 
+  * [OpenHandleCodeXslt XSLT]
   * [OpenHandleCodeSmalltalk Smalltalk]
   * [OpenHandleCodeRuby Ruby] 
   * [OpenHandleCodePython Python]
