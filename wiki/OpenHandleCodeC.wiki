@@ -56,9 +56,12 @@ int main(int argc, char *argv[])
 }
 }}}
 
-This can be run as follows (note that this is still a work in progress and so doesn't produce the standard [OpenHandleHelloWorld Hello World] document):
+Compiling this
 {{{
 % gcc -l curl -l json openhandle.c -o openhandle
+}}}
+and running gives the following (note that this is still a work in progress and so doesn't produce the standard [OpenHandleHelloWorld Hello World] document):
+{{{
 % ./openhandle 10100/nature
 json = 
 {
