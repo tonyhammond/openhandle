@@ -1,0 +1,28 @@
+#summary XSLT code examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle XSLT Code Examples ==
+
+Here's a simple XSLT stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/lisp/openhandle.xsl openhandle.xsl]") which can be used to grab a handle data record as:
+
+% xalan -xsl openhandle.xsl -in 'http://nascent.nature.com/openhandle/handle?format=rdf&id=10100/nature'
+The handle <hdl:10100/nature> has 2 values:
+
+value #1:
+  index = 100
+  type = HS_ADMIN
+  data = [object]
+  permission = 1110
+  ttl = +86400
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = []
+
+value #2:
+  index = 1
+  type = URL
+  data = http://www.nature.com/
+  permission = 1110
+  ttl = +86400
+  timestamp = Wed Feb 28 15:37:06 GMT 2007
+  reference = []
+}}}
