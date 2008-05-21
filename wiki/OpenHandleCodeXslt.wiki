@@ -3,7 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle XSLT Code Examples ==
 
-Here's a simple XSLT stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/lisp/openhandle.xsl openhandle.xsl]") which can be used to grab a handle data record as:
+Here's a simple XSLT stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/xslt/openhandle.xsl openhandle.xsl]") which can be used to grab a handle data record as:
 
 {{{
 % xalan -xsl openhandle.xsl -in 'http://nascent.nature.com/openhandle/handle?format=rdf&id=10100/nature'
