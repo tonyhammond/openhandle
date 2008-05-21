@@ -5,7 +5,7 @@
 
 Here's how a native Java**Script program (contained in file "[http://nurture.nature.com/tony/openhandle/code/javascript/openhandle.js openhandle.js]") can grab a handle data record.
 
-Note this example uses an embedded JSON object since there are cross-site security policy restrictions in place to open an JSON object. It also makes use of the [http://www.mozilla.org/rhino/ Rhino] JavaScript engine.
+Note this example uses an embedded JSON object since there are cross-site security policy restrictions in place to open an JSON object. It also makes use of the [http://www.mozilla.org/rhino/ Rhino] Java**Script engine.
 
 To run a similar script in the browser would require a [http://bob.pythonmac.org/archives/2005/12/05/remote-json-jsonp/ JSONP] callback. A seperate template for OpenHandle will have to be set up.
 
