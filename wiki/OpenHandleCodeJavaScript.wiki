@@ -85,6 +85,14 @@ value #2:
 
 }}}
 
-Embedding the same script within an HTML page header between {{{<script>...</script>}}} tags and substituting {{{alert(s);}}} for {{{print(s);}}} gives the following popup:
+Embedding the same script within an HTML page between {{{<script>...</script>}}} tags and substituting {{{alert(s);}}} for {{{print(s);}}}, i.e. 
+{{{
+<script type="application/javascript">
+var h = {
+...
+alert(s);
+</script>
+}}}
+gives the following popup:
 
 http://nurture.nature.com/tony/imx/openhandle_js.jpg
