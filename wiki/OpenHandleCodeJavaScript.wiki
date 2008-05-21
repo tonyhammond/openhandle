@@ -90,6 +90,26 @@ Embedding the same script within an HTML page between {{{<script>...</script>}}}
 <script type="application/javascript">
 var h = {
 ...
+}
+
+var handle = h["handle"];
+var values = h["handleValues"];
+var value;
+var i = 0;
+var s = "";
+
+s += "The handle <" + handle + "> has " + values.length + " values:\n";;
+for (var i = 0; i < values.length; i++) {
+    value = values[i];
+    s += "\nvalue #" + (i + 1) + ":\n";
+    s += "  index = " + value["index"] + "\n";
+    s += "  type = " + value["type"] + "\n";
+    s += "  data = " + value["data"] + "\n";
+    s += "  permission = " + value["permission"] + "\n";
+    s += "  ttl = " + value["ttl"] + "\n";
+    s += "  timestamp = " + value["timestamp"] + "\n";
+    s += "  reference = " + value["reference"] + "\n";
+}
 alert(s);
 </script>
 }}}
