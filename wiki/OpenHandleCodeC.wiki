@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     CURL *curl;
     CURLcode res;
  
-    char *OPENHANDLE = "http://nascent.nature.com/openhandle/handle?&format=json&id=";
+    const char *OPENHANDLE = "http://nascent.nature.com/openhandle/handle?&format=json&id=";
     char uri[255];
 
     if (argc != 2) {
