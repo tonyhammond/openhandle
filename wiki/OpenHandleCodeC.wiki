@@ -3,8 +3,7 @@
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle C Code Examples ==
 
-Here's a simple C program (contained in file "[http://nurture.nature.com/tony/openhandle/code/c/openhandle.c openhandle.c]") which can be used to grab a handle data record (uses the [http://oss.metaparadigm.com/json-c/
- JSON-C] library):
+Here's a simple C program (contained in file "[http://nurture.nature.com/tony/openhandle/code/c/openhandle.c openhandle.c]") which can be used to grab a handle data record (uses the [http://oss.metaparadigm.com/json-c/ JSON-C] library):
 {{{
 #include <stdlib.h>
 #include <string.h>
