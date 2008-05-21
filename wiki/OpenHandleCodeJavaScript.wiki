@@ -84,3 +84,7 @@ value #2:
   reference = [object Object]
 
 }}}
+
+Embedding the same script within an HTML page header between {{{<script>}}} tags and substituting {{{{alert(s);}}} for {{{print(s);}}} gives the following popup:
+
+[]
