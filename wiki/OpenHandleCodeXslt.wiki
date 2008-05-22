@@ -6,6 +6,7 @@
 Here's a simple XSLT stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/xslt/openhandle.xsl openhandle.xsl]") which can be used to grab a handle data record:
 
 {{{
+% cat openhandle.xsl
 <?xml version="1.0"?>
 <!DOCTYPE stylesheet [
     <!ENTITY nl "<xsl:text>&#10;</xsl:text>">
@@ -120,4 +121,11 @@ value #2:
   ttl = +86400
   timestamp = Wed Feb 28 15:37:06 GMT 2007
   reference = []
+}}}
+
+A variant stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/xslt/openhandle_dot.xsl openhandle_dot.xsl]")  can be used to generate a <code>.dot</code> file for a GraphViz presentation:
+
+{{{
+% cat openhandle_dot.xsl
+
 }}}
