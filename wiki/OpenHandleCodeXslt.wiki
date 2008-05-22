@@ -123,7 +123,7 @@ value #2:
   reference = []
 }}}
 
-A variant stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/xslt/openhandle_dot.xsl openhandle_dot.xsl]")  can be used to generate a <code>.dot</code> file for a [http://www.graphviz.org/ GraphViz] presentation:
+A variant stylesheet (contained in file "[http://nurture.nature.com/tony/openhandle/code/xslt/openhandle_dot.xsl openhandle_dot.xsl]")  can be used to generate a "`.dot`" file for a [http://www.graphviz.org/ GraphViz] presentation:
 
 {{{
 % cat openhandle_dot.xsl
@@ -247,11 +247,11 @@ This can be applied simply (here using [http://xalan.apache.org/index.html Xalan
 % xalan -xsl openhandle_dot.xsl -in 'http://nascent.nature.com/openhandle/handle?format=rdf&id=10100/nature' > test.dot
 }}}
 
-This can either be be displayed directly using a GrphViz viewer application, e.g.
+This can either be be displayed directly using a [http://www.graphviz.org/ GraphViz] viewer application, e.g.
 {{{
 % dotty test.dot
 }}}
-or can processed by <code>dot</code> and saved in a preferred graphics format, e.g.
+or can processed by "`dot`" and saved in a preferred graphics format, e.g.
 {{{
 % dot test.dot -T jpg > test.jpg
 }}}
