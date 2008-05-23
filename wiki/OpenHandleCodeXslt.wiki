@@ -354,8 +354,8 @@ A variant stylesheet (contained in file "[http://nurture.nature.com/tony/openhan
 
         <xsl:otherwise>
             <xsl:text>    I CAN HAS DATA</xsl:text>&nl;
-            <xsl:text>      ITZ AT MUCH STUFFINGS</xsl:text>&nl;
-            <xsl:text>      LOL ITZ SOOO HEAVY</xsl:text>&nl;
+            <xsl:text>      ITZ AT BIG FLUFFY BALL</xsl:text>&nl;
+            <xsl:text>      LOL ITZ SOOO WOOLLY</xsl:text>&nl;
             <xsl:text>    KTHX.</xsl:text>&nl;
 
         </xsl:otherwise>
@@ -415,8 +415,8 @@ IM IN UR BUCKETS MAKING UP VALS
       ITZ AT HS_ADMIN
     KTHX.
     I CAN HAS DATA
-      ITZ AT MUCH STUFFINGS
-      LOL ITZ SOOO HEAVY
+      ITZ AT BIG FLUFFY BALL
+      LOL ITZ SOOO WOOLLY
     KTHX.
     I CAN HAS PERMISSION
       ITZ AT 1110
