@@ -11,7 +11,7 @@ can grab a handle data record:
 {{{
 % cat openhandle.acsl.txt
 
-make "json  [/Users/tony/Desktop/h.json]
+make "json [/Users/tony/Desktop/h.json]
 readhandle
 
 
