@@ -133,7 +133,8 @@ moveline
 make "msg (list "The "handle (word char 60 :handle char 62) "has :values (word "values char 58))
 grtype :msg moveline
 printlines :listing 
-]]}}}
+]]
+}}}
 
 http://nurture.nature.com/tony/imx/openhandle_logo_linear.jpg
 
