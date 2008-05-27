@@ -1,0 +1,13 @@
+#summary Logo code examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Logo Code Examples ==
+
+These examples use [http://www.alancsmith.co.uk/logo/ ACSLogo] for MacOS X. Logo does not have system calls so cannot fetch an OpenHandle decsription, but it can read from a disk file.
+
+Here's how [http://www.alancsmith.co.uk/logo/ ACSLogo] can process a Logo program (contained in file "[http://nurture.nature.com/tony/openhandle/code/logo/openhandle.acsl.txt openhandle.acsl.txt]" - for working offline a test handle data record is read from the file "[http://nurture.nature.com/tony/openhandle/code/logo/h.json h.json]")
+can grab a handle data record:
+{{{
+% cat openhandle.acsl.txt
+
+}}}
