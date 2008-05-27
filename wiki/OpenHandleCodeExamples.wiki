@@ -11,7 +11,7 @@ This page will maintain links to language-specific pages for using OpenHandle fr
   * [OpenHandleCodeProlog Prolog]
   * [OpenHandleCodePhp PHP]
   * [OpenHandleCodePerl Perl]
-  * [OpenHandleCodeLisp Logo]
+  * [OpenHandleCodeLogo Logo]
   * [OpenHandleCodeLisp Lisp]
   * [OpenHandleCodeJavaScript JavaScript]
   * [OpenHandleCodeJava Java]
