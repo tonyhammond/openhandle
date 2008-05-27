@@ -136,6 +136,17 @@ printlines :listing
 ]]
 }}}
 
+So, executing the following lines in the work window (by pressing cmd-rtn)
+{{{
+make "json [/Users/tony/Desktop/h.json]
+readhandle
+}}}
+one gets the following graphics:
+
+a) Linear - with {{{make "moveline_action "linear}}} 
+
 http://nurture.nature.com/tony/imx/openhandle_logo_linear.jpg
+
+b) Radial - with {{{make "moveline_action "radial}}} 
 
 http://nurture.nature.com/tony/imx/openhandle_logo_radial.jpg
