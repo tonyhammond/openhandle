@@ -11,3 +11,7 @@ can grab a handle data record:
 % cat openhandle.acsl.txt
 
 }}}
+
+http://nurture.nature.com/tony/imx/openhandle_logo_linear.jpg
+
+http://nurture.nature.com/tony/imx/openhandle_logo_radial.jpg
