@@ -1,0 +1,94 @@
+#summary Haskell code examples for OpenHandle
+
+[OpenHandleCodeExamples Code Examples]
+== OpenHandle Haskell Code Examples ==
+
+This page shows a Haskell example. It makes use of these two libraries:
+
+ * [http://www.haskell.org/http/ HTTP]
+
+ * [http://hackage.haskell.org/cgi-bin/hackage-scripts/package/json-0.3.3 JSON]
+
+Here's the code for the Haskell handle client (see file "[http://nurture.nature.com/tony/openhandle/code/haskell/OpenHandle.hs OpenHandle.hs]"):
+{{{
+% cat OpenHandle.hs
+module Openhandle where
+
+import Data.Char (intToDigit)
+import Network.URI
+import Network.HTTP
+import Text.JSON
+
+main :: IO()
+main = do
+  putStr "Enter Handle: "
+  handle <- getLine
+  raw <-get (getUri handle)
+  putStr (formatJson (decodeStrict raw))
+
+formatJson :: Text.JSON.Result (JSObject JSValue) -> String
+formatJson (Ok j) = let values = (getValue j "handleValues") in 
+                      "\nThe handle <" ++ (formatHandle (getValue j "handle")) ++ "> has " ++ (show (countValues values)) ++ " values:\n"
+                      ++ (formatHandleValues values)
+formatJson (Error e) = e
+
+formatHandleValues :: Maybe JSValue -> String
+formatHandleValues (Just (JSArray values)) = formatHandleValuesN 1 values
+
+formatHandleValuesN :: Int -> [JSValue] -> [Char]
+formatHandleValuesN _ [] = ""
+formatHandleValuesN n (x:xs) = "\nValue " ++ (show n) ++ ": " ++ (formatJSValue 0 x) ++ (formatHandleValuesN (n + 1) xs)
+
+formatHandle :: Maybe JSValue -> String
+formatHandle (Just (JSString str)) = fromJSString str
+
+countValues :: Maybe JSValue -> Int
+countValues (Just (JSArray arr)) = length arr
+
+getValue :: JSObject o -> String -> Maybe o
+getValue obj name = lookup name (fromJSObject obj)
+
+formatJSValue :: Int -> JSValue -> String
+formatJSValue indent (JSArray arr)  = (makeIndent indent) ++ (foldl (++) "" (map (formatJSValue indent) arr)) ++ "\n"
+formatJSValue indent (JSString str) = (fromJSString str) ++ "\n"
+formatJSValue indent (JSObject obj) = "{\n" ++ (foldl (formatEntry (indent + 1)) "" (fromJSObject obj)) ++ (makeIndent indent) ++ "}\n"
+
+formatEntry :: Int -> [Char] -> (String, JSValue) -> [Char]
+formatEntry indent str (name, val) = str ++ (makeIndent indent) ++ name ++ ": " ++ (formatJSValue indent val)
+
+makeIndent :: Int -> String
+makeIndent 0 = ""
+makeIndent n = "  " ++ (makeIndent (n - 1))
+
+get :: URI -> IO String
+get uri =
+    do
+      eresp <- simpleHTTP (request uri)
+      resp <- handleE (error . show) eresp
+      case rspCode resp of
+                      (2,0,0) -> return (rspBody resp)
+                      _ -> error (httpError resp)
+      where
+        showRspCode (a,b,c) = map intToDigit [a,b,c]
+        httpError resp = showRspCode (rspCode resp) ++ " " ++ rspReason resp
+
+handleE :: Monad m => (ConnError -> m a) -> Either ConnError a -> m a
+handleE h (Left e) = h e
+handleE _ (Right v) = return v
+
+request :: URI -> Request
+request uri = Request{ rqURI = uri,
+                       rqMethod = GET,
+                       rqHeaders = [],
+                       rqBody = "" }
+
+getUri :: String -> URI
+getUri handle =
+    let uriStr = (getUriStr handle)
+    in case parseURI uriStr of
+         Nothing -> error ("Couldn't Parse ur: " ++ uriStr)
+         Just uri -> uri
+
+getUriStr :: String -> String
+getUriStr handle = "http://nascent.nature.com/openhandle/handle?id=" ++ handle ++ "&format=json"
+}}}
