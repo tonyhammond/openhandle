@@ -92,3 +92,51 @@ getUri handle =
 getUriStr :: String -> String
 getUriStr handle = "http://nascent.nature.com/openhandle/handle?id=" ++ handle ++ "&format=json"
 }}}
+
+Running this from the iteractive "{{{ghc}}}" shell gives this:
+{{{
+% ghci
+WARNING: GHCi invoked via 'ghci.exe' in *nix-like shells (cygwin-bash, in partic
+ular)
+         doesn't handle Ctrl-C well; use the 'ghcii.sh' shell wrapper instead
+GHCi, version 6.8.2: http://www.haskell.org/ghc/  :? for help
+Loading package base ... linking ... done.
+Prelude> :load OpenHandle
+Ok, modules loaded: Openhandle.
+Prelude Openhandle> main
+Loading package array-0.1.0.0 ... linking ... done.
+Loading package containers-0.1.0.1 ... linking ... done.
+Loading package bytestring-0.9.0.1 ... linking ... done.
+Loading package parsec-2.1.0.0 ... linking ... done.
+Loading package network-2.1.0.0 ... linking ... done.
+Loading package HTTP-3001.0.4 ... linking ... done.
+Loading package pretty-1.0.0.0 ... linking ... done.
+Loading package json-0.3.3 ... linking ... done.
+Enter Handle: 10100/nature
+
+The handle <hdl:10100/nature> has 2 values:
+
+Value 1: {
+  index: 100
+  type: HS_ADMIN
+  data: {
+    adminRef: hdl:10100/nature?index=100
+    adminPermission: 111111111111
+  }
+  permission: 1110
+  ttl: +86400
+  timestamp: Wed Feb 28 15:37:06 GMT 2007
+  reference:
+}
+
+Value 2: {
+  index: 1
+  type: URL
+  data: http://www.nature.com/
+  permission: 1110
+  ttl: +86400
+  timestamp: Wed Feb 28 15:37:06 GMT 2007
+  reference:
+}
+Prelude Openhandle>
+}}}
