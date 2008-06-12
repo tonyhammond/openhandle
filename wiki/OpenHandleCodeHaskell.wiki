@@ -93,7 +93,7 @@ getUriStr :: String -> String
 getUriStr handle = "http://nascent.nature.com/openhandle/handle?id=" ++ handle ++ "&format=json"
 }}}
 
-Running this from the "[http://www.haskell.org/ghc/ ghc]" interactive shell ("[http://www.haskell.org/ghc/docs/latest/html/users_guide/ghci.html ghci]") gives this:
+Running this from the [http://www.haskell.org/ghc/ GHC] interactive shell ("[http://www.haskell.org/ghc/docs/latest/html/users_guide/ghci.html ghci]") gives this:
 {{{
 % ghci
 WARNING: GHCi invoked via 'ghci.exe' in *nix-like shells (cygwin-bash, in partic
