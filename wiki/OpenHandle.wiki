@@ -8,4 +8,8 @@ Head pages:
  * OpenHandleServices - services delivering OpenHandle
  * OpenHandleParameters - querystring parameters to the service
 
+Wiki pages:
+
+ * [http://code.google.com/p/openhandle/wiki Listing]
+
 See http://www.handle.net/ for further information on the Handle System.
