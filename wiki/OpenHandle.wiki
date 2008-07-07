@@ -7,6 +7,10 @@ Project:
  * OpenHandleRationale - rationale behind OpenHandle project
  * OpenHandleTimeline - timeline for OpenHandle project
 
+Install:
+
+ * GettingStarted - info on downloading and compiling the OpenHandle code
+
 Query:
 
  * OpenHandleServices - services supporting OpenHandle
@@ -16,21 +20,19 @@ Response:
 
  * OpenHandleSerializations - serializations supported by OpenHandle
  * OpenHandleCodeExamples - code examples for OpenHandle
+ * OpenHandleValidators - online validators for OpenHandle
 
 Handle:
 
  * HandleDataModel - data model for Handle
  * HandleSpecification - specification for Handle
- * HandleRdfSchema - RDF Schema for Handle
+ * HandleSchema - RDF Schema for Handle
 
 Related topics:
 
- * [http://code.google.com/p/openhandle/wiki/HandleSchema Handle RDF Schema]
-  ** The RDF schema defines a constraint grammar for an RDF representation of a Handle record (RDF/XML, RDF/N3)
- * [http://code.google.com/p/openhandle/wiki/HandleUriScheme Handle URI Scheme]
-  ** Currently there is no native URI scheme for handle (it can be represented under the 'info' URI scheme) which leads to uncertainties in how best to cite Handle
- * [http://code.google.com/p/openhandle/wiki/HandleAdminApiJson Handle API (JSON)]
-  ** Although a command line API is available for batch processing by the Java codebase it would be useful to see a lower barrier to entry for Handle admin - hence the JSON API here being developed 
+ * HandleUriScheme - URI scheme for Handle
+ * HandleAdminApiJson - proposals for a Handle API (JSON)
+ * HandleRdfDatasource - RDF serialization as RDF datasource
 
 Listing:
 
