@@ -2,20 +2,14 @@
 
 == OpenHandle Serializations ==
 
-The OpenHandle service currently serializes Handle records as:
-
- * [OpenHandleSerializationRdf RDF/XML]
- * [OpenHandleSerializationN3 RDF/N3]
- * [OpenHandleSerializationJson RDF/JSON]
-
 Initial serializations include the following:
 
  * [http://www.w3.org/TR/rdf-syntax-grammar/ RDF/XML]
-  ** Standard XML-based serialization for RDF ([http://code.google.com/p/openhandle/wiki/OpenHandleSerializationRdf wiki page], [http://nascent.nature.com/openhandle/handle?id=4263537/4069&format=rdf&mimetype=application/xml example])
+  ** Standard XML-based serialization for RDF ([http://code.google.com/p/openhandle/wiki/OpenHandleSerializationRdf Page], [http://nascent.nature.com/openhandle/handle?id=4263537/4069&format=rdf&mimetype=application/xml Example])
  *  [http://www.w3.org/TeamSubmission/n3/ RDF/N3]
-  ** Notation3, a text-based serialization of RDF ([http://code.google.com/p/openhandle/wiki/OpenHandleSerializationN3 wiki page], [http://nascent.nature.com/openhandle/handle?id=4263537/4069&format=n3&mimetype=text/plain  example])
+  ** Notation3, a text-based serialization of RDF ([http://code.google.com/p/openhandle/wiki/OpenHandleSerializationN3 Page], [http://nascent.nature.com/openhandle/handle?id=4263537/4069&format=n3&mimetype=text/plain  Example])
  * [http://www.json.org/ JSON]
-  ** Java**Script Object Notation ([http://code.google.com/p/openhandle/wiki/OpenHandleSerializationJson wiki page], [http://nascent.nature.com/openhandle/handle?id=4263537/4069&format=json&mimetype=text/plain example])
+  ** Java**Script Object Notation ([http://code.google.com/p/openhandle/wiki/OpenHandleSerializationJson Page], [http://nascent.nature.com/openhandle/handle?id=4263537/4069&format=json&mimetype=text/plain Example])
 
 A candidate serialization format would be [http://www.w3.org/TR/rdf-sparql-query/ SPARQL] Query Results: [http://www.w3.org/TR/rdf-sparql-XMLres/ XML Format] and/or [http://www.w3.org/TR/rdf-sparql-json-res/ JSON].
 
