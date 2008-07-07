@@ -6,7 +6,7 @@ OpenHandle is a project to expose Handle records in common text-based serializat
   * OpenHandleRationale - rationale behind OpenHandle project
   * OpenHandleTimeline - timeline for OpenHandle project
 
-Install:
+* Install:
 
  * GettingStarted - info on downloading and compiling the OpenHandle code
 
