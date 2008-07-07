@@ -4,8 +4,8 @@ OpenHandle is a project to expose Handle records in common text-based serializat
 
  * Project:
 
- ** OpenHandleRationale - rationale behind OpenHandle project
- ** OpenHandleTimeline - timeline for OpenHandle project
+** OpenHandleRationale - rationale behind OpenHandle project
+** OpenHandleTimeline - timeline for OpenHandle project
 
 Install:
 
