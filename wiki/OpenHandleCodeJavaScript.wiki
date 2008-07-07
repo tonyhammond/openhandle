@@ -116,3 +116,7 @@ alert(s);
 gives the following popup:
 
 http://nurture.nature.com/tony/imx/openhandle_js1.jpg
+
+A freeform [http://code.google.com/p/openhandle/wiki/OpenHandleHelloWorld 'Hello World'] generated in the browser using [http://ejohn.org/blog/processingjs/ Processing.js] and [http://www.mozilla.com/en-US/firefox/all-rc.html Firefox 3 RC1]
+
+http://nurture.nature.com/tony/imx/openhandle_p5.jpg
