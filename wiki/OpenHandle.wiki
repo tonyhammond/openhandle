@@ -29,8 +29,7 @@ OpenHandle is a project to expose Handle records in common text-based serializat
  * HandleAdminApiJson - proposals for a Handle API (JSON)
  * HandleRdfDatasource - RDF serialization as RDF datasource
 
-Listing:
-
+*Listing:*
  * [http://code.google.com/p/openhandle/wiki All Pages]
 
 See http://www.handle.net/ for further information on the Handle System.
