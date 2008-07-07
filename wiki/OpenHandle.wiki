@@ -2,34 +2,29 @@
  
 OpenHandle is a project to expose Handle records in common text-based serializations to make the data stored within the records more accessible to Web applications. Specifically, OpenHandle is a Java servlet-based front-end to the Handle System for exposing records as RDF/XML, RDF/N3, and JSON. 
 
-* Project:
+*Project:*
  * OpenHandleRationale - rationale behind OpenHandle project
  * OpenHandleTimeline - timeline for OpenHandle project
 
-* Install:
-
+*Install:*
  * GettingStarted - info on downloading and compiling the OpenHandle code
 
-* Query:
-
+*Query:*
  * OpenHandleServices - services supporting OpenHandle
  * OpenHandleParameters - querystring parameters to the service
 
-* Response:
-
+*Response:*
  * OpenHandleSerializations - serializations supported by OpenHandle
  * OpenHandleCodeExamples - code examples for OpenHandle
  * OpenHandleValidators - online validators for OpenHandle
 
-* Handle:
-
+*Handle:*
  * HandleDataModel - data model for Handle
  * HandleSpecification - specification for Handle
  * HandleSchema - RDF Schema for Handle
  * HandleGalleryPage - gallery of handles serialized by OpenHandle
 
-* Related:
-
+*Related:*
  * HandleUriScheme - URI scheme for Handle
  * HandleAdminApiJson - proposals for a Handle API (JSON)
  * HandleRdfDatasource - RDF serialization as RDF datasource
