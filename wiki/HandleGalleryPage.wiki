@@ -1,4 +1,5 @@
 #summary Gallery of handles shown in various serializations
+#labels Featured
 
 == Handle Gallery ==
 
