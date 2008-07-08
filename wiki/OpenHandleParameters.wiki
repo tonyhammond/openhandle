@@ -16,6 +16,7 @@ Recognized parameters are:
   * `format` = `rdf` | `n3` | `json`
   * `mimetype` = mime type for overriding default mime type
   * `compact` = `true` | `false`
+  * `callback` = JSONP callback function (e.g. `callback=openhandle`)
   * `include` = `datatypes` (*not* implemented yet)
 
 == Examples ==
