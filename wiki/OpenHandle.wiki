@@ -1,4 +1,5 @@
 #summary Homepage for OpenHandle project wiki
+#labels Featured
  
 OpenHandle is an open-source community project to expose [http://www.handle.net/ Handle Values] in common text-based serializations to make the data stored within the records more accessible to Web applications. OpenHandle is not a replacement for the [http://www.handle.net/ Handle System], but rather an alternate means to access Handle.
 
