@@ -1,4 +1,5 @@
 #summary Information on downloading, compiling, packaging and using the Openhandle code.
+#labels Featured
 
 = Introduction =
 
