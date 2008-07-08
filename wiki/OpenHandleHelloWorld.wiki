@@ -1,4 +1,5 @@
 #summary 'Hello World' for OpenHandle
+#labels Featured
 
 [OpenHandleCodeExamples Code Examples]
 == OpenHandle 'Hello World' ==
