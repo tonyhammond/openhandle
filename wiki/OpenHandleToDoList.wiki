@@ -1,4 +1,5 @@
 #summary To-do list for OpenHandle
+#labels Featured
 
 == To-Do List =
 
