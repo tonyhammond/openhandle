@@ -1,4 +1,5 @@
 #summary Code examples for OpenHandle
+#labels Featured
 
 == OpenHandle Code Examples ==
 
