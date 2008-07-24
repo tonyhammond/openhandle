@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openhandle>
+    <servlet>
+        <parameterNames>
+            <handleId>id</handleId>
+            <datatypes>include</datatypes>
+            <format>format</format><!-- note to self: we are asserting that the value for responseFormat maps to extension for template -->
+        </parameterNames>
+        <templates>
+            <handleResponse>
+                <template>
+                    <!-- you MUST specify a name and a mimetype for EACH template that is configured -->
+                    <name>handle</name>
+                    <mimetype>application/rdf+xml</mimetype>
+                </template>
+                <template>
+                    <name>handle</name>
+                    <mimetype>application/json</mimetype>
+                </template>
+                <template>
+                    <name>handle</name>
+                </template>
+            </handleResponse>
+            <errorResponses>
+                <template>
+                    <name>error</name>
+                    <mimetype>application/rdf+xml</mimetype>
+                </template>
+            </errorResponses>
+        </templates>
+    </servlet>
+    <traceMessages>true</traceMessages>
+    <preferredProtocols>http, tcp</preferredProtocols>
+</openhandle>
