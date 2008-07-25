@@ -4,7 +4,7 @@
 
 Section 4 of the Handle Technical Manual describes a batch-oriented command-line interface to admin Handle. 
 
-An example batch file (where the secret key is `"*"`:
+An example batch file (where the secret key is `"******"`):
 {{{
 AUTHENTICATE SECKEY:300:10100/admin
 ******
