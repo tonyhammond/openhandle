@@ -30,7 +30,7 @@ Specifically, OpenHandle is implemented as a Java servlet front-end to the Handl
 *Related:*
  * HandleUriScheme - URI scheme for Handle
  * HandleAdminApiJson - proposals for a Handle API (JSON)
- * HandleAdminApiText - proposals for a Handle API (TEXT)
+ * HandleAdminApiText - current command line Handle API (TEXT)
  * HandleRdfDatasource - RDF serialization as RDF datasource
 
 *Listing:*
