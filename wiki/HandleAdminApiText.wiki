@@ -2,7 +2,21 @@
 
 == Text API ==
 
-Section 4 of the Handle Technical Manual describes a batch-oriented command-line interface to admin Handle. This can be summarized as below, where the recognized command-line keywords are followed by a usage template, with '`LINE`' being a blank line, and the '`+`' character symbolizing that the argument can be repeated on its own new line):
+Section 4 of the Handle Technical Manual describes a batch-oriented command-line interface to admin Handle. 
+
+An example batch file (where the secret key is "******":
+{{{
+AUTHENTICATE SECKEY:300:10100/admin
+******
+
+DELETE 10100/nature
+CREATE 10100/nature
+100 HS_ADMIN 86400 1110 ADMIN 200:111111111111:0.NA/10100
+1 URL 86400 1110 UTF8 http://www.nature.com/
+
+}}}
+
+This can be summarized as below, where the recognized command-line keywords are followed by a usage template, with '`LINE`' being a blank line, and the '`+`' character symbolizing that the argument can be repeated on its own new line):
 
 {{{
 CREATE
