@@ -2,7 +2,7 @@
 
 == Text API ==
 
-Section 4 of the [Handle Technical Manual|http://www.handle.net/tech_manual/Handle_Technical_Manual.pdf] describes a simple batch-oriented command-line interface to admin Handle. This covers all Handle Value fields, apart from "reference", i.e. it accounts for 6 of the 7 fields within a Handle Value. 
+Section 4 of the [http://www.handle.net/tech_manual/Handle_Technical_Manual.pdf|Handle Technical Manual] describes a simple batch-oriented command-line interface to admin Handle. This covers all Handle Value fields, apart from "reference", i.e. it accounts for 6 of the 7 fields within a Handle Value. 
 
 An example batch file (where the secret key is "`******`"):
 {{{
