@@ -21,7 +21,7 @@ Such a JSON request could look like the following skeleton (here using the JSON 
             "operation" : "CREATE" ,
             "arguments" : {
                 "handle" : "1234/567" ,
-                "valueValues" : [
+                "handleValues" : [
                     {
                         "index" : "100" ,
                         "type" : "HS_ADMIN" ,
@@ -55,7 +55,7 @@ A similar format could be used for selective resolution:
 {
     "resolve" : {
         "handle" : "hdl:10100/tony" ,
-        "values" : [
+        "handleValues" : [
             {
                 "index" : "100" ,
                 "type" : "HS_ADMIN" ,
