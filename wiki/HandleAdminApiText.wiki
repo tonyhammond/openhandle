@@ -16,34 +16,41 @@ CREATE 10100/nature
 
 }}}
 
-The API be summarized as below, where the recognized command-line keywords are followed by a usage template, with '`LINE`' being a blank line, and the '`+`' character symbolizing that the argument can be repeated on its own new line):
+The API be summarized as below, where the recognized command-line keywords are followed by a usage template, with '`BLANK-LINE`' being a blank line, and the '`+`' character symbolizing that the argument can be repeated on its own new line):
 
 {{{
-CREATE
+=CREATE=
   CREATE handle
   value+
-  LINE
-DELETE
+  BLANK-LINE
+
+=DELETE=
   DELETE handle
-HOME
+
+=HOME=
   HOME address:port:protocol
   handle+
-  LINE
-UNHOME
+  BLANK-LINE
+
+=UNHOME=
   UNHOME address:port:protocol
   handle+
-  LINE
-ADD
+  BLANK-LINE
+
+=ADD=
   ADD handle
   value+
-  LINE
-REMOVE
+  BLANK-LINE
+
+=REMOVE=
   REMOVE indexes:handle
-MODIFY
+
+=MODIFY=
   MODIFY handle
   value+
-  LINE
-AUTHENTICATE
+  BLANK-LINE
+
+=AUTHENTICATE=
   AUTHENTICATE SECKEY:adm_index:adm_handle
   password
   LINE
@@ -52,8 +59,9 @@ AUTHENTICATE
   LINE
   AUTHENTICATE PUBKEY:adm_index:adm_handle
   key_file_path
-  LINE
-SESSIONSETUP
+  BLANK-LINE
+
+=SESSIONSETUP=
   SESSIONSETUP
   USESESSION:session_on_or_off_flag
   PUBEXNGKEYFILE:public_exchange_key_file
@@ -62,5 +70,5 @@ SESSIONSETUP
   PASSPHRASE:pass_phrase_for_private_exchange_key
   OPTIONS:<encrypt><authenticate><fallback on challenge response>
   TIMEOUT:time_out_in_hours
-  LINE
+  BLANK-LINE
 }}}
