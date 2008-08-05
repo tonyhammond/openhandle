@@ -18,4 +18,9 @@ Openhandle has a critical dependency on version 6 of the [http://handle.net/clie
   # If you have not already done so, download and install [http://maven.apache.org/download.html Maven].
   # Download the [http://handle.net/client_download.html Client Library (ver. 6) -- Java version] and unpack the zip file, which contains the file `handle.jar`.
   # At a command prompt, type `mvn install:install-file -Dfile=<path-to-handle.jar> -DgroupId=net.handle -DartifactId=handle -Dversion=6 -Dpackaging=jar` to install `handle.jar` to your local Maven repository.
-  # You can now build Openhandle using [http://maven.apache.org/plugins/index.html the normal Maven targets] by entering them at a command prompt in the *project home* root folder (i.e. the same folder where, once the source has been checked out, you have a file called `pom.xml`). For example, typing `mvn compile` will compile the source; `mvn jar:jar` will compile the source and create a jar file of the Openhandle code; `mvn package` will create a war file of the Openhandle application which can be deployed in your web app container of choice (e.g. [http://tomcat.apache.org Tomcat] or [http://www.mortbay.org/ Jetty]); `mvn clean` will delete all previously built files; and, `mvn tomcat:run` will run the Openhandle web application in an embedded Tomcat server on your local machine.
+  # You can now build Openhandle using [http://maven.apache.org/plugins/index.html the normal Maven targets] by entering them at a command prompt in the *project home* root folder (i.e. the same folder where, once the source has been checked out, you have a file called `pom.xml`). Some examples:
+    * `mvn compile` - compile the source
+    * `mvn jar:jar` - compile the source and create a jar file of the Openhandle code
+    * `mvn package` - create a war file of the Openhandle application which can be deployed in your web app container of choice (e.g. [http://tomcat.apache.org Tomcat] or [http://www.mortbay.org/ Jetty])
+    * `mvn clean` - delete all previously built files
+    * `mvn tomcat:run` - run the Openhandle web application in an embedded Tomcat server on your local machine
