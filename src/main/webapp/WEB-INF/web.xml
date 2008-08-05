@@ -7,8 +7,8 @@
     <!-- =================================================================== -->
     <!--                  Display Name and Description                       -->
     <!-- =================================================================== -->
-    <display-name>openhandle</display-name>
-    <description>Simple web application to get handle values and return as RDF/XML.</description>
+    <display-name>OpenHandle</display-name>
+    <description>OpenHandle - Handle: Anyway, Anyhow, Anywhere</description>
 
     <!-- =================================================================== -->
     <!--                              Filters                                -->

@@ -10,11 +10,12 @@
 ##  Date:   2008-03-21T12:00:00Z
 ##
 ##  ==
-##  [1] http://openhandle.googlecode.com/
+##  [1] http://code.google.com/p/openhandle/
 ##  [2] http://www.ietf.org/rfc/rfc3651.txt
 ##  [3] http://wwww.handle.net/
 ########################################################################
 #set ($this = $request.getAttribute("id"))
+#set ($err = $request.getAttribute("error"))
 #if ($request.getParameter("compact"))
 #if ($request.getParameter("compact") == "false")
 #else
@@ -24,12 +25,16 @@
 #set ($compact = "true")
 #end
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- OpenHandle (RDF/XML) - see http://openhandle.googlecode.com/ -->
+<!-- OpenHandle (RDF/XML) - see http://code.google.com/p/openhandle/ -->
 <r:RDF
     xmlns:h="http://hdl.handle.net/10100/handle.rdfs#"
     xmlns:r="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
 >
     <h:Handle r:about="hdl:${this.handle}">
+        <h:handleStatus>
+            <h:code>1</h:code>
+            <h:message>SUCCESS</h:message>
+        </h:handleStatus>
         <h:handleValues r:parseType="Collection">
 #foreach ($value in $this.values)
 ########################################################################
@@ -49,7 +54,8 @@
 ########################################################################
 #if (!$value.type.binary)
 #if ($value.type == "URL")
-                <h:data r:resource="${value.data}"/>
+#set ($uri = $value.data.replaceAll("&", "&amp;"))
+                <h:data r:resource="${uri}"/>
 #else
                 <h:data>${value.data}</h:data>
 #end

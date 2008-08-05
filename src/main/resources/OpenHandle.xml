@@ -4,17 +4,15 @@
         <parameterNames>
             <handleId>id</handleId>
             <datatypes>include</datatypes>
-            <format>format</format><!-- note to self: we are asserting that the value for responseFormat maps to extension for template -->
+            <format>format</format>
             <index>index</index>
             <type>type</type>
+            <compact>compact</compact>
+            <mimetype>mimetype</mimetype>
+            <callback>callback</callback>
         </parameterNames>
         <templates>
             <handleResponse>
-                <template>
-                    <!-- you MUST specify a name, an extension, and a mimetype for EACH template that is configured -->
-                    <name>/handle</name>
-                    <mimetype>application/rdf+xml</mimetype>
-                </template>
                 <template>
                     <name>/handle</name>
                     <mimetype>application/json</mimetype>
@@ -23,8 +21,20 @@
                     <name>/handle</name>
                     <mimetype>text/rdf+n3</mimetype>
                 </template>
+                <template>
+                    <name>/handle</name>
+                    <mimetype>application/rdf+xml</mimetype>
+                </template>
             </handleResponse>
             <errorResponse>
+                <template>
+                    <name>/error</name>
+                    <mimetype>application/json</mimetype>
+                </template>
+                <template>
+                    <name>/error</name>
+                    <mimetype>text/rdf+n3</mimetype>
+                </template>
                 <template>
                     <name>/error</name>
                     <mimetype>application/rdf+xml</mimetype>

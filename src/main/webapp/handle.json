@@ -10,11 +10,12 @@
 ##  Date:   2008-03-21T12:00:00Z
 ##
 ##  ==
-##  [1] http://openhandle.googlecode.com/
+##  [1] http://code.google.com/p/openhandle/
 ##  [2] http://www.ietf.org/rfc/rfc3651.txt
 ##  [3] http://wwww.handle.net/
 ########################################################################
 #set ($this = $request.getAttribute("id"))
+#set ($err = $request.getAttribute("error"))
 #if ($request.getParameter("compact"))
 #if ($request.getParameter("compact") == "false")
 #else
@@ -23,9 +24,17 @@
 #else
 #set ($compact = "true")
 #end
+#if ($request.getParameter("callback"))
+#set ($callback = $request.getParameter("callback"))
+${callback}(
+#end
 {
-    "comment" : "OpenHandle (JSON) - see http://openhandle.googlecode.com/" ,
+    "comment" : "OpenHandle (JSON) - see http://code.google.com/p/openhandle/" ,
     "handle" : "hdl:${this.handle}" ,
+    "handleStatus" : {
+        "code" : "1" ,
+        "message" : "SUCCESS"
+    } ,
     "handleValues" : [
 #foreach ($value in $this.values)
 ########################################################################
@@ -261,6 +270,9 @@ hdl:${reference.handle}?index=${reference.index}/
 #end
     ]
 }
+#if ($request.getParameter("callback"))
+)
+#end
 ########################################################################
 ## EOF
 ########################################################################
