@@ -6,8 +6,8 @@
     <groupId>net.handle</groupId>
     <artifactId>openhandle</artifactId>
     <packaging>war</packaging>
-    <version>0.1.3</version>
-    <description>Simple web application facade to handle.</description>
+    <version>0.1.4</version>
+    <description>OpenHandle - Handle: Anyway, Anyhow, Anywhere</description>
     <issueManagement>
         <url>http://code.google.com/p/openhandle/issues/</url>
     </issueManagement>
@@ -24,7 +24,7 @@
             <email>tony.hammond@gmail.com</email>
             <organization>Nature Publishing Group</organization>
             <roles>
-                <role>Application Architect</role>
+                <role>Data Architect</role>
             </roles>
         </developer>
     </developers>
