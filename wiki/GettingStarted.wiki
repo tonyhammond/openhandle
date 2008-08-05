@@ -3,7 +3,7 @@
 
 = Introduction =
 
-This page contains information about how to obtain the !OpenHandle source code and how to use it once you have obtained it.
+This page contains information about how to obtain the [http://code.google.com/p/openhandle/source/checkout OpenHandle source code] and how to use it once you have obtained it.
 
 
 = Checking out the source =
