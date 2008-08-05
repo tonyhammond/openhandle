@@ -17,7 +17,11 @@ The latest version of the !OpenHandle source is kept in the Google Code [http://
  # Checkout the latest version of the [http://code.google.com/p/openhandle/source/checkout OpenHandle source code] to your preferred location (this will be the *project home*).
  # If you have not already done so, download and install [http://maven.apache.org/download.html Maven].
  # Download the [http://handle.net/client_download.html Client Library (ver. 6) -- Java version] and unpack the zip file, which contains the file `handle.jar`.
- # At a command prompt, type `mvn install:install-file -Dfile=<path-to-handle.jar> -DgroupId=net.handle -DartifactId=handle -Dversion=6 -Dpackaging=jar` to install `handle.jar` to your local Maven repository.
+ # At a command prompt, type
+{{{
+mvn install:install-file -Dfile=<path-to-handle.jar> -DgroupId=net.handle -DartifactId=handle -Dversion=6 -Dpackaging=jar
+}}}
+to install `handle.jar` to your local Maven repository.
  # You can now build !OpenHandle using [http://maven.apache.org/plugins/index.html the normal Maven targets] by entering them at a command prompt in the *project home* root folder (i.e. the same folder where, once the source has been checked out, you have a file called `pom.xml`). Some examples:
   * `mvn clean` - delete all previously built files
   * `mvn compile` - compile the source
