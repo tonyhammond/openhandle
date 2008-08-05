@@ -8,7 +8,7 @@ This page contains information about how to obtain the !OpenHandle source code a
 
 = Checking out the source =
 
-The latest version of the !OpenHandle source is kept in the [http://code.google.com/p/openhandle/source/checkout Google Code subversion repository for this project]. Details on how to check it out are provided on [http://code.google.com/p/openhandle/source/checkout the source page].
+The latest version of the !OpenHandle source is kept in the [http://code.google.com/p/openhandle/source/checkout Google Code subversion repository] for this project. Details on how to check it out are provided on [http://code.google.com/p/openhandle/source/checkout the source page].
 
 = Compiling the source =
 
