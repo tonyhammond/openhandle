@@ -12,7 +12,7 @@ The latest version of the OpenHandle source is kept in the Google Code subversio
 
 = Compiling the source =
 
-OpenHandle has a critical dependency on version 6 of the [http://handle.net/client_download.html Handle client for Java] which is not distributed with Openhandle. Additionally, Openhandle itself uses [http://maven.apache.org/ Maven] to manage build and packaging. Therefore, to build OpenHandle, you need to complete the following steps:
+OpenHandle has a critical dependency on version 6 of the [http://handle.net/client_download.html Handle client for Java] which is not distributed with Openhandle. Additionally, OpenHandle itself uses [http://maven.apache.org/ Maven] to manage build and packaging. Therefore, to build OpenHandle, you need to complete the following steps:
 
   # Checkout the latest version of the [http://code.google.com/p/openhandle/source/checkout OpenHandle source code] to your preferred location (this will be the *project home*).
   # If you have not already done so, download and install [http://maven.apache.org/download.html Maven].
