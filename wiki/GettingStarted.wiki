@@ -1,4 +1,4 @@
-#summary Information on downloading, compiling, packaging and using the !OpenHandle code.
+#summary Information on downloading, compiling, packaging and using the OpenHandle code.
 #labels Featured
 
 = Introduction =
