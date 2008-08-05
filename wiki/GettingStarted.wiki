@@ -8,7 +8,7 @@ This page contains information about how to obtain the Openhandle source code an
 
 = Checking out the source =
 
-The latest version of the Openhandle source is kept in the googlecode subversion repository for this project. Details on how to check it out are provided on [http://code.google.com/p/openhandle/source/checkout the source page].
+The latest version of the Openhandle source is kept in the Google Code subversion repository for this project. Details on how to check it out are provided on [http://code.google.com/p/openhandle/source/checkout the source page].
 
 = Compiling the source =
 
