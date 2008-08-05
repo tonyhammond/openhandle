@@ -14,7 +14,7 @@ The latest version of the Openhandle source is kept in the googlecode subversion
 
 Openhandle has a critical dependency on version 6 of the [http://handle.net/client_download.html Handle client for Java] which is not distributed with Openhandle. Additionally, Openhandle itself uses [http://maven.apache.org/ Maven] to manage build and packaging. Therefore, to build Openhandle, you need to complete the following steps:
 
-  # [http://code.google.com/p/openhandle/source/checkout Checkout the latest version of the Openhandle source code] to your preferred location (this will be the *project home*).
+  # Checkout the latest version of the [http://code.google.com/p/openhandle/source/checkout Openhandle source code] to your preferred location (this will be the *project home*).
   # If you have not already done so, download and install [http://maven.apache.org/download.html Maven].
   # Download the [http://handle.net/client_download.html Client Library (ver. 6) -- Java version] and unpack the zip file, which contains the file `handle.jar`.
   # At a command prompt, type `mvn install:install-file -Dfile=<path-to-handle.jar> -DgroupId=net.handle -DartifactId=handle -Dversion=6 -Dpackaging=jar` to install `handle.jar` to your local Maven repository.
