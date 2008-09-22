@@ -4,7 +4,7 @@
 == OpenHandle Java**Script Code Examples ==
 
 @@
-This page needs updating. For now, though, see [http://openhandle.googlecode.com/files/openhandle-0.1.1.js here] for a JavaScript client library.
+This page badly needs updating. For now, though, see [http://openhandle.googlecode.com/files/openhandle-0.1.1.js here] for a Java**Script client library.
 @@
 
 Here's how a native Java**Script program (contained in file "[http://nurture.nature.com/tony/openhandle/code/javascript/openhandle.js openhandle.js]") can grab a handle data record.
